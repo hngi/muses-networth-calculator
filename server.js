@@ -1,12 +1,46 @@
-// Import express
-let express = require('express')
-// Initialize the app
-let app = express();
-// Setup server port
-var port = process.env.PORT || 8080;
-// Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
-// Launch app to listen to specified port
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const apiRoutes = require('./api-routes.js');
+
+const app = express();
+// Configure bodyparser to handle post requests
+app.use(bodyParser.urlencoded({
+   extended: true
+}));
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://localhost/musesnwc', { 
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
+const db = mongoose.connection;
+
+// Added check for DB connection
+if(!db)
+    console.log("Error connecting db")
+else
+    console.log("Db connected successfully")
+
+const port = process.env.PORT || 8080;
+
+app.get('/', (req, res) =>
+{
+	res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.json({"status": "Test"})
+});
+
+app.use('/api', (req, res, next) => 
+{
+	res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Headers', '*');
+	next();
+})
+
+app.use('/api', apiRoutes);
+
 app.listen(port, function () {
-     console.log("Running RestHub on port " + port);
+     console.log("Running api on port " + port);
 });
