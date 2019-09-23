@@ -8,33 +8,37 @@ exports.signup = async function (req, res)
 {
     let user = new User();
     if (!req.body || !req.body.name || !req.body.email || !req.body.password)
-        res.json({
+        res.json(
+        {
             errors: "Bad request! Supply POST data: name, email and password",
             code: 401
         })
-    let users = [];
     User.findOne({email: req.body.email}).then(oldUser => 
     {
         if (oldUser)
             return res.json({errors: "Email already exists", code: 427});
-        user.name = req.body.name ? req.body.name : user.name;
+        user.name = req.body.name;
         user.email = req.body.email;
-        user.passwordHash = req.body.password;
-        const token = jwt.sign({email: user.email, id: user._id}, APP_SECRET)
-        user.save(function (err)
+
+        bcrypt.hash(req.body.password, 10).then(pass =>
         {
-            if (err)
-                 res.json(err);
-            res.json(
+            user.passwordHash = pass;
+            const token = jwt.sign({email: user.email, id: user._id}, APP_SECRET)
+            user.save(err =>
             {
-                message: 'New user created!',
-                data: 
+                if (err)
+                     res.json(err);
+                res.json(
                 {
-                    name: user.name,
-                    email: user.email,
-                    password: user.passwordHash,
-                    token
-                }
+                    message: 'New user created!',
+                    data: 
+                    {
+                        name: user.name,
+                        email: user.email,
+                        password: user.passwordHash,
+                        token
+                    }
+                });
             });
         });
     });
@@ -42,13 +46,34 @@ exports.signup = async function (req, res)
 // Handle view user info
 exports.login = function (req, res) 
 {
-    User.findById(req.params.user_id, function (err, user) 
+    if (!req.body || !req.body.email || !req.body.password)
+        res.json(
+        {
+            errors: "Bad request! Supply POST data: name, email and password",
+            code: 401
+        })
+    User.findOne({email: req.body.email}).then(user => 
     {
-        if (err)
-            res.send(err);
-        res.json({
-            message: 'User details loading..',
-            data: user
+        if (!user)
+            return res.json({errors: "Email does not exist", code: 496});
+
+        bcrypt.compare(req.body.password, user.passwordHash).then(valid =>
+        {
+            if (!valid)
+                return res.json({errors: "Incorrect password", code: 419});
+
+            const token = jwt.sign({email: user.email, id: user._id}, APP_SECRET);
+            res.json(
+            {
+                message: 'Successful login!',
+                data:
+                {
+                    name: user.name,
+                    email: user.email,
+                    password: user.passwordHash,
+                    token
+                }
+            });
         });
     });
 };
