@@ -1,0 +1,24 @@
+{
+  "name": "muses-networth-calculator",
+  "version": "1.0.0",
+  "description": "This is one of the stage 3 projects built by Team Muses. A Net Worth Calculator web app.",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass sass/main.scss css/style.css",
+    "watch-sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eronmmer/muses-networth-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eronmmer/muses-networth-calculator/issues"
+  },
+  "homepage": "https://github.com/Eronmmer/muses-networth-calculator#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
