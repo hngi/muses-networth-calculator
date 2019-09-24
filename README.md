@@ -20,7 +20,7 @@ To set up this project, you need the following:
 1. Laravel requires a server with PHP version of more than 7.0 (recommended: wampserver)
 
 
-## what do we need to have installed?
+## What do we need to have installed?
 1. first download and install composer
 Then on your command line within the project folder
 2. Run composer install 
@@ -29,7 +29,7 @@ The execution of the dependency is dependent on:
 * For development: run `npm run watch` (this is required for developers)
 * For production: run `npm run production`  (this is required for project deployment)
 
-## what about database?
+## What about database?
 The database was created using migrations. 
 1. To setup the database you need to first create your database on you server.
 2. Duplicate the sample .env.example file and rename it to .env
