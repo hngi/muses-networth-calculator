@@ -17,7 +17,7 @@
 	<main>
 		<section>
 			<h1 class="blue">Welcome. . .</h1>
-			<h3 class="blue">This is the REST API docummentation for the #team-muses net-worth calculator built using Express and MongoDB with MVC architecture (minus the V :-) )</h3>
+			<h3 class="blue">This is the REST API docummentation for the #team-muses Net Worth Calculator built using Express and MongoDB with MVC architecture (minus the V :-) )</h3>
 
 			<h3 class="blue">To test locally, apply the following steps</h3>
 			<ul>
@@ -32,7 +32,7 @@
 
 			<br />
 			<h2 class="blue" id="operations">API Operations</h2>
-			<h4>The API allows you signup, login and (while logged in) perform CRUD (create, read, update and delete) operations on a set of financial <span class="code">items</span> on your account</h4>
+			<h4>The API allows you to signup, login and (while logged in) perform CRUD (create, read, update and delete) operations on a set of financial <span class="code">items</span> on your account</h4>
 			<em>Note: In all the examples, you could substitute <span class="code">http://localhost:3000</span> with the hosted API url, if you are not testing locally</em>
 			<h4>To signup, send</h4>
 			<code>
@@ -62,9 +62,9 @@ fetch("http://localhost:3000/api/signup",
 			</code>
 				<em id="note">
 					Note: The token could already be used to access your account. There's no need to login immediately after a signup. To use the token, you could save to localStorage: 
-					<span class="code">window.localStorage.setItem("auth_token", token);</span>
+					<span class="code">window.localStorage.setItem("auth_token", token)</span>
 					and attach it as header to your future requests: 
-					<span class="code">'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')</span> 
+					<span class="code">'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')</span> and logging out could simply be done via <span class="code">localStorage.removeItem("auth_token", token)</span> at the frontend.
 					<br />See examples below for more information
 				</em>
 			<h4>To login, send</h4>
