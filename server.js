@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const apiRoutes = require('./api-routes.js');
 
 const app = express();
@@ -22,25 +23,33 @@ if(!db)
 else
     console.log("Db connected successfully")
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) =>
 {
-	res.setHeader('Content-Type', 'application/json');
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.json({"status": "Test"})
+	app.use(express.static(__dirname + '/docs'));
+	res.setHeader('Content-Type', 'text/html');
+	res.setHeader('Access-Control-Allow-Origin', req.header('Origin') || '*');
+	res.setHeader('Access-Control-Allow-Headers', '*');
+	res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
+	res.setHeader('Access-Control-Allow-Credentials', true);
+	res.statusCode = 200;
+	res.sendFile(path.join(__dirname + "/docs/"));
 });
 
 app.use('/api', (req, res, next) => 
 {
 	res.setHeader('Content-Type', 'application/json');
-	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Origin', req.header('Origin') || '*');
 	res.setHeader('Access-Control-Allow-Headers', '*');
+	res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
+	res.setHeader('Access-Control-Allow-Credentials', true);
+	res.status(200);
 	next();
 })
 
 app.use('/api', apiRoutes);
 
 app.listen(port, function () {
-     console.log("Running api on port " + port);
+     console.log("API running on port " + port);
 });

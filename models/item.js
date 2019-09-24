@@ -1,20 +1,16 @@
 const mongoose = require('mongoose');
 // Setup schema
 const userSchema = mongoose.Schema({
-    name: {
+    type: {
         type: String,
         required: true
     },
-    email: {
+    description: {
         type: String,
         required: true
     },
-    passwordHash: {
-        type: String,
-        required: true
-    },
-    items: {
-        type: Array,
+    value: {
+        type: Number,
         required: true
     },
     create_date: {
@@ -22,8 +18,8 @@ const userSchema = mongoose.Schema({
         default: Date.now
     }
 });
-// Export User model
-const User = module.exports = mongoose.model('user', userSchema);
+// Export Item model
+const Item = module.exports = mongoose.model('item', userSchema);
 module.exports.get = function (callback, limit) {
-    User.find(callback).limit(limit);
+    Item.find(callback).limit(limit);
 }
