@@ -1,0 +1,22 @@
+// Base
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  color: $text-black;
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  box-sizing: border-box;
+  color: #333; }
+
+ul {
+  list-style: none; }
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ff2d9b; }
+
+.btn {
+  text-decoration: none;
+  padding: 0.7rem 3rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s; }
+  .btn-block {
+    display: block; }
+  .btn-purple {
+    background-color: #983ce9; }
+    .btn-purple:hover {
+      background-color: #b06aee; }
+
+.landing-container {
+  height: 100vh; }
+
+.landing-body {
+  height: 100%;
+  position: relative; }
+  .landing-body .landing-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .landing-body .landing-header h1 {
+      margin-left: 3rem;
+      color: #4a0e7e; }
+    .landing-body .landing-header nav {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: flex-end; }
+    .landing-body .landing-header__nav-items {
+      display: flex;
+      justify-content: space-around; }
+    .landing-body .landing-header__nav-list {
+      display: inline-block;
+      margin-right: 2rem; }
+      .landing-body .landing-header__nav-list a {
+        font-weight: bold;
+        padding: 0.6rem; }
+        .landing-body .landing-header__nav-list a:hover {
+          border-bottom: 2px solid #983ce9; }
+  .landing-body .landing-main {
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    padding: 1rem; }
+    .landing-body .landing-main__text a {
+      margin-top: 2rem;
+      color: white; }
+    .landing-body .landing-main__image img {
+      width: 100%; }
+  .landing-body footer {
+    text-align: center;
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    width: 100%; }
+    .landing-body footer a {
+      color: #ff2d9b;
+      text-decoration: none; }
+      .landing-body footer a:hover {
+        border-bottom: 1px solid #983ce9; }
