@@ -1,14 +1,13 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('./models/user.js');
-const APP_SECRET = "muses is bae";
+const User = require('../models/user.js');
+const APP_SECRET = require('../utils.js').APP_SECRET;
 
-
-exports.signup = async function (req, res) 
+exports.signup = function (req, res) 
 {
     let user = new User();
     if (!req.body || !req.body.name || !req.body.email || !req.body.password)
-        res.json(
+        return res.json(
         {
             errors: "Bad request! Supply POST data: name, email and password",
             code: 401
@@ -27,15 +26,14 @@ exports.signup = async function (req, res)
             user.save(err =>
             {
                 if (err)
-                     res.json(err);
+                    return res.json(err);
                 res.json(
                 {
-                    message: 'New user created!',
+                    message: 'New user created',
                     data: 
                     {
                         name: user.name,
                         email: user.email,
-                        password: user.passwordHash,
                         token
                     }
                 });
@@ -47,7 +45,7 @@ exports.signup = async function (req, res)
 exports.login = function (req, res) 
 {
     if (!req.body || !req.body.email || !req.body.password)
-        res.json(
+        return res.json(
         {
             errors: "Bad request! Supply POST data: name, email and password",
             code: 401
@@ -65,12 +63,11 @@ exports.login = function (req, res)
             const token = jwt.sign({email: user.email, id: user._id}, APP_SECRET);
             res.json(
             {
-                message: 'Successful login!',
+                message: 'Successful login',
                 data:
                 {
                     name: user.name,
                     email: user.email,
-                    password: user.passwordHash,
                     token
                 }
             });
@@ -87,11 +84,8 @@ exports.update = function (req, res) {
 User.findById(req.params.user_id, function (err, user) {
         if (err)
             res.send(err);
-user.name = req.body.name ? req.body.name : user.name;
-        user.gender = req.body.gender;
+        user.name = req.body.name;
         user.email = req.body.email;
-        user.phone = req.body.phone;
-// save the user and check for errors
         user.save(function (err) {
             if (err)
                 res.json(err);
