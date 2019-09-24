@@ -145,7 +145,7 @@
         },
         data() {
             return {
-                netWorth: 0,
+                netWorth: '',
                 assets: {},
                 liabilities: {}
             }
@@ -154,7 +154,8 @@
             calcNetWorth() {
                 let totalAsset = Number(this.assets.realestate ? this.assets.realestate : 0) + Number(this.assets.savings ? this.assets.savings : 0) + Number(this.assets.retirement ? this.assets.retirement : 0) + Number(this.assets.autos ? this.assets.autos : 0) + Number(this.assets.others ? this.assets.others : 0)
                 let totalLiability = Number(this.liabilities.morgage ? this.liabilities.morgage : 0) + Number(this.liabilities.debt ? this.liabilities.debt : 0) + Number(this.liabilities.personalLoans ? this.liabilities.personalLoans : 0) + Number(this.liabilities.carLoans ? this.liabilities.carLoans : 0) + Number(this.liabilities.otherDebt ? this.liabilities.otherDebt : 0)
-                this.netWorth = totalAsset - totalLiability
+                let result = totalAsset - totalLiability
+                this.netWorth = result.toFixed(2)
             }
         }
     }
