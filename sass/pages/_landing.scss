@@ -8,6 +8,11 @@
 
     .muses-logo {
       flex: 1;
+      height: 7rem;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
     }
     .nav-menu {
       list-style-type: none;
@@ -18,7 +23,15 @@
         text-align: center;
         padding: 1rem 3rem;
         border-radius: 2rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 5rem;
+        transition: all 500ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          font-size: 2rem;
+          background-color: #f1f6fe80;
+        }
       }
       .join-nav {
         background-color: #f1f6fe;
@@ -101,6 +114,8 @@
       & > * {
         width: 80%;
         text-align: center;
+        // transition: all 500ms ease-in-out;
+        cursor: pointer;
 
         h4 {
           font-size: 2rem;
