@@ -118,7 +118,7 @@ exports.delete = function (req, res)
                 res.json(
                 {
                     message: 'Item deleted successfully',
-                    newItemsSize: user.items.length
+                    newItemsCount: user.items.length
                 });
             });
         });
