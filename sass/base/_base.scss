@@ -1,22 +1,30 @@
-// Base
-
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
 }
 
 body {
   box-sizing: border-box;
-  color: $text-black;
+  // background-color: #f6f6f6;
+  //   background-color: black;
+  font-family: "Poppins", sans-serif;
+  // font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
 }
-
-ul {
-  list-style: none;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h2 {
+  font-size: 5rem;
+  font-weight: 400;
+  text-align: center;
+  color: #3f3f3f;
 }
