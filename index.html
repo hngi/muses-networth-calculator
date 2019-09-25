@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Muses Networth Calculator</title>
+    <title>Networth Calculator</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -175,18 +176,19 @@
           <form name="login" action="">
             <h2>Log In</h2>
             <label for="login-email">Email</label>
-            <input type="email" name="login-email" placeholder="Your email" />
+            <input type="email" id="login-email" name="email" placeholder="Your email" />
             <label for="login-password">Password</label>
             <input
               type="password"
-              name="login-password"
+              name="password"
+              id="login-password"
               placeholder="Your Password"
             />
             <div class="stay-signed">
-              <input type="checkbox" />Keep me signed in
+              <input type="checkbox" checked/>Keep me signed in
             </div>
             <a href="http://">Forgot password?</a>
-            <button>
+            <button id="login-button">
               <i class="fas fa-unlock"></i>
               <p>
                 Enter
@@ -205,43 +207,45 @@
             <h2>Register</h2>
             <div class="namesinput">
               <label for="register-firstname"> First Name</label>
-              <label for="register-surname">Surname</label>
               <input
                 type="text"
-                name="register-firstname"
+                name="name"
+                id="register-firstname"
                 placeholder="Your Name"
-              />
-              <input
-                type="text"
-                name="register-surname"
-                placeholder="Your Name"
+                required
               />
             </div>
             <label for="register-email">Email</label>
             <input
               type="email"
-              name="register-email"
+              name="email"
+              id="register-email"
               placeholder="Your email"
+              required
             />
             <div class="passwordsinput">
               <label for="register-password">Password</label>
               <label for="register-password2">Confirm Password</label>
               <input
                 type="password"
-                name="register-password"
+                name="password"
+                id="register-password"
                 placeholder="Your Password"
+                required
               />
               <input
                 type="password"
-                name="register-password2"
+                name="password"
+                id="register-password2"
                 placeholder="Retype Password"
+                required
               />
             </div>
             <div class="stay-signed">
               <input type="checkbox" />Keep me signed in
             </div>
             <a href="http://">Forgot password?</a>
-            <button>
+            <button id="register-button">
               <i class="fas fa-unlock"></i>
               <p>
                 Enter
@@ -261,5 +265,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
