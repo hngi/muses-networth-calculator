@@ -64,7 +64,7 @@ fetch("http://localhost:3000/api/signup",
 					Note: The token could already be used to access your account. There's no need to login immediately after a signup. To use the token, you could save to localStorage: 
 					<span class="code">window.localStorage.setItem("auth_token", token)</span>
 					and attach it as header to your future requests: 
-					<span class="code">'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')</span> and logging out could simply be done via <span class="code">localStorage.removeItem("auth_token", token)</span> at the frontend.
+					<span class="code">'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')</span> and logging out could simply be done via <span class="code">localStorage.removeItem("auth_token")</span> at the frontend.
 					<br />See examples below for more information
 				</em>
 			<h4>To login, send</h4>
