@@ -1,89 +1,341 @@
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit; }
 
 html {
-  font-family: 'Montserrat', sans-serif; }
+  font-size: 62.5%; }
 
 body {
   box-sizing: border-box;
-  color: #333; }
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem; }
 
-ul {
-  list-style: none; }
-
-.nav-link {
+a {
   text-decoration: none;
-  text-transform: uppercase;
-  color: #ff2d9b; }
+  color: inherit; }
 
-.btn {
-  text-decoration: none;
-  padding: 0.7rem 3rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all 0.2s; }
-  .btn-block {
-    display: block; }
-  .btn-purple {
-    background-color: #983ce9; }
-    .btn-purple:hover {
-      background-color: #b06aee; }
+h2 {
+  font-size: 5rem;
+  font-weight: 400;
+  text-align: center;
+  color: #3f3f3f; }
 
-.landing-container {
-  height: 100vh; }
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */ }
+
+#login-modal .modal-content {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8rem 3rem;
+  width: 30%;
+  color: #3f3f3f; }
+  #login-modal .modal-content h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 3.5rem; }
+  #login-modal .modal-content form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10rem; }
+    #login-modal .modal-content form > * {
+      display: block; }
+    #login-modal .modal-content form label {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem; }
+    #login-modal .modal-content form input {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      border: 0.2rem solid #3f3f3f80;
+      margin-bottom: 2rem; }
+    #login-modal .modal-content form .stay-signed {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      align-content: center; }
+      #login-modal .modal-content form .stay-signed input {
+        margin: auto; }
+    #login-modal .modal-content form a {
+      text-align: center;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: #4a7de0; }
+    #login-modal .modal-content form button {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+      background-color: #4a7de0;
+      border: none;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem; }
+      #login-modal .modal-content form button i {
+        color: white;
+        font-size: 1.3rem;
+        margin: auto; }
+      #login-modal .modal-content form button p {
+        flex: 1;
+        color: white; }
+
+#login-modal .close {
+  color: #3f3f3f;
+  float: right;
+  font-size: 4rem;
+  cursor: pointer; }
+
+/* Modal Content/Box */
+/* The Close Button */
+.landing-header {
+  width: 100%;
+  padding: 1rem 5rem; }
+  .landing-header .nav-bar {
+    width: 100%;
+    display: flex; }
+    .landing-header .nav-bar .muses-logo {
+      flex: 1; }
+    .landing-header .nav-bar .nav-menu {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); }
+      .landing-header .nav-bar .nav-menu .nav-item {
+        text-align: center;
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        font-size: 2rem; }
+      .landing-header .nav-bar .nav-menu .join-nav {
+        background-color: #f1f6fe;
+        color: #4a7de0; }
+      .landing-header .nav-bar .nav-menu #login-modal-trigger,
+      .landing-header .nav-bar .nav-menu #register-modal-trigger {
+        cursor: pointer; }
 
 .landing-body {
-  height: 100%;
-  position: relative; }
-  .landing-body .landing-header {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem; }
+  .landing-body .upper-section {
+    width: 70%;
     display: flex;
-    align-items: center;
-    justify-content: space-between; }
-    .landing-body .landing-header h1 {
-      margin-left: 3rem;
-      color: #4a0e7e; }
-    .landing-body .landing-header nav {
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: flex-end; }
-    .landing-body .landing-header__nav-items {
-      display: flex;
-      justify-content: space-around; }
-    .landing-body .landing-header__nav-list {
-      display: inline-block;
-      margin-right: 2rem; }
-      .landing-body .landing-header__nav-list a {
-        font-weight: bold;
-        padding: 0.6rem; }
-        .landing-body .landing-header__nav-list a:hover {
-          border-bottom: 2px solid #983ce9; }
-  .landing-body .landing-main {
-    margin: 0 auto;
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    flex-direction: row;
     justify-content: center;
+    align-items: center; }
+    .landing-body .upper-section .intro-text {
+      flex: 1;
+      margin-left: 8%; }
+      .landing-body .upper-section .intro-text h1 {
+        font-size: 8rem;
+        font-weight: 600;
+        line-height: 10rem; }
+      .landing-body .upper-section .intro-text h6 {
+        font-size: 2rem;
+        font-weight: 400; }
+    .landing-body .upper-section .intro-svg {
+      flex: 1;
+      width: 60%;
+      overflow: hidden; }
+      .landing-body .upper-section .intro-svg img {
+        width: 100%; }
+  .landing-body .howitworks {
+    width: 100%;
+    background-image: url("../assets/img/blue-background.png");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    margin-top: -8rem;
+    padding-top: 30rem;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    padding: 1rem; }
-    .landing-body .landing-main__text a {
-      margin-top: 2rem;
-      color: white; }
-    .landing-body .landing-main__image img {
-      width: 100%; }
-  .landing-body footer {
-    text-align: center;
-    position: absolute;
-    bottom: 2rem;
-    right: 0;
-    width: 100%; }
-    .landing-body footer a {
-      color: #ff2d9b;
-      text-decoration: none; }
-      .landing-body footer a:hover {
-        border-bottom: 1px solid #983ce9; }
+    margin-bottom: 5rem; }
+    .landing-body .howitworks h2 {
+      margin-bottom: 10rem; }
+    .landing-body .howitworks .process-image {
+      width: 70%;
+      margin: auto;
+      margin-bottom: 20rem; }
+      .landing-body .howitworks .process-image img {
+        width: 100%; }
+    .landing-body .howitworks .process-text {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 13%; }
+      .landing-body .howitworks .process-text > * {
+        width: 80%;
+        text-align: center; }
+        .landing-body .howitworks .process-text > * h4 {
+          font-size: 2rem;
+          color: #4a7de0; }
+        .landing-body .howitworks .process-text > * p {
+          padding: 1rem;
+          border-bottom: 0.1rem solid #4a7de0; }
+      .landing-body .howitworks .process-text .assets {
+        margin-top: -5rem; }
+      .landing-body .howitworks .process-text .tax-rate {
+        margin-top: -4rem;
+        margin-left: 1rem; }
+      .landing-body .howitworks .process-text .investments {
+        margin-left: 2rem; }
+  .landing-body #faq {
+    width: 70%;
+    display: flex;
+    flex-direction: column; }
+    .landing-body #faq .offset-text {
+      align-self: flex-end;
+      font-weight: 400;
+      font-size: 3rem;
+      width: 50%;
+      text-align: center;
+      margin-bottom: 15rem; }
+      .landing-body #faq .offset-text .divider {
+        margin: 10rem auto; }
+    .landing-body #faq .weekly-tips {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
+      align-items: center;
+      padding: 5rem 10rem;
+      border-radius: 2rem;
+      background-color: #ccdbf6;
+      margin-bottom: 15rem; }
+      .landing-body #faq .weekly-tips h3 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        font-weight: 700;
+        color: #4a7de0; }
+      .landing-body #faq .weekly-tips form {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        column-gap: 3rem; }
+        .landing-body #faq .weekly-tips form input {
+          border: none;
+          margin: auto;
+          width: 100%;
+          font-size: 2rem;
+          padding: 1.5rem 2rem;
+          border-radius: 1.5rem; }
+          .landing-body #faq .weekly-tips form input::placeholder {
+            font-size: 2.5rem;
+            color: #4a7de0; }
+        .landing-body #faq .weekly-tips form button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer; }
+          .landing-body #faq .weekly-tips form button i {
+            margin: 3rem 0;
+            font-size: 3.5rem;
+            color: white; }
+    .landing-body #faq .faq .divider {
+      margin: 5rem auto; }
+    .landing-body #faq .faq .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .landing-body #faq .faq .faq-accordion button {
+        display: grid;
+        width: 45%;
+        grid-template-columns: max-content 1fr max-content;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: none;
+        font-size: 3rem;
+        text-align: start;
+        padding-bottom: 3.5rem;
+        border-bottom: 0.3rem solid #92b0eb90;
+        color: #4a7de0;
+        margin-bottom: 5rem;
+        cursor: pointer; }
+        .landing-body #faq .faq .faq-accordion button span {
+          text-align: center; }
+        .landing-body #faq .faq .faq-accordion button .question {
+          padding: 0.5rem;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 3rem;
+          color: white;
+          background-color: #4a7de0;
+          margin-right: 5rem; }
+        .landing-body #faq .faq .faq-accordion button .addition {
+          font-weight: 700; }
+      .landing-body #faq .faq .faq-accordion .faq-panel {
+        width: 45%;
+        padding: 0 2rem;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+        font-size: 2rem;
+        margin-bottom: 5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out; }
+  .landing-body .lower-section {
+    width: 70%;
+    margin: 15rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10rem;
+    align-items: center;
+    justify-content: center; }
+    .landing-body .lower-section > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      box-shadow: 1rem 1rem 5rem #00000020;
+      padding: 7rem;
+      text-align: center;
+      color: #3f3f3f; }
+      .landing-body .lower-section > * i {
+        color: #4a7de0;
+        font-size: 3rem;
+        margin-bottom: 2rem; }
+      .landing-body .lower-section > * h4 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem; }
+      .landing-body .lower-section > * p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem; }
+      .landing-body .lower-section > * a {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #4a7de0; }
+
+footer {
+  background-image: url("../assets/img/blue-background-2.png");
+  width: 100%;
+  margin-top: -35rem;
+  z-index: -1;
+  background-size: cover; }
+  footer p {
+    margin-top: 35rem;
+    text-align: center; }
+
+.divider {
+  width: 12rem;
+  height: 1rem;
+  background-color: #25c296;
+  margin: auto;
+  margin-bottom: 10rem; }
