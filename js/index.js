@@ -24,9 +24,14 @@ const useToken = data =>
 // Login
 document.getElementById("login-button").addEventListener("click", e => 
 {
-	e.preventDefault();
 	let email = document.getElementById("login-email").value;
 	let password = document.getElementById("login-password").value;
+
+	if (/\w+@\w+/.test(email) && password.length)
+		e.preventDefault();
+	else
+		return;
+
 	let data = {"email": email, "password": password};
 	fetch(backendUrl + "/api/login",
 	{
@@ -57,10 +62,15 @@ document.getElementById("login-button").addEventListener("click", e =>
 // Signup
 document.getElementById("register-button").addEventListener("click", e => 
 {
-	e.preventDefault();
 	let name = document.getElementById("register-firstname").value;
 	let email = document.getElementById("register-email").value;
 	let password = document.getElementById("register-password").value;
+
+	if (name.length && /\w+@\w+/.test(email) && password.length)
+		e.preventDefault();
+	else
+		return;
+
 	let data = {"name": name, "email": email, "password": password};
 	fetch(backendUrl + "/api/signup",
 	{
