@@ -67,7 +67,9 @@ h2 {
         border-radius: 0.5rem;
         border: none;
         border: 0.2rem solid #3f3f3f80;
-        margin-bottom: 2rem; }
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        font-family: "Raleway", segoe UI, sans-serif; }
       #login-modal .modal-content form .stay-signed {
         display: grid;
         grid-template-columns: max-content max-content;
@@ -108,15 +110,11 @@ h2 {
       padding: 0;
       cursor: pointer;
       width: 5rem;
+      height: 5rem;
       text-align: center;
       transition: 0.4s ease-out; }
-      #login-modal .modal-content .close div {
-        margin: auto;
-        border-radius: 55%;
-        transition: 0.4s ease-out; }
-    #login-modal .modal-content .close:hover > div {
-      background-color: rgba(0, 0, 0, 0.05);
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05); }
+    #login-modal .modal-content .close:hover {
+      transform: scale(1.2); }
 
 #register-modal {
   /* Modal Content/Box */
@@ -141,7 +139,6 @@ h2 {
       padding: 0 5rem; }
       #register-modal .modal-content form > * {
         display: block; }
-      #register-modal .modal-content form .namesinput,
       #register-modal .modal-content form .passwordsinput {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -155,7 +152,8 @@ h2 {
         border-radius: 0.5rem;
         border: none;
         border: 0.2rem solid #3f3f3f80;
-        margin-bottom: 2rem; }
+        margin-bottom: 2rem;
+        font-family: "Raleway", segoe UI, sans-serif; }
       #register-modal .modal-content form .stay-signed {
         display: grid;
         grid-template-columns: max-content max-content;
