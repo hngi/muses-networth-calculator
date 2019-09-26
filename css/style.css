@@ -38,9 +38,9 @@ h2 {
   /* Black w/ opacity */ }
   @media (max-width: 700px) {
     .modal {
-      width: 80%;
-      height: 80%;
-      font-size: 1rem; } }
+      width: 90%;
+      height: 90%;
+      font-size: 1.2rem; } }
 
 #login-modal {
   /* Modal Content/Box */ }
@@ -55,10 +55,10 @@ h2 {
     /* The Close Button */ }
     @media (max-width: 700px) {
       #login-modal .modal-content {
-        width: 65vw;
-        height: 65vh;
-        top: 3vh;
-        left: 3vw;
+        width: 80vw;
+        height: 80vh;
+        top: 10vh;
+        left: 8vw;
         padding: 0rem 1rem; } }
     #login-modal .modal-content h2 {
       font-weight: 700;
@@ -81,7 +81,7 @@ h2 {
         margin-bottom: 0.5rem; }
         @media (max-width: 700px) {
           #login-modal .modal-content form label {
-            font-size: 1rem; } }
+            font-size: 1.2rem; } }
       #login-modal .modal-content form input {
         padding: 1rem;
         border-radius: 0.5rem;
@@ -92,8 +92,8 @@ h2 {
         font-family: "Raleway", segoe UI, sans-serif; }
         @media (max-width: 700px) {
           #login-modal .modal-content form input {
-            margin-bottom: 1rem;
-            font-size: 1.2rem; } }
+            margin-bottom: 1.3rem;
+            font-size: 1.3rem; } }
       #login-modal .modal-content form .stay-signed {
         display: grid;
         grid-template-columns: max-content max-content;
@@ -123,6 +123,7 @@ h2 {
         transition: 0.4s ease-out; }
         @media (max-width: 700px) {
           #login-modal .modal-content form button {
+            margin: 4rem auto 2rem;
             padding: 0.4em 2rem; } }
         #login-modal .modal-content form button i {
           color: white;
@@ -164,10 +165,10 @@ h2 {
     color: #3f3f3f; }
     @media (max-width: 700px) {
       #register-modal .modal-content {
-        width: 65vw;
-        height: 65vh;
-        top: 3vh;
-        left: 3vw;
+        width: 80vw;
+        height: 80vh;
+        top: 10vh;
+        left: 8vw;
         padding: 0rem 1rem; } }
     #register-modal .modal-content h2 {
       font-weight: 700;
@@ -190,7 +191,7 @@ h2 {
         margin-bottom: 0.5rem; }
         @media (max-width: 700px) {
           #register-modal .modal-content form label {
-            font-size: 1rem; } }
+            font-size: 1.2rem; } }
       #register-modal .modal-content form input {
         padding: 1rem;
         border-radius: 0.5rem;
@@ -201,8 +202,8 @@ h2 {
         font-family: "Raleway", segoe UI, sans-serif; }
         @media (max-width: 700px) {
           #register-modal .modal-content form input {
-            margin-bottom: 1rem;
-            font-size: 1.2rem; } }
+            margin-bottom: 1.3rem;
+            font-size: 1.3rem; } }
       #register-modal .modal-content form .stay-signed {
         display: grid;
         grid-template-columns: max-content max-content;
