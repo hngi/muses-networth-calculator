@@ -15,11 +15,10 @@
   .modal-content { 
     background-color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 8vh;
+    left: 33vw;
     padding: 8rem 3rem;
-    width: 30%;
+    width: 30vw;
     color: #3f3f3f;
 
     h2 {
@@ -32,7 +31,7 @@
     form {
       display: flex;
       flex-direction: column;
-      padding: 0 10rem;
+      padding: 0 1rem;
 
       & > * {
         display: block;
@@ -76,6 +75,7 @@
         border: none;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
+        cursor: pointer;
 
         i {
           color: white;
@@ -91,9 +91,25 @@
     /* The Close Button */
     .close {
       color: #3f3f3f;
-      float: right;
-      font-size: 4rem;
+      position: absolute;
+      left: 85%;
+      top: 0;
+      font-size: 5rem;
+      padding: 0;
       cursor: pointer;
+      width: 5rem;
+      text-align: center;
+      transition: 0.4s ease-out;
+      div {
+        margin: auto;
+        border-radius: 55%;
+        transition: 0.4s ease-out;
+      }
+    }
+    .close:hover > div
+    {
+      background-color: rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
     }
   }
 }
