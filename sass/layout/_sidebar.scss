@@ -16,22 +16,50 @@ aside.general-sidebar
 		border-radius: 5px;
 		cursor: pointer;
 		padding: 1px 5px;
+		position: relative;
+		--tooltip-color: black;
+		.tooltiptext 
+		{
+			visibility: hidden;
+			width: 120px;
+			background-color: var(--tooltip-color);
+			color: #fff;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+			left: 130%;
+			top: -20%;
+
+			position: absolute;
+			z-index: 1;
+		}
+		.tooltiptext::before
+		{
+			content: " ";
+			position: absolute;
+			left: -12%;
+			top: 25%;
+			border: 8px black solid;
+			border-color: transparent var(--tooltip-color) transparent transparent;
+		}
+	}
+	a:hover .tooltiptext 
+	{
+	  visibility: visible;
 	}
 	.sidebar-active-link
 	{
 		background-color: rgb(20, 20, 170);
-		cursor: default;
 	}
 	#mid-icons
 	{
 		display: flex;
 		flex-direction: column;
-		height: 15vh;
-		margin-top: 40vh;
+		height: 30vh;
+		margin-top: 20vh;
 		width: calc(var(--header-width) / 2);
 		margin-left: calc(var(--header-width) / 8);
 		justify-content: space-between;
-		top: 30vh;
 		
 	}
 	#logout-icon
