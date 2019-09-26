@@ -1,0 +1,23 @@
+main#congratulations-main
+{
+	background-image: url("../assets/img/cheers.png");
+	height: calc(100vh - var(--header-width));
+	width: calc(100vw - var(--header-width));
+	background-color: var(--header-background);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: 25vw 0;
+
+	h1
+	{
+		padding-top: 50vh;
+		font-weight: 50;
+		font-size: 6rem;
+		text-align: center;
+	}
+	h3
+	{
+		text-align: center;
+		font-size: 1.5rem;
+	}
+}

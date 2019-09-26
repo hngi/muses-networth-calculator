@@ -1,3 +1,8 @@
+:root {
+  --header-width: 60px;
+  --sidebar-color: rgb(100, 100, 250);
+  --header-background: rgb(250, 250, 250); }
+
 *,
 *::after,
 *::before {
@@ -24,6 +29,10 @@ h2 {
   font-weight: 400;
   text-align: center;
   color: #3f3f3f; }
+
+main.general-main {
+  margin-top: var(--header-width);
+  margin-left: var(--header-width); }
 
 /* The Modal (background) */
 .modal {
@@ -261,6 +270,70 @@ h2 {
         left: 80%; } }
   #register-modal .close:hover {
     transform: scale(1.2); }
+
+header.general-header {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background: var(--header-background);
+  width: 100vw;
+  height: var(--header-width);
+  justify-content: space-between;
+  padding-right: 2rem; }
+  header.general-header #logo-link {
+    height: var(--header-width);
+    width: var(--header-width);
+    background-color: white;
+    align-items: center;
+    display: block; }
+    header.general-header #logo-link #logo {
+      display: block;
+      margin: 5px auto; }
+  header.general-header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 14vw; }
+    header.general-header nav #name-plate {
+      margin-right: 0.5rem;
+      margin-left: 1.5rem;
+      font-size: 1.8rem; }
+
+aside.general-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-color);
+  color: white;
+  position: fixed;
+  width: var(--header-width);
+  height: 100vh;
+  z-index: 10;
+  left: 0;
+  top: var(--header-width); }
+  aside.general-sidebar a {
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1px 5px; }
+  aside.general-sidebar .sidebar-active-link {
+    background-color: #1414aa;
+    cursor: default; }
+  aside.general-sidebar #mid-icons {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    margin-top: 40vh;
+    width: calc(var(--header-width) / 2);
+    margin-left: calc(var(--header-width) / 8);
+    justify-content: space-between;
+    top: 30vh; }
+  aside.general-sidebar #logout-icon {
+    margin-top: 20vh;
+    margin-left: calc(var(--header-width) / 8); }
 
 .landing-header {
   width: 100%;
@@ -510,3 +583,20 @@ footer {
   background-color: #25c296;
   margin: auto;
   margin-bottom: 10rem; }
+
+main#congratulations-main {
+  background-image: url("../assets/img/cheers.png");
+  height: calc(100vh - var(--header-width));
+  width: calc(100vw - var(--header-width));
+  background-color: var(--header-background);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 25vw 0; }
+  main#congratulations-main h1 {
+    padding-top: 50vh;
+    font-weight: 50;
+    font-size: 6rem;
+    text-align: center; }
+  main#congratulations-main h3 {
+    text-align: center;
+    font-size: 1.5rem; }
