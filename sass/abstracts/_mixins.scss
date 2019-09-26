@@ -6,3 +6,9 @@
         display: table;
     }
 }
+$mobile: 700px;
+@mixin mobile {
+	@media (max-width: #{$mobile}) {
+		@content;
+	}
+}

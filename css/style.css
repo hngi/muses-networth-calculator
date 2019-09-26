@@ -12,6 +12,7 @@ body {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   font-size: 1.6rem; }
 
 a {
@@ -230,6 +231,9 @@ h2 {
       margin-top: 3rem; }
       .landing-header .nav-bar .nav-menu #home-nav {
         text-decoration: underline; }
+        @media (max-width: 700px) {
+          .landing-header .nav-bar .nav-menu #home-nav {
+            text-decoration: none; } }
       .landing-header .nav-bar .nav-menu .nav-item {
         text-align: center;
         border-radius: 2rem;
