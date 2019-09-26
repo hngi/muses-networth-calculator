@@ -286,7 +286,6 @@ header.general-header {
   header.general-header #logo-link {
     height: var(--header-width);
     width: var(--header-width);
-    background-color: white;
     align-items: center;
     display: block; }
     header.general-header #logo-link #logo {
@@ -319,7 +318,8 @@ aside.general-sidebar {
     border-radius: 5px;
     cursor: pointer;
     padding: 1px 5px; }
-  aside.general-sidebar .sidebar-active-link {
+  aside.general-sidebar a:focus
+.sidebar-active-link {
     background-color: #1414aa;
     cursor: default; }
   aside.general-sidebar #mid-icons {
