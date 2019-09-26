@@ -318,8 +318,7 @@ aside.general-sidebar {
     border-radius: 5px;
     cursor: pointer;
     padding: 1px 5px; }
-  aside.general-sidebar a:focus
-.sidebar-active-link {
+  aside.general-sidebar .sidebar-active-link {
     background-color: #1414aa;
     cursor: default; }
   aside.general-sidebar #mid-icons {
@@ -600,3 +599,29 @@ main#congratulations-main {
   main#congratulations-main h3 {
     text-align: center;
     font-size: 1.5rem; }
+
+main#not-found-main {
+  background-color: var(--header-background);
+  height: calc(100vh - var(--header-width));
+  width: calc(100vw - var(--header-width));
+  text-align: center; }
+  main#not-found-main h1 {
+    font-size: 15rem;
+    padding-top: 10rem;
+    font-weight: 50; }
+  main#not-found-main h3 {
+    font-size: 2.5rem; }
+  main#not-found-main button {
+    margin-top: 3rem;
+    padding: 1.4rem 2rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: var(--header-background);
+    background-color: darkorange;
+    border: none;
+    outline: none;
+    font-family: Raleway, segoe UI, sams-serif;
+    font-weight: bold;
+    transition: 0.4s ease-out; }
+  main#not-found-main button:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8); }
