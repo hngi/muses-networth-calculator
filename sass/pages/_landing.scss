@@ -12,25 +12,28 @@
       overflow: hidden;
       img {
         height: 100%;
+        width: 50px;
       }
     }
     .nav-menu {
       list-style-type: none;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      margin-top: 3rem;
+      #home-nav {
+        text-decoration: underline;
+      }
 
       .nav-item {
         text-align: center;
-        padding: 1rem 3rem;
         border-radius: 2rem;
         font-size: 1.8rem;
-        line-height: 5rem;
         transition: all 500ms ease-in-out;
+        margin-left: 2rem;
         cursor: pointer;
 
         &:hover {
-          font-size: 2rem;
-          background-color: #f1f6fe80;
+          transform: scale(1.1);
         }
       }
       .join-nav {
@@ -74,7 +77,7 @@
     }
     .intro-svg {
       flex: 1;
-      width: 60%;
+      width: 80%;
       overflow: hidden;
 
       img {

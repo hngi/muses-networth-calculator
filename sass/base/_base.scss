@@ -14,8 +14,10 @@ body {
   box-sizing: border-box;
   // background-color: #f6f6f6;
   //   background-color: black;
-  font-family: "Poppins", sans-serif;
-  // font-family: "Raleway", sans-serif;
+  //font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
   font-size: 1.6rem;
 }
 a {
