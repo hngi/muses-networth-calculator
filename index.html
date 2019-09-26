@@ -25,14 +25,18 @@
         <div class="muses-logo">
           <img src="./assets/img/muses.png" />
         </div>
-        <ul class="nav-menu">
+        <nav class="nav-menu">
+        	<a id="home-nav" href="#" class="nav-item">Home</a>
+        	<a href="#faq" class="nav-item">Faq</a>
+        	<a id="login-modal-trigger" class="nav-item">Login</a>
+        	<a id="register-modal-trigger" class="nav-item">Join now</a>
+        </nav>
+        <!--ul class="nav-menu">
           <li class="nav-item"><a href="#features">Features</a></li>
           <li class="nav-item"><a href="#faq">Faq</a></li>
           <li class="nav-item"><a id="login-modal-trigger">Login</a></li>
-          <li class="nav-item join-nav">
-            <a id="register-modal-trigger">Join now</a>
-          </li>
-        </ul>
+          <li class="nav-item"><a id="register-modal-trigger">Join now</a></li>
+        </ul-->
       </div>
     </header>
 
@@ -49,7 +53,7 @@
           <div class="button get-started"></div>
         </div>
         <div class="intro-svg">
-          <img src="./assets/img/invest.png" alt="" />
+          <img src="./assets/img/invest.png" alt="investment" />
         </div>
       </section>
       <section class="howitworks">
@@ -152,19 +156,19 @@
           <i class="fas fa-chart-line"></i>
           <h4>Ready to dive in?</h4>
           <p>Begin now to calculate and grow your worth</p>
-          <a href="http://">BEGIN</a>
+          <a href="">BEGIN</a>
         </div>
         <div class="seedemo">
           <i class="far fa-lightbulb"></i>
           <h4>Thinking over it?</h4>
           <p>Email us or watch a free demo today</p>
-          <a href="http://">SEE A DEMO</a>
+          <a href="">SEE A DEMO</a>
         </div>
         <div class="emailsupport">
           <i class="fas fa-headphones"></i>
           <h4>Need some help?</h4>
           <p>Users can email us for support</p>
-          <a href="http://">EMAIL SUPPORT</a>
+          <a href="">EMAIL SUPPORT</a>
         </div>
       </section>
 
@@ -187,7 +191,7 @@
             <div class="stay-signed">
               <input type="checkbox" checked/>Keep me signed in
             </div>
-            <a href="http://">Forgot password?</a>
+            <a href="">Forgot password?</a>
             <button id="login-button">
               <i class="fas fa-unlock"></i>
               <p>
@@ -221,9 +225,7 @@
               placeholder="Your email"
               required
             />
-            <div class="passwordsinput">
-              <label for="register-password">Password</label>
-              <label for="register-password2">Confirm Password</label>
+            <label for="register-password">Password</label>
               <input
                 type="password"
                 name="password"
@@ -231,18 +233,10 @@
                 placeholder="Your Password"
                 required
               />
-              <input
-                type="password"
-                name="password"
-                id="register-password2"
-                placeholder="Retype Password"
-                required
-              />
-            </div>
             <div class="stay-signed">
               <input type="checkbox" />Keep me signed in
             </div>
-            <a href="http://">Forgot password?</a>
+            <a href="">Forgot password?</a>
             <button id="register-button">
               <i class="fas fa-unlock"></i>
               <p>

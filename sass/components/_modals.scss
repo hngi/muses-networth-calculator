@@ -75,9 +75,12 @@
         font-size: 1.6rem;
         background-color: #4a7de0;
         border: none;
+        outline: none;
+        width: 20rem;
         border-radius: 0.5rem;
-        margin-bottom: 2rem;
+        margin: 2rem auto;
         cursor: pointer;
+        transition: 0.4s ease-out;
 
         i {
           color: white;
@@ -88,6 +91,10 @@
           flex: 1;
           color: white;
         }
+      }
+      button:hover
+      {
+        box-shadow: 0 0 5px 3px rgba(70, 80, 200, 0.4);
       }
     }
     /* The Close Button */
@@ -118,11 +125,10 @@
   .modal-content {
     background-color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 3rem 3rem 8rem 3rem;
-    width: 30%;
+    top: 8vh;
+    left: 33vw;
+    padding: 5rem 3rem;
+    width: 30vw;
     color: #3f3f3f;
 
     h2 {
@@ -135,12 +141,12 @@
     form {
       display: flex;
       flex-direction: column;
-      padding: 0 5rem;
+      padding: 0 1rem;
 
       & > * {
         display: block;
       }
-      
+
       .passwordsinput {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -158,6 +164,7 @@
         border: none;
         border: 0.2rem solid #3f3f3f80;
         margin-bottom: 2rem;
+        font-size: 1.8rem;
         font-family: "Raleway", segoe UI, sans-serif;
       }
       .stay-signed {
@@ -184,8 +191,12 @@
         font-size: 1.6rem;
         background-color: #4a7de0;
         border: none;
+        outline: none;
+        width: 20rem;
         border-radius: 0.5rem;
-        margin-bottom: 2rem;
+        margin: 2rem auto;
+        cursor: pointer;
+        transition: 0.4s ease-out;
 
         i {
           color: white;
@@ -197,14 +208,31 @@
           color: white;
         }
       }
+      button:hover
+      {
+        box-shadow: 0 0 5px 3px rgba(70, 80, 200, 0.4);
+      }
     }
   }
 
   /* The Close Button */
   .close {
-    color: #3f3f3f;
-    float: right;
-    font-size: 4rem;
-    cursor: pointer;
-  }
+      color: #3f3f3f;
+      position: absolute;
+      left: 85%;
+      top: 0;
+      font-size: 5rem;
+      padding: 0;
+      cursor: pointer;
+      width: 5rem;
+      height: 5rem;
+      text-align: center;
+      transition: 0.4s ease-out;
+    }
+    .close:hover 
+    {
+      //background-color: rgba(0, 0, 0, 0.05);
+      //box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+      transform: scale(1.2);
+    }
 }
