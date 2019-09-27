@@ -99,7 +99,7 @@ document.getElementById("assets-switch").addEventListener("click", e =>
 	document.querySelector("table").setAttribute("data-mode", e.target.getAttribute("data-switch-value"));
 	e.target.classList.add("item-switch-active");
 	document.getElementById("liabilities-switch").classList.remove("item-switch-active");
-	document.getElementById("overview-add-item").value = "Add Asset";
+	document.getElementById("overview-add-item").textContent = "Add Asset";
 	populateTable(dummyItems);
 });
 document.getElementById("liabilities-switch").addEventListener("click", e =>
