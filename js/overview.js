@@ -1,4 +1,4 @@
-const dummyItems = 
+let dummyItems = 
 [
 	{
 		id: "sarstas23",
@@ -44,15 +44,42 @@ const dummyItems =
 	},
 ];
 
+let selectedItems = [];
+let displayedCBs = [];
+
+document.getElementById("overview-select-all").checked = false;
+
+const updateControlFocus = () =>
+{
+	if (selectedItems.length)
+		document.getElementById("overview-controls-delete").classList.add("overview-controls-focus");
+	else
+		document.getElementById("overview-controls-delete").classList.remove("overview-controls-focus");
+
+	if (selectedItems.length === 1)
+		document.getElementById("overview-controls-edit").classList.add("overview-controls-focus");
+	else
+		document.getElementById("overview-controls-edit").classList.remove("overview-controls-focus");
+}
+
 const selectRow = e =>
 {
-
-	let cb = document.getElementById(e.target.parentElement.getAttribute("data-id"));
-	cb.checked = !cb.checked;
+	let cb = e.target.getAttribute("type") == "checkbox" ? 
+		e.target : 
+		document.getElementById(e.target.parentElement.getAttribute("data-id"));
+	if (e.target != cb)
+		cb.checked = !cb.checked;
+	if (cb.checked)
+		selectedItems.push(dummyItems.find(a => cb.id == a.id));
+	else
+		selectedItems = selectedItems.filter(a => cb.id != a.id);
+	document.getElementById("overview-select-all").checked = false;
+	updateControlFocus();
 }
 
 const populateTable = (items) =>
 {
+	selectedItems = [];
 	const table = document.querySelector("table");
 	let th = table.firstChild;
 	while (table.childNodes[2])
@@ -71,6 +98,7 @@ const populateTable = (items) =>
 		cb.setAttribute("type", "checkbox");
 		cb.setAttribute("id", item.id);
 		cbtd.appendChild(cb);
+		displayedCBs.push(cb);
 
 		let type = document.createElement("td");
 		type.appendChild(document.createTextNode(item.type));
@@ -92,7 +120,10 @@ const populateTable = (items) =>
 	}
 }
 
+
+
 populateTable(dummyItems);
+
 
 document.getElementById("assets-switch").addEventListener("click", e =>
 {
@@ -100,13 +131,48 @@ document.getElementById("assets-switch").addEventListener("click", e =>
 	e.target.classList.add("item-switch-active");
 	document.getElementById("liabilities-switch").classList.remove("item-switch-active");
 	document.getElementById("overview-add-item").textContent = "Add Asset";
+	document.getElementById("overview-select-all").checked = false;
+	selectedItems = [];
+	updateControlFocus();
 	populateTable(dummyItems);
 });
+
 document.getElementById("liabilities-switch").addEventListener("click", e =>
 {
 	document.querySelector("table").setAttribute("data-mode", e.target.getAttribute("data-switch-value"));
 	e.target.classList.add("item-switch-active");
 	document.getElementById("assets-switch").classList.remove("item-switch-active");
 	document.getElementById("overview-add-item").textContent = "Add Liability";
+	document.getElementById("overview-select-all").checked = false;
+	selectedItems = [];
+	updateControlFocus();
 	populateTable(dummyItems);
+});
+
+document.getElementById("overview-select-all").addEventListener("click", e =>
+{
+	selectedItems = [];
+	for (let cb of displayedCBs)
+	{
+		cb.checked = e.target.checked;
+		if (e.target.checked)
+			selectedItems.push(dummyItems.find(a => cb.id == a.id));
+	}
+	updateControlFocus();
+});
+
+document.getElementById("overview-controls-edit").addEventListener("click", e =>
+{
+	e.preventDefault();
+	
+});
+
+document.getElementById("overview-controls-delete").addEventListener("click", e =>
+{
+	e.preventDefault();
+});
+
+document.getElementById("overview-controls-sort").addEventListener("click", e =>
+{
+	e.preventDefault();
 });
