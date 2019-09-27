@@ -1,9 +1,14 @@
+
 main#overview-main
 {
 	padding: 3em 5em;
 	h1
 	{
 		font-size: 4rem;
+		@include mobile {
+			font-size: 3rem;
+			text-align: center;
+		}
 	}
 	#item-switch
 	{
@@ -12,6 +17,11 @@ main#overview-main
 		width: 12vw;
 		justify-content: space-between;
 		margin: 1em 1em;
+		@include mobile {
+			justify-content: center;
+			align-content: center;
+			margin: 2rem auto;
+		}
 		div
 		{
 			padding: 0.3em 0.3em;
@@ -28,11 +38,28 @@ main#overview-main
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		@include mobile {
+			display: grid;
+			row-gap: 5rem;
+			justify-content: center;
+			align-content: center;
+
+		}
 		section#overview-controls-left
 		{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+			@include mobile {
+				display: grid;
+				grid-template-columns: 1fr;
+				row-gap: 5rem;
+				align-content: center;
+				justify-content: center;
+			}
+			& div {
+				text-align: center;
+			}
 			a
 			{
 				background-color: white;
@@ -41,6 +68,10 @@ main#overview-main
 				margin: 0 1rem;
 				transition: 1s ease-out;
 				cursor: default;
+				@include mobile {
+					display: inline-block;
+					margin-top: 1rem;
+				}
 			}
 			.overview-controls-focus
 			{
@@ -66,8 +97,17 @@ main#overview-main
 		{
 			margin: 0 2rem;
 			font-family: inherit;
-			font-size: 2rem;
+			vertical-align: middle;
+			font-size: 1.8rem;
 			padding: 0.5rem;
+			border-radius: 5px;
+			outline: none;
+			border: 1px solid rgb(196, 191, 191);
+			&::placeholder {
+				font-size: 1.7rem;
+				display: inline-block;
+				margin: auto;
+			}
 		}
 		#overview-add-item
 		{
@@ -81,6 +121,11 @@ main#overview-main
 			font-family: inherit;
 			font-size: 1.8rem;
 			transition: 0.4s ease-out;
+			@include mobile {
+				display: block !important;
+				width: 50%;
+				margin: 0 auto;
+			}
 		}
 		#overview-add-item:hover
 		{
@@ -95,6 +140,10 @@ main#overview-main
 		background-color: white;
 		border-radius: 5px;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+		@include mobile {
+			margin-bottom: 10rem;
+		}
 
 		#overview-checkbox-col
 		{

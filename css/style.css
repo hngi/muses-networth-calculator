@@ -47,14 +47,16 @@ main.general-main {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  /* Black w/ opacity */ }
+  /* Black w/ opacity */
+  background-position: center;
+  background-size: cover; }
   @media (max-width: 850px) {
     .modal {
-      width: 90%;
-      height: 90%;
+      width: 100vw;
+      height: 100vh;
       font-size: 1.2rem; } }
 
 #login-modal {
@@ -71,7 +73,7 @@ main.general-main {
     @media (max-width: 850px) {
       #login-modal .modal-content {
         width: 80vw;
-        height: 80vh;
+        height: auto;
         top: 10vh;
         left: 8vw;
         padding: 0rem 1rem; } }
@@ -87,7 +89,8 @@ main.general-main {
     #login-modal .modal-content form {
       display: flex;
       flex-direction: column;
-      padding: 0 1rem; }
+      padding: 0 1rem;
+      margin-bottom: 1em; }
       #login-modal .modal-content form > * {
         display: block; }
       #login-modal .modal-content form label {
@@ -866,12 +869,21 @@ main#overview-main {
   padding: 3em 5em; }
   main#overview-main h1 {
     font-size: 4rem; }
+    @media (max-width: 850px) {
+      main#overview-main h1 {
+        font-size: 3rem;
+        text-align: center; } }
   main#overview-main #item-switch {
     display: flex;
     flex-direction: row;
     width: 12vw;
     justify-content: space-between;
     margin: 1em 1em; }
+    @media (max-width: 850px) {
+      main#overview-main #item-switch {
+        justify-content: center;
+        align-content: center;
+        margin: 2rem auto; } }
     main#overview-main #item-switch div {
       padding: 0.3em 0.3em;
       cursor: pointer; }
@@ -882,10 +894,25 @@ main#overview-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
+    @media (max-width: 850px) {
+      main#overview-main section#overview-controls {
+        display: grid;
+        row-gap: 5rem;
+        justify-content: center;
+        align-content: center; } }
     main#overview-main section#overview-controls section#overview-controls-left {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
+      @media (max-width: 850px) {
+        main#overview-main section#overview-controls section#overview-controls-left {
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: 5rem;
+          align-content: center;
+          justify-content: center; } }
+      main#overview-main section#overview-controls section#overview-controls-left div {
+        text-align: center; }
       main#overview-main section#overview-controls section#overview-controls-left a {
         background-color: white;
         border-radius: 0.3rem;
@@ -893,6 +920,10 @@ main#overview-main {
         margin: 0 1rem;
         transition: 1s ease-out;
         cursor: default; }
+        @media (max-width: 850px) {
+          main#overview-main section#overview-controls section#overview-controls-left a {
+            display: inline-block;
+            margin-top: 1rem; } }
       main#overview-main section#overview-controls section#overview-controls-left .overview-controls-focus {
         transition: 1s ease-out;
         background-color: skyblue;
@@ -907,8 +938,16 @@ main#overview-main {
     main#overview-main section#overview-controls input {
       margin: 0 2rem;
       font-family: inherit;
-      font-size: 2rem;
-      padding: 0.5rem; }
+      vertical-align: middle;
+      font-size: 1.8rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #c4bfbf; }
+      main#overview-main section#overview-controls input::placeholder {
+        font-size: 1.7rem;
+        display: inline-block;
+        margin: auto; }
     main#overview-main section#overview-controls #overview-add-item {
       background-color: #50c882;
       cursor: pointer;
@@ -920,6 +959,11 @@ main#overview-main {
       font-family: inherit;
       font-size: 1.8rem;
       transition: 0.4s ease-out; }
+      @media (max-width: 850px) {
+        main#overview-main section#overview-controls #overview-add-item {
+          display: block !important;
+          width: 50%;
+          margin: 0 auto; } }
     main#overview-main section#overview-controls #overview-add-item:hover {
       box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3); }
   main#overview-main table {
@@ -928,6 +972,9 @@ main#overview-main {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+    @media (max-width: 850px) {
+      main#overview-main table {
+        margin-bottom: 10rem; } }
     main#overview-main table #overview-checkbox-col {
       width: 13%; }
     main#overview-main table #overview-type-col {

@@ -5,12 +5,14 @@
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  background-position: center;
+  background-size: cover;
   @include mobile {
-          width: 90%;
-          height: 90%;
+          width: 100vw;
+          height: 100vh;
           font-size: 1.2rem; 
         }
 }
@@ -27,7 +29,7 @@
     color: #3f3f3f;
     @include mobile {
       width: 80vw;
-      height: 80vh;
+      height: auto;
       top: 10vh;
       left: 8vw;
       padding: 0rem 1rem;
@@ -47,6 +49,7 @@
       display: flex;
       flex-direction: column;
       padding: 0 1rem;
+      margin-bottom: 1em;
 
       & > * {
         display: block;
