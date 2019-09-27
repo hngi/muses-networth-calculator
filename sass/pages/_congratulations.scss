@@ -1,9 +1,6 @@
 main#congratulations-main
 {
 	background-image: url("../assets/img/cheers.png");
-	height: calc(100vh - var(--header-width));
-	width: calc(100vw - var(--header-width));
-	background-color: var(--header-background);
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position: 25vw 0;

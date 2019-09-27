@@ -32,7 +32,10 @@ h2 {
 
 main.general-main {
   margin-top: var(--header-width);
-  margin-left: var(--header-width); }
+  margin-left: var(--header-width);
+  background-color: var(--header-background);
+  height: calc(100vh - var(--header-width));
+  width: calc(100vw - var(--header-width)); }
 
 /* The Modal (background) */
 .modal {
@@ -278,7 +281,8 @@ header.general-header {
   z-index: 10;
   left: 0;
   top: 0;
-  background: var(--header-background);
+  background: white;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
   width: 100vw;
   height: var(--header-width);
   justify-content: space-between;
@@ -335,7 +339,7 @@ aside.general-sidebar {
     aside.general-sidebar a .tooltiptext::before {
       content: " ";
       position: absolute;
-      left: -12%;
+      left: -11%;
       top: 25%;
       border: 8px black solid;
       border-color: transparent var(--tooltip-color) transparent transparent; }
@@ -606,9 +610,6 @@ footer {
 
 main#congratulations-main {
   background-image: url("../assets/img/cheers.png");
-  height: calc(100vh - var(--header-width));
-  width: calc(100vw - var(--header-width));
-  background-color: var(--header-background);
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: 25vw 0; }
@@ -622,9 +623,6 @@ main#congratulations-main {
     font-size: 1.5rem; }
 
 main#not-found-main {
-  background-color: var(--header-background);
-  height: calc(100vh - var(--header-width));
-  width: calc(100vw - var(--header-width));
   text-align: center; }
   main#not-found-main h1 {
     font-size: 15rem;
@@ -646,3 +644,81 @@ main#not-found-main {
     transition: 0.4s ease-out; }
   main#not-found-main button:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8); }
+
+main#overview-main {
+  padding: 3em 5em; }
+  main#overview-main h1 {
+    font-size: 4rem; }
+  main#overview-main #item-switch {
+    display: flex;
+    flex-direction: row;
+    width: 12vw;
+    justify-content: space-between;
+    margin: 1em 1em; }
+    main#overview-main #item-switch div {
+      padding: 0.3em 0.3em;
+      cursor: pointer; }
+    main#overview-main #item-switch .item-switch-active {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+      font-weight: bold; }
+  main#overview-main section#overview-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    main#overview-main section#overview-controls section#overview-controls-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      main#overview-main section#overview-controls section#overview-controls-left a {
+        background-color: white;
+        border-radius: 0.3rem;
+        box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
+        margin: 0 1rem; }
+    main#overview-main section#overview-controls .little-btn {
+      padding: 0.8rem 1rem 0.5rem;
+      align-items: center; }
+      main#overview-main section#overview-controls .little-btn img {
+        margin: auto auto; }
+    main#overview-main section#overview-controls input {
+      margin: 0 2rem;
+      font-family: inherit;
+      font-size: 2rem;
+      padding: 0.5rem; }
+    main#overview-main section#overview-controls #overview-add-item {
+      background-color: #50c882;
+      cursor: pointer;
+      color: var(--header-background);
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      font-family: inherit;
+      font-size: 1.8rem;
+      transition: 0.4s ease-out; }
+    main#overview-main section#overview-controls #overview-add-items:hover {
+      box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3); }
+  main#overview-main table {
+    margin-top: 4rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+    main#overview-main table th {
+      padding: 1.7rem 0;
+      font-size: 2rem;
+      cursor: default; }
+    main#overview-main table td {
+      text-align: center;
+      margin: auto;
+      padding: 0.8rem 0;
+      border: none; }
+    main#overview-main table tr {
+      cursor: pointer; }
+      main#overview-main table tr input {
+        cursor: pointer; }
+    main#overview-main table tr:nth-child(even) {
+      background-color: #f0f0f0; }
+    main#overview-main table input {
+      font-size: 4rem; }
+    main#overview-main table .selected-row {
+      border: 1px solid dimgray; }

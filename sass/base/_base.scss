@@ -34,4 +34,7 @@ main.general-main
 {
   margin-top: var(--header-width);
   margin-left: var(--header-width);
+  background-color: var(--header-background);
+  height: calc(100vh - var(--header-width));
+  width: calc(100vw - var(--header-width));
 }
