@@ -41,6 +41,9 @@ main#overview-main {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      #little-btns-div {
+        margin-top: 0.6rem;
+      }
       @include mobile {
         display: grid;
         grid-template-columns: 1fr;
@@ -73,8 +76,7 @@ main#overview-main {
       }
     }
     .little-btn {
-      padding: 0.8rem 1rem 0.5rem;
-      align-items: center;
+      padding: 1.4rem 1rem 0.6rem;
       img {
         margin: auto auto;
       }
