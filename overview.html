@@ -2,46 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtr=device-widtr, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css?family=Montsserat&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
+    <link rel="stylesheet" href="css/style.css" />
     <title>Overview</title>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-faded">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img width="40px" height="45px" src="logo.png" alt="Muses"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Icon</a>
-                    </li>
-                    <li class="nav-item two">
-                        <a class="nav-link" href="#">James Boowman</a>
-                    </li>
-                    <li class="nav-item calculate"> 
-                        <a class="nav-link" href="#"><img width="40px" height="45px" src="headshot.png" alt="Muses"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <header class="general-header">
+        <a href="#" id="logo-link"><img id="logo" widtr="40px" height="45px" src="assets/img/muses.png" alt="Muses"></a>
+        <nav>
+            <a href="#"><img src="assets/img/bell-icon.png" widtr="15px" height="15px"></a>
+            <a href="#" id="name-plate"></a>
+            <a href="#"><img widtr="40px" height="45px" src="assets/img/profilepic.png" alt="Muses"></a>
+        </nav>
+    </header>
 
-        <!-- Content -->
+    <!-- Content -->
+    <main class="general-main" id="overview-main">
         <h1>Overview</h1>
-        <div class="container"></div>
-        <div class="container"></div>
+        <section id="item-switch">
+            <div id="assets-switch" class="item-switch-active" data-switch-value="ASSET">Assets</div>
+            <div id="liabilities-switch" data-switch-value="LIABILITY">Liabilities</div>
+        </section>
+        <section id="overview-controls">
+            <section id="overview-controls-left">
+                <a class="little-btn" href="" id="overview-controls-edit"><img src="assets/img/edit-icon.jpg" height="20px" widtr="20px"></a>
+                <a href="" class="little-btn" id="overview-controls-delete"><img src="assets/svg/delete-icon.svg" height="20px" widtr="20px"></a>
+                <a href="" class="little-btn" id="overview-controls-sort"><img src="assets/img/sort-icon.png" height="20px" widtr="20px"></a>
+                <input type="text" name="search" placeholder="Search by description">
+            </section>
+            <button id="overview-add-item">Add Asset</button>
+        </section>
+        <table data-mode="ASSET">
+            <tr>
+                <th>Select</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Value</th>
+            </tr>
+        </table>
+    </main>
         
         <!-- Side Navigation -->
-        <div>
-            <button>Icon</button>
-            <button>Icon</button>
-            <button>Icon</button>
+    <aside class="general-sidebar">
+        <div id="mid-icons">
+            <a id="real-estate-icon" class="sidebar-active-link"><span class="tooltiptext">Overview</span><img src="assets/svg/real-estate-icon.svg"></a>
+            <a id="graph-icon"><span class="tooltiptext">Statistics</span><img src="assets/svg/graph-icon.svg"></a>
+            <a id="user-icon" ><span class="tooltiptext">Profile</span><img src="assets/svg/user-icon.svg"></a>
         </div>
+        <a id="logout-icon"><span class="tooltiptext">Logout</span><img src="assets/svg/logout-icon.svg"></a>
+    </aside>
 </body>
 </html>
+
+<script type="text/javascript" src="js/header-sidebar.js"></script>
+<script type="text/javascript" src="js/overview.js"></script>

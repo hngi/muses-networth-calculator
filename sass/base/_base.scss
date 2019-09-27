@@ -15,10 +15,13 @@ body {
   // background-color: #f6f6f6;
   //   background-color: black;
   //font-family: "Poppins", sans-serif;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", segoe UI, sans-serif !important;
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-size: 1.6rem;
+}
+.blue-body {
+  background-color: #f9f9fa;
 }
 a {
   text-decoration: none;
@@ -34,4 +37,7 @@ main.general-main
 {
   margin-top: var(--header-width);
   margin-left: var(--header-width);
+  background-color: var(--header-background);
+  height: calc(100vh - var(--header-width));
+  width: calc(100vw - var(--header-width));
 }

@@ -1,0 +1,32 @@
+main#not-found-main
+{
+	text-align: center;
+	h1
+	{
+		font-size: 15rem;
+		padding-top: 10rem;
+		font-weight: 50;
+	}
+	h3
+	{
+		font-size: 2.5rem;
+	}
+	button
+	{
+		margin-top: 3rem;
+		padding: 1.4rem 2rem;
+		font-size: 1.7rem;
+		cursor: pointer;
+		color: var(--header-background);
+		background-color: darkorange;
+		border: none;
+		outline: none;
+		font-family: Raleway, segoe UI, sams-serif;
+		font-weight: bold;
+		transition: 0.4s ease-out;
+	}
+	button:hover
+	{
+		box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+	}
+}

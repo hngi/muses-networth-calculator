@@ -1,0 +1,62 @@
+#dashboard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15rem 15rem 0rem 10rem;
+  font-family: inherit;
+
+  .welcome-message {
+    h1 {
+      font-size: 6rem;
+      font-weight: 300;
+      color: #3f3f3f;
+    }
+    h2 {
+      text-align: start;
+      margin-top: 2rem;
+      font-size: 5rem;
+      font-weight: 700;
+    }
+    .actions {
+      margin-top: 5rem;
+
+      button {
+        border: none;
+        border-radius: 0.5rem;
+        background-color: white;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+      }
+      .letsbegin {
+        background-color: #4a7de0;
+        color: white;
+        margin-right: 10rem;
+        transition: all 500ms ease-in-out;
+
+        &:hover {
+          color: #4a7de0;
+          background-color: white;
+        }
+      }
+      .watchdemo {
+        color: #4a7de0;
+        transition: all 500ms ease-in-out;
+
+        i {
+          margin-right: 2rem;
+        }
+
+        &:hover {
+          color: white;
+          background-color: #4a7de0;
+          i {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .welcome-svg {
+    padding: 0 10rem;
+  }
+}

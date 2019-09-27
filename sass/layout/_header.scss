@@ -6,7 +6,8 @@ header.general-header
 	z-index: 10;
 	left: 0;
 	top: 0;
-	background: var(--header-background);
+	background: white;//var(--header-background);
+	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
 	width: 100vw;
 	height: var(--header-width);
 	justify-content: space-between;
@@ -16,7 +17,6 @@ header.general-header
 	{
 		height: var(--header-width);
 		width: var(--header-width);
-		background-color: white;
 		align-items: center;
 		display: block;
 		#logo

@@ -1,0 +1,120 @@
+main#overview-main
+{
+	padding: 3em 5em;
+	h1
+	{
+		font-size: 4rem;
+	}
+	#item-switch
+	{
+		display: flex;
+		flex-direction: row;
+		width: 12vw;
+		justify-content: space-between;
+		margin: 1em 1em;
+		div
+		{
+			padding: 0.3em 0.3em;
+			cursor: pointer;
+		}
+		.item-switch-active
+		{
+			border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+			font-weight: bold;
+		}
+	}
+	section#overview-controls
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		section#overview-controls-left
+		{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			a
+			{
+				background-color: white;
+				border-radius: 0.3rem;
+				box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
+				margin: 0 1rem;
+			}
+		}
+		.little-btn
+		{
+			padding: 0.8rem 1rem 0.5rem;
+			align-items: center;
+			img
+			{
+				margin: auto auto;
+			}
+		}
+		input
+		{
+			margin: 0 2rem;
+			font-family: inherit;
+			font-size: 2rem;
+			padding: 0.5rem;
+		}
+		#overview-add-item
+		{
+			background-color: rgb(80, 200, 130);
+			cursor: pointer;
+			color: var(--header-background);
+			outline: none;
+			border: none;
+			border-radius: 5px;
+			padding: 1rem 2rem;
+			font-family: inherit;
+			font-size: 1.8rem;
+			transition: 0.4s ease-out;
+		}
+		#overview-add-items:hover
+		{
+			box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	table
+	{
+		margin-top: 4rem;
+		width: 100%;
+		background-color: white;
+		border-radius: 5px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		th
+		{
+			padding: 1.7rem 0;
+			font-size: 2rem;
+			cursor: default;
+		}
+		td
+		{
+			text-align: center;
+			margin: auto;
+			padding: 0.8rem 0;
+			border: none;
+		}
+		tr
+		{
+			cursor: pointer;
+			input
+			{
+				cursor: pointer;
+			}
+		}
+		tr:nth-child(even)
+		{
+			background-color: rgb(240, 240, 240);
+		}
+		input
+		{
+			font-size: 4rem;
+		}
+		.selected-row
+		{
+			border: 1px solid dimgray;
+		}
+	}
+}
