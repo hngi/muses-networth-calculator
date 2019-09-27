@@ -974,7 +974,10 @@ main#overview-main {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
     @media (max-width: 850px) {
       main#overview-main table {
-        margin-bottom: 10rem; } }
+        margin-bottom: 10rem;
+        max-width: 50%;
+        padding: 0;
+        margin-left: -7rem; } }
     main#overview-main table #overview-checkbox-col {
       width: 13%; }
     main#overview-main table #overview-type-col {

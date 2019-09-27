@@ -140,9 +140,11 @@ main#overview-main
 		background-color: white;
 		border-radius: 5px;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-
 		@include mobile {
 			margin-bottom: 10rem;
+			max-width: 50%;
+			padding: 0;
+			margin-left: -7rem;
 		}
 
 		#overview-checkbox-col
