@@ -1,0 +1,138 @@
+main#newitem-main
+{
+	padding: 2rem 3rem;
+	#newitem-flex
+	{
+		display: flex;
+		flex-direction: row;
+
+		#newitem-go-back
+		{
+			cursor: pointer;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			border: 1px solid var(--sidebar-color);
+			transition: 0.4s ease-out;
+			transform: rotate(-90deg);
+			margin: 6rem;
+		}
+		#newitem-go-back:hover
+		{
+			background-color: rgba(224, 200, 203, 0.3);
+		}
+		#newitem-go-back > div 
+		{
+			width: 20px;
+			height: 20px;
+			margin: 17px auto;
+			border-top: 1px solid var(--sidebar-color);
+			border-right: 1px solid transparent;
+			border-bottom: 1px solid transparent;
+			border-left: 1px solid var(--sidebar-color);
+			transform: rotate(45deg);
+		}
+
+		#newitem-intro
+		{
+			font-weight: 900;
+			font-size: 4rem;
+			position: relative;
+			margin-right: 10rem;
+			#intro-title
+			{
+				cursor: pointer;
+			}
+			#intro-symbol
+			{
+				display: inline-block;
+				position: absolute;
+				font-size: 3.5rem;
+				top: 0.3rem;
+				margin-left: 1rem;
+				margin-top: 0;
+				color: var(--sidebar-color);
+			}
+			#intro-spec
+			{
+				font-size: 2.5rem;
+				font-weight: 100;
+				margin-left: 5rem;
+			}
+		}
+		#newitem-modal
+		{
+			background-color: white;
+			color: rgba(0, 0, 0, 0.7);
+			height: 65vh;
+			width: 28vw;
+			box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
+			padding: 4rem;
+			margin-top: 8rem;
+			border-radius: 5px;
+			h1
+			{
+				font-size: 2.5rem;
+				font-weight: 600;
+			}
+			form
+			{
+				margin: 2rem auto;
+				section
+				{
+					display: flex;
+					flex-direction: column;
+					margin: 2rem auto;
+				}
+				label
+				{
+					font-weight: bold;
+					color: inherit;
+				}
+				button
+				{
+					background-color: var(--sidebar-color);
+					color: var(--header-background);
+					border: none;
+					outline: none;
+					font-family: inherit;
+					width: 95%;
+					text-align: center;
+					padding: 0.8rem;
+					margin-top: 4.5rem;
+					font-size: inherit;
+					border-radius: 0.5rem;
+					cursor: pointer;
+					transition: 0.4s ease-out;
+				}
+				button:hover
+				{
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+				}
+			}
+			.newitem-form-input
+			{
+				outline: none;
+				border: solid lightgray 2px;
+				border-radius: 0.3rem;
+				padding: 0.5rem 1rem;
+				width: 95%;
+				font-family: Raleway, segoe UI, sans-serif;
+				font-size: 2rem;
+				color: rgba(0, 0, 0, 0.6);
+			}
+			select.newitem-form-input
+			{
+				cursor: pointer;
+			}
+			#item-value
+			{
+				background: url("../assets/svg/naira-icon.svg");
+				background-repeat: no-repeat;
+				background-position: 2% 47%;
+				background-size: 20px 20px;
+				padding-left: 30px;
+			}
+		}
+	}
+}

@@ -331,7 +331,7 @@ aside.general-sidebar {
     position: relative;
     --tooltip-color: black; }
     aside.general-sidebar a .tooltiptext {
-      visibility: hidden;
+      opacity: 0;
       width: 120px;
       background-color: var(--tooltip-color);
       color: #fff;
@@ -341,7 +341,8 @@ aside.general-sidebar {
       left: 130%;
       top: -20%;
       position: absolute;
-      z-index: 1; }
+      z-index: 1;
+      transition: 0.4s ease; }
     aside.general-sidebar a .tooltiptext::before {
       content: " ";
       position: absolute;
@@ -350,7 +351,7 @@ aside.general-sidebar {
       border: 8px black solid;
       border-color: transparent var(--tooltip-color) transparent transparent; }
   aside.general-sidebar a:hover .tooltiptext {
-    visibility: visible; }
+    opacity: 100; }
   aside.general-sidebar .sidebar-active-link {
     background-color: #1414aa; }
   aside.general-sidebar #mid-icons {
@@ -847,7 +848,7 @@ main#overview-main {
       flex-direction: row;
       justify-content: space-between; }
       main#overview-main section#overview-controls section#overview-controls-left #little-btns-div {
-        margin-top: 0.6rem; }
+        margin-top: 0.8rem; }
       @media (max-width: 850px) {
         main#overview-main section#overview-controls section#overview-controls-left {
           display: grid;
@@ -946,3 +947,102 @@ main#overview-main {
       font-size: 4rem; }
     main#overview-main table .selected-row {
       border: 1px solid dimgray; }
+
+main#newitem-main {
+  padding: 2rem 3rem; }
+  main#newitem-main #newitem-flex {
+    display: flex;
+    flex-direction: row; }
+    main#newitem-main #newitem-flex #newitem-go-back {
+      cursor: pointer;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--sidebar-color);
+      transition: 0.4s ease-out;
+      transform: rotate(-90deg);
+      margin: 6rem; }
+    main#newitem-main #newitem-flex #newitem-go-back:hover {
+      background-color: rgba(224, 200, 203, 0.3); }
+    main#newitem-main #newitem-flex #newitem-go-back > div {
+      width: 20px;
+      height: 20px;
+      margin: 17px auto;
+      border-top: 1px solid var(--sidebar-color);
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid var(--sidebar-color);
+      transform: rotate(45deg); }
+    main#newitem-main #newitem-flex #newitem-intro {
+      font-weight: 900;
+      font-size: 4rem;
+      position: relative;
+      margin-right: 10rem; }
+      main#newitem-main #newitem-flex #newitem-intro #intro-title {
+        cursor: pointer; }
+      main#newitem-main #newitem-flex #newitem-intro #intro-symbol {
+        display: inline-block;
+        position: absolute;
+        font-size: 3.5rem;
+        top: 0.3rem;
+        margin-left: 1rem;
+        margin-top: 0;
+        color: var(--sidebar-color); }
+      main#newitem-main #newitem-flex #newitem-intro #intro-spec {
+        font-size: 2.5rem;
+        font-weight: 100;
+        margin-left: 5rem; }
+    main#newitem-main #newitem-flex #newitem-modal {
+      background-color: white;
+      color: rgba(0, 0, 0, 0.7);
+      height: 65vh;
+      width: 28vw;
+      box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
+      padding: 4rem;
+      margin-top: 8rem;
+      border-radius: 5px; }
+      main#newitem-main #newitem-flex #newitem-modal h1 {
+        font-size: 2.5rem;
+        font-weight: 600; }
+      main#newitem-main #newitem-flex #newitem-modal form {
+        margin: 2rem auto; }
+        main#newitem-main #newitem-flex #newitem-modal form section {
+          display: flex;
+          flex-direction: column;
+          margin: 2rem auto; }
+        main#newitem-main #newitem-flex #newitem-modal form label {
+          font-weight: bold;
+          color: inherit; }
+        main#newitem-main #newitem-flex #newitem-modal form button {
+          background-color: var(--sidebar-color);
+          color: var(--header-background);
+          border: none;
+          outline: none;
+          font-family: inherit;
+          width: 95%;
+          text-align: center;
+          padding: 0.8rem;
+          margin-top: 4.5rem;
+          font-size: inherit;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          transition: 0.4s ease-out; }
+        main#newitem-main #newitem-flex #newitem-modal form button:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); }
+      main#newitem-main #newitem-flex #newitem-modal .newitem-form-input {
+        outline: none;
+        border: solid lightgray 2px;
+        border-radius: 0.3rem;
+        padding: 0.5rem 1rem;
+        width: 95%;
+        font-family: Raleway, segoe UI, sans-serif;
+        font-size: 2rem;
+        color: rgba(0, 0, 0, 0.6); }
+      main#newitem-main #newitem-flex #newitem-modal select.newitem-form-input {
+        cursor: pointer; }
+      main#newitem-main #newitem-flex #newitem-modal #item-value {
+        background: url("../assets/svg/naira-icon.svg");
+        background-repeat: no-repeat;
+        background-position: 2% 47%;
+        background-size: 20px 20px;
+        padding-left: 30px; }

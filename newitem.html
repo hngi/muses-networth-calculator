@@ -21,9 +21,41 @@
     </header>
 
     <!-- Content -->
-    <main class="general-main" id="congratulations-main">
-        <h1>Congratulations</h1>
-        <h3>You have successfully calculated your net worth</h3>
+    <main class="general-main" id="newitem-main">
+        <div id="newitem-flex">
+            <div>
+                <h1 id="newitem-intro"><span id="intro-title">Overview</span> <span id="intro-symbol">&gt</span> <span id="intro-spec">Add Asset</span></h1>
+                <div>
+                    <a href="#">
+                        <div id="newitem-go-back">
+                            <div></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="newitem-modal">
+                <h1><img src="assets/img/money-icon.png" height="30px" width="30px"> Add new item</h1>
+                <form>
+                    <section>
+                        <label for="item-type">Type</label>
+                        <select class="newitem-form-input" id="item-type">
+                            <option value="asset">ASSET</option>
+                            <option value="liability">LIABILITY</option>
+                        </select>
+                    </section>
+                    <section>
+                        <label for="item-desc">Description</label>
+                        <input class="newitem-form-input" type="text" name="description" placeholder="Short description" id="item-desc" required>
+                    </section>
+                    <section>
+                        <label for="item-value">Value</label>
+                        <input class="newitem-form-input" id="item-value" type="text" name="value" required placeholder="Positive or negative value">
+                    </section>
+                    <button>ADD</button>
+                </form>
+            </div>
+        </div>
     </main>
         
         <!-- Side Navigation -->
@@ -39,3 +71,4 @@
 </html>
 
 <script type="text/javascript" src="js/header-sidebar.js"></script>
+<script type="text/javascript" src="js/newitem.js"></script>
