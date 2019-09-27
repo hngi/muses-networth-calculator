@@ -15,9 +15,9 @@
     <header class="general-header">
         <a href="#" id="logo-link"><img id="logo" widtr="40px" height="45px" src="assets/img/muses.png" alt="Muses"></a>
         <nav>
-            <a href="#"><img src="assets/img/bell-icon.png" widtr="15px" height="15px"></a>
+            <a href="#"><img src="assets/img/bell-icon.png" width="15px" height="15px"></a>
             <a href="#" id="name-plate"></a>
-            <a href="#"><img widtr="40px" height="45px" src="assets/img/profilepic.png" alt="Muses"></a>
+            <a href="#"><img width="40px" height="45px" src="assets/img/profilepic.png" alt="Muses"></a>
         </nav>
     </header>
 
@@ -32,17 +32,17 @@
             <section id="overview-controls-left">
                 <a class="little-btn" href="" id="overview-controls-edit"><img src="assets/img/edit-icon.jpg" height="20px" widtr="20px"></a>
                 <a href="" class="little-btn" id="overview-controls-delete"><img src="assets/svg/delete-icon.svg" height="20px" widtr="20px"></a>
-                <a href="" class="little-btn" id="overview-controls-sort"><img src="assets/img/sort-icon.png" height="20px" widtr="20px"></a>
+                <a href="" class="little-btn" id="overview-controls-sort"><img src="assets/img/sort-icon.png" height="20px" width="20px"></a>
                 <input type="text" name="search" placeholder="Search by description">
             </section>
             <button id="overview-add-item">Add Asset</button>
         </section>
         <table data-mode="ASSET">
             <tr>
-                <th>Select</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Value</th>
+                <th id="overview-checkbox-col"><input type="checkbox" id="overview-select-all" checked=""></th>
+                <th id="overview-type-col">Type</th>
+                <th id="overview-desc-col">Description</th>
+                <th id="overview-value-col">Value</th>
             </tr>
         </table>
     </main>
@@ -50,9 +50,9 @@
         <!-- Side Navigation -->
     <aside class="general-sidebar">
         <div id="mid-icons">
-            <a id="real-estate-icon" class="sidebar-active-link"><span class="tooltiptext">Overview</span><img src="assets/svg/real-estate-icon.svg"></a>
-            <a id="graph-icon"><span class="tooltiptext">Statistics</span><img src="assets/svg/graph-icon.svg"></a>
-            <a id="user-icon" ><span class="tooltiptext">Profile</span><img src="assets/svg/user-icon.svg"></a>
+            <a id="real-estate-icon" href="overview.html" class="sidebar-active-link"><span class="tooltiptext">Overview</span><img src="assets/svg/real-estate-icon.svg"></a>
+            <a id="graph-icon" href="portfolio.html"><span class="tooltiptext">Statistics</span><img src="assets/svg/graph-icon.svg"></a>
+            <a id="user-icon" href="dashboard.html"><span class="tooltiptext">Profile</span><img src="assets/svg/user-icon.svg"></a>
         </div>
         <a id="logout-icon"><span class="tooltiptext">Logout</span><img src="assets/svg/logout-icon.svg"></a>
     </aside>

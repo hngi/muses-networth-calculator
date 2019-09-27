@@ -1,8 +1,8 @@
 #dashboard-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 15rem 15rem 0rem 10rem;
-  font-family: inherit;
+  padding: 10rem 15rem 0rem 10rem;
+  font-family: Raleway, segoe UI, sans-serif;
 
   .welcome-message {
     h1 {
@@ -57,6 +57,6 @@
     }
   }
   .welcome-svg {
-    padding: 0 10rem;
+    padding: 5rem 10rem;
   }
 }
