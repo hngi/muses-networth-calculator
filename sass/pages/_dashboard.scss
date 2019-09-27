@@ -1,18 +1,19 @@
 #dashboard-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 20rem 15rem 0rem 15rem;
+  padding: 15rem 15rem 0rem 10rem;
+  font-family: inherit;
 
   .welcome-message {
     h1 {
-      font-size: 7rem;
+      font-size: 6rem;
       font-weight: 300;
       color: #3f3f3f;
     }
     h2 {
       text-align: start;
       margin-top: 2rem;
-      font-size: 6rem;
+      font-size: 5rem;
       font-weight: 700;
     }
     .actions {

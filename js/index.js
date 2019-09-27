@@ -1,6 +1,6 @@
-const auth_token = "muse_nwc_auth_token";
-const user_name = "muse_nwc_name";
-const user_email = "muse_nwc_email";
+let auth_token = "muse_nwc_auth_token";
+let user_name = "muse_nwc_name";
+let user_email = "muse_nwc_email";
 //const backendUrl = "http://localhost:3000";	// For local testing
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
 

@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="logo.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
     <title>Portfolio</title>
   </head>
   <body class="blue-body">
     <!-- Navigation -->
-    <header></header>
-    <sidebar></sidebar>
+    <header class="general-header">
+        <a href="#" id="logo-link"><img id="logo" widtr="40px" height="45px" src="assets/img/muses.png" alt="Muses"></a>
+        <nav>
+            <a href="#"><img src="assets/img/bell-icon.png" widtr="15px" height="15px"></a>
+            <a href="#" id="name-plate"></a>
+            <a href="#"><img widtr="40px" height="45px" src="assets/img/profilepic.png" alt="Muses"></a>
+        </nav>
+    </header>
     <!-- Content -->
 
     <main id="portfolio-main" class="general-main">
@@ -109,5 +109,16 @@
         </div>
       </section>
     </main>
+
+        <aside class="general-sidebar">
+        <div id="mid-icons">
+            <a id="real-estate-icon" class="sidebar-active-link"><span class="tooltiptext">Overview</span><img src="assets/svg/real-estate-icon.svg"></a>
+            <a id="graph-icon"><span class="tooltiptext">Statistics</span><img src="assets/svg/graph-icon.svg"></a>
+            <a id="user-icon" ><span class="tooltiptext">Profile</span><img src="assets/svg/user-icon.svg"></a>
+        </div>
+        <a id="logout-icon"><span class="tooltiptext">Logout</span><img src="assets/svg/logout-icon.svg"></a>
+    </aside>
   </body>
 </html>
+
+<script type="text/javascript" src="js/header-sidebar.js"></script>

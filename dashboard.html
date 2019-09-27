@@ -17,8 +17,23 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <header></header>
-    <sidebar></sidebar>
+    <!-- Navigation -->
+    <header class="general-header">
+        <a href="#" id="logo-link"><img id="logo" widtr="40px" height="45px" src="assets/img/muses.png" alt="Muses"></a>
+        <nav>
+            <a href="#"><img src="assets/img/bell-icon.png" widtr="15px" height="15px"></a>
+            <a href="#" id="name-plate"></a>
+            <a href="#"><img widtr="40px" height="45px" src="assets/img/profilepic.png" alt="Muses"></a>
+        </nav>
+    </header>
+    <aside class="general-sidebar">
+        <div id="mid-icons">
+            <a id="real-estate-icon" class="sidebar-active-link"><span class="tooltiptext">Overview</span><img src="assets/svg/real-estate-icon.svg"></a>
+            <a id="graph-icon"><span class="tooltiptext">Statistics</span><img src="assets/svg/graph-icon.svg"></a>
+            <a id="user-icon" ><span class="tooltiptext">Profile</span><img src="assets/svg/user-icon.svg"></a>
+        </div>
+        <a id="logout-icon"><span class="tooltiptext">Logout</span><img src="assets/svg/logout-icon.svg"></a>
+    </aside>
     <main id="dashboard-main" class="general-main">
       <div class="welcome-message">
         <h1></h1>
@@ -314,3 +329,4 @@
 </html>
 
 <script type="text/javascript" src="js/dashboard.js"></script>
+<script type="text/javascript" src="js/header-sidebar.js"></script>

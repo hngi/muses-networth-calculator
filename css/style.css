@@ -15,7 +15,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", segoe UI, sans-serif !important;
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-size: 1.6rem; }
@@ -611,6 +611,161 @@ footer {
   margin: auto;
   margin-bottom: 10rem; }
 
+#dashboard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15rem 15rem 0rem 10rem;
+  font-family: inherit; }
+  #dashboard-main .welcome-message h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    color: #3f3f3f; }
+  #dashboard-main .welcome-message h2 {
+    text-align: start;
+    margin-top: 2rem;
+    font-size: 5rem;
+    font-weight: 700; }
+  #dashboard-main .welcome-message .actions {
+    margin-top: 5rem; }
+    #dashboard-main .welcome-message .actions button {
+      border: none;
+      border-radius: 0.5rem;
+      background-color: white;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      cursor: pointer; }
+    #dashboard-main .welcome-message .actions .letsbegin {
+      background-color: #4a7de0;
+      color: white;
+      margin-right: 10rem;
+      transition: all 500ms ease-in-out; }
+      #dashboard-main .welcome-message .actions .letsbegin:hover {
+        color: #4a7de0;
+        background-color: white; }
+    #dashboard-main .welcome-message .actions .watchdemo {
+      color: #4a7de0;
+      transition: all 500ms ease-in-out; }
+      #dashboard-main .welcome-message .actions .watchdemo i {
+        margin-right: 2rem; }
+      #dashboard-main .welcome-message .actions .watchdemo:hover {
+        color: white;
+        background-color: #4a7de0; }
+        #dashboard-main .welcome-message .actions .watchdemo:hover i {
+          color: white; }
+  #dashboard-main .welcome-svg {
+    padding: 0 10rem; }
+
+#portfolio-main {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 5vw; }
+  #portfolio-main .upper-section {
+    border-radius: 2rem;
+    background-color: #f1f3fe;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1.5rem 5rem 1.5rem 0;
+    align-items: center; }
+    #portfolio-main .upper-section h1 {
+      align-self: start;
+      justify-self: center;
+      font-weight: 700;
+      font-size: 2rem; }
+    #portfolio-main .upper-section .portfolio-item {
+      padding-top: 4rem;
+      justify-self: start; }
+      #portfolio-main .upper-section .portfolio-item h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        text-align: start;
+        margin-bottom: 1.5rem; }
+      #portfolio-main .upper-section .portfolio-item .currency {
+        font-size: 1.2rem;
+        color: #7a7a7a;
+        padding: 0;
+        margin: 0; }
+      #portfolio-main .upper-section .portfolio-item h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        padding: 0;
+        margin: 0; }
+        #portfolio-main .upper-section .portfolio-item h3 .percentage {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-left: 1rem; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.purple {
+            color: purple; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.red {
+            color: #c53b3d; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.gold {
+            color: #ba9126; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.green {
+            color: #1ec66c; }
+    #portfolio-main .upper-section .estimated-worth {
+      margin-left: -10rem;
+      padding-left: 10rem;
+      border-left: 0.2rem solid #e4e4e4; }
+  #portfolio-main .lower-section {
+    margin-top: 3rem;
+    display: flex; }
+    #portfolio-main .lower-section .left-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+      #portfolio-main .lower-section .left-panel .netgrowth {
+        background-color: #f1f3fe;
+        border-radius: 2rem; }
+        #portfolio-main .lower-section .left-panel .netgrowth .labels {
+          display: flex;
+          justify-content: space-between;
+          padding: 2rem 5rem; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels h1 {
+            font-size: 1.6rem;
+            font-weight: 700; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels h2 {
+            text-align: start;
+            font-size: 1.6rem; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels .netgrowth-years {
+            align-self: center;
+            padding: 0.5rem 3rem;
+            border-radius: 2rem;
+            border: 0.2rem solid blue; }
+            #portfolio-main .lower-section .left-panel .netgrowth .labels .netgrowth-years span {
+              margin-right: 1rem; }
+      #portfolio-main .lower-section .left-panel .liability-list {
+        margin-top: 5rem;
+        padding: 2rem; }
+        #portfolio-main .lower-section .left-panel .liability-list h1 {
+          font-weight: 700;
+          font-size: 1.6rem;
+          margin-bottom: 2rem; }
+        #portfolio-main .lower-section .left-panel .liability-list #liabilities {
+          width: 100%; }
+          #portfolio-main .lower-section .left-panel .liability-list #liabilities thead {
+            color: #88898d;
+            border-bottom: 0.2rem solid #c6c8ed; }
+            #portfolio-main .lower-section .left-panel .liability-list #liabilities thead th {
+              padding-bottom: 1rem;
+              font-weight: 400;
+              font-size: 1.4rem; }
+  #portfolio-main .right-panel {
+    padding: 5rem;
+    margin-left: 3rem;
+    width: 25%;
+    padding: 5rem;
+    align-self: start;
+    border-radius: 2rem;
+    background-color: #f1f3fe; }
+    #portfolio-main .right-panel h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem; }
+    #portfolio-main .right-panel .recent-asset {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem; }
+      #portfolio-main .right-panel .recent-asset h4 {
+        font-size: 1.3rem; }
 
 main#congratulations-main {
   background-image: url("../assets/img/cheers.png");
