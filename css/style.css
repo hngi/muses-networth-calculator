@@ -51,7 +51,7 @@ main.general-main {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   /* Black w/ opacity */ }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     .modal {
       width: 90%;
       height: 90%;
@@ -68,7 +68,7 @@ main.general-main {
     width: 30vw;
     color: #3f3f3f;
     /* The Close Button */ }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       #login-modal .modal-content {
         width: 80vw;
         height: 80vh;
@@ -80,7 +80,7 @@ main.general-main {
       text-align: center;
       margin: 8rem auto 4rem;
       font-size: 3.5rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         #login-modal .modal-content h2 {
           font-size: 2.5rem;
           margin: 5rem auto 3rem; } }
@@ -94,7 +94,7 @@ main.general-main {
         font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 0.5rem; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #login-modal .modal-content form label {
             font-size: 1.2rem; } }
       #login-modal .modal-content form input {
@@ -105,7 +105,7 @@ main.general-main {
         margin-bottom: 2rem;
         font-size: 1.8rem;
         font-family: "Raleway", segoe UI, sans-serif; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #login-modal .modal-content form input {
             margin-bottom: 1.3rem;
             font-size: 1.3rem; } }
@@ -136,7 +136,7 @@ main.general-main {
         margin: 2rem auto;
         cursor: pointer;
         transition: 0.4s ease-out; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #login-modal .modal-content form button {
             margin: 4rem auto 2rem;
             padding: 0.4em 2rem; } }
@@ -161,7 +161,7 @@ main.general-main {
       height: 5rem;
       text-align: center;
       transition: 0.4s ease-out; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         #login-modal .modal-content .close {
           left: 80%; } }
     #login-modal .modal-content .close:hover {
@@ -178,7 +178,7 @@ main.general-main {
     padding: 0rem 3rem 5rem;
     width: 30vw;
     color: #3f3f3f; }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       #register-modal .modal-content {
         width: 80vw;
         height: 80vh;
@@ -190,7 +190,7 @@ main.general-main {
       text-align: center;
       margin: 6rem auto 2rem;
       font-size: 3.5rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         #register-modal .modal-content h2 {
           font-size: 2.5rem;
           margin: 4.5rem auto 1.5rem; } }
@@ -204,7 +204,7 @@ main.general-main {
         font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 0.5rem; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #register-modal .modal-content form label {
             font-size: 1.2rem; } }
       #register-modal .modal-content form input {
@@ -215,7 +215,7 @@ main.general-main {
         margin-bottom: 2rem;
         font-size: 1.8rem;
         font-family: "Raleway", segoe UI, sans-serif; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #register-modal .modal-content form input {
             margin-bottom: 1.3rem;
             font-size: 1.3rem; } }
@@ -246,7 +246,7 @@ main.general-main {
         margin: 2rem auto;
         cursor: pointer;
         transition: 0.4s ease-out; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           #register-modal .modal-content form button {
             padding: 0.4em 2rem;
             margin: 1.5em auto; } }
@@ -271,7 +271,7 @@ main.general-main {
     height: 5rem;
     text-align: center;
     transition: 0.4s ease-out; }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       #register-modal .close {
         left: 80%; } }
   #register-modal .close:hover {
@@ -380,7 +380,7 @@ aside.general-sidebar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 3rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .landing-header .nav-bar .nav-menu {
           grid-template-columns: repeat(2, 1fr); } }
       .landing-header .nav-bar .nav-menu #home-nav {
@@ -392,7 +392,7 @@ aside.general-sidebar {
         transition: all 500ms ease-in-out;
         margin-left: 2rem;
         cursor: pointer; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           .landing-header .nav-bar .nav-menu .nav-item {
             padding: 0.5em 0; } }
         .landing-header .nav-bar .nav-menu .nav-item:hover {
@@ -424,14 +424,14 @@ aside.general-sidebar {
         font-weight: 600;
         line-height: 5rem;
         margin-bottom: 2rem; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           .landing-body .upper-section .intro-text h1 {
             font-size: 2.5rem;
             line-height: 3rem; } }
       .landing-body .upper-section .intro-text h6 {
         font-size: 2rem;
         font-weight: 400; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           .landing-body .upper-section .intro-text h6 {
             font-size: calc(2rem / 1.2); } }
     .landing-body .upper-section .intro-svg {
@@ -440,7 +440,7 @@ aside.general-sidebar {
       overflow: hidden; }
       .landing-body .upper-section .intro-svg img {
         width: 100%; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           .landing-body .upper-section .intro-svg img {
             min-width: 50%;
             min-height: 50%;
@@ -456,12 +456,12 @@ aside.general-sidebar {
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem; }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       .landing-body .howitworks {
         margin-top: -17rem; } }
     .landing-body .howitworks h2 {
       margin-bottom: 10rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .landing-body .howitworks h2 {
           font-size: 4.5rem;
           text-align: center;
@@ -474,7 +474,7 @@ aside.general-sidebar {
       grid-template-columns: 1fr; }
       .landing-body .howitworks .process-image img {
         width: 100%; }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
           .landing-body .howitworks .process-image img {
             display: none; } }
     .landing-body .howitworks .process-text {
@@ -482,7 +482,7 @@ aside.general-sidebar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 13%; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .landing-body .howitworks .process-text {
           grid-template-columns: 1fr;
           row-gap: 12rem;
@@ -517,7 +517,7 @@ aside.general-sidebar {
       width: 50%;
       text-align: center;
       margin-bottom: 15rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .landing-body #faq .offset-text {
           align-self: center; } }
       .landing-body #faq .offset-text .divider {
@@ -533,7 +533,7 @@ aside.general-sidebar {
       border-radius: 2rem;
       background-color: #ccdbf6;
       margin-bottom: 15rem; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .landing-body #faq .weekly-tips {
           grid-template-columns: 1fr;
           width: 100%;
@@ -560,7 +560,7 @@ aside.general-sidebar {
           .landing-body #faq .weekly-tips form input::placeholder {
             font-size: 2.5rem;
             color: #4a7de0; }
-            @media (max-width: 768px) {
+            @media (max-width: 700px) {
               .landing-body #faq .weekly-tips form input::placeholder {
                 font-size: 1.9rem; } }
         .landing-body #faq .weekly-tips form button {
@@ -623,7 +623,7 @@ aside.general-sidebar {
     column-gap: 10rem;
     align-items: center;
     justify-content: center; }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       .landing-body .lower-section {
         grid-template-columns: 1fr;
         row-gap: 10rem; } }
@@ -668,6 +668,162 @@ footer {
   background-color: #25c296;
   margin: auto;
   margin-bottom: 10rem; }
+
+#dashboard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10rem 15rem 0rem 10rem;
+  font-family: Raleway, segoe UI, sans-serif; }
+  #dashboard-main .welcome-message h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    color: #3f3f3f; }
+  #dashboard-main .welcome-message h2 {
+    text-align: start;
+    margin-top: 2rem;
+    font-size: 5rem;
+    font-weight: 700; }
+  #dashboard-main .welcome-message .actions {
+    margin-top: 5rem; }
+    #dashboard-main .welcome-message .actions button {
+      border: none;
+      border-radius: 0.5rem;
+      background-color: white;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      cursor: pointer; }
+    #dashboard-main .welcome-message .actions .letsbegin {
+      background-color: #4a7de0;
+      color: white;
+      margin-right: 10rem;
+      transition: all 500ms ease-in-out; }
+      #dashboard-main .welcome-message .actions .letsbegin:hover {
+        color: #4a7de0;
+        background-color: white; }
+    #dashboard-main .welcome-message .actions .watchdemo {
+      color: #4a7de0;
+      transition: all 500ms ease-in-out; }
+      #dashboard-main .welcome-message .actions .watchdemo i {
+        margin-right: 2rem; }
+      #dashboard-main .welcome-message .actions .watchdemo:hover {
+        color: white;
+        background-color: #4a7de0; }
+        #dashboard-main .welcome-message .actions .watchdemo:hover i {
+          color: white; }
+  #dashboard-main .welcome-svg {
+    padding: 5rem 10rem; }
+
+#portfolio-main {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 5vw; }
+  #portfolio-main .upper-section {
+    border-radius: 2rem;
+    background-color: #f1f3fe;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1.5rem 5rem 1.5rem 0;
+    align-items: center; }
+    #portfolio-main .upper-section h1 {
+      align-self: start;
+      justify-self: center;
+      font-weight: 700;
+      font-size: 2rem; }
+    #portfolio-main .upper-section .portfolio-item {
+      padding-top: 4rem;
+      justify-self: start; }
+      #portfolio-main .upper-section .portfolio-item h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        text-align: start;
+        margin-bottom: 1.5rem; }
+      #portfolio-main .upper-section .portfolio-item .currency {
+        font-size: 1.2rem;
+        color: #7a7a7a;
+        padding: 0;
+        margin: 0; }
+      #portfolio-main .upper-section .portfolio-item h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        padding: 0;
+        margin: 0; }
+        #portfolio-main .upper-section .portfolio-item h3 .percentage {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-left: 1rem; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.purple {
+            color: purple; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.red {
+            color: #c53b3d; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.gold {
+            color: #ba9126; }
+          #portfolio-main .upper-section .portfolio-item h3 .percentage.green {
+            color: #1ec66c; }
+    #portfolio-main .upper-section .estimated-worth {
+      margin-left: -10rem;
+      padding-left: 10rem;
+      border-left: 0.2rem solid #e4e4e4; }
+  #portfolio-main .lower-section {
+    margin-top: 3rem;
+    display: flex; }
+    #portfolio-main .lower-section .left-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+      #portfolio-main .lower-section .left-panel .netgrowth {
+        background-color: #f1f3fe;
+        border-radius: 2rem; }
+        #portfolio-main .lower-section .left-panel .netgrowth .labels {
+          display: flex;
+          justify-content: space-between;
+          padding: 2rem 5rem; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels h1 {
+            font-size: 1.6rem;
+            font-weight: 700; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels h2 {
+            text-align: start;
+            font-size: 1.6rem; }
+          #portfolio-main .lower-section .left-panel .netgrowth .labels .netgrowth-years {
+            align-self: center;
+            padding: 0.5rem 3rem;
+            border-radius: 2rem;
+            border: 0.2rem solid blue; }
+            #portfolio-main .lower-section .left-panel .netgrowth .labels .netgrowth-years span {
+              margin-right: 1rem; }
+      #portfolio-main .lower-section .left-panel .liability-list {
+        margin-top: 5rem;
+        padding: 2rem; }
+        #portfolio-main .lower-section .left-panel .liability-list h1 {
+          font-weight: 700;
+          font-size: 1.6rem;
+          margin-bottom: 2rem; }
+        #portfolio-main .lower-section .left-panel .liability-list #liabilities {
+          width: 100%; }
+          #portfolio-main .lower-section .left-panel .liability-list #liabilities thead {
+            color: #88898d;
+            border-bottom: 0.2rem solid #c6c8ed; }
+            #portfolio-main .lower-section .left-panel .liability-list #liabilities thead th {
+              padding-bottom: 1rem;
+              font-weight: 400;
+              font-size: 1.4rem; }
+  #portfolio-main .right-panel {
+    padding: 5rem;
+    margin-left: 3rem;
+    width: 25%;
+    padding: 5rem;
+    align-self: start;
+    border-radius: 2rem;
+    background-color: #f1f3fe; }
+    #portfolio-main .right-panel h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem; }
+    #portfolio-main .right-panel .recent-asset {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem; }
+      #portfolio-main .right-panel .recent-asset h4 {
+        font-size: 1.3rem; }
 
 main#congratulations-main {
   background-image: url("../assets/img/cheers.png");
