@@ -30,9 +30,9 @@
 // });
 
 //ACCORDION CONTROL
-let acc = document.getElementsByClassName("accordion-trigger");
+const acc = document.getElementsByClassName("accordion-trigger");
 
-for (let i = 0; i < acc.length; i++) {
+for (let i in acc) {
   acc[i].addEventListener("click", function() {
     /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
