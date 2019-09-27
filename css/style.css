@@ -309,6 +309,59 @@ header.general-header {
       margin-left: 1.5rem;
       font-size: 1.8rem; }
 
+aside.general-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-color);
+  color: white;
+  position: fixed;
+  width: var(--header-width);
+  height: 100vh;
+  z-index: 10;
+  left: 0;
+  top: var(--header-width); }
+  aside.general-sidebar a {
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1px 5px;
+    position: relative;
+    --tooltip-color: black; }
+    aside.general-sidebar a .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: var(--tooltip-color);
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      left: 130%;
+      top: -20%;
+      position: absolute;
+      z-index: 1; }
+    aside.general-sidebar a .tooltiptext::before {
+      content: " ";
+      position: absolute;
+      left: -11%;
+      top: 25%;
+      border: 8px black solid;
+      border-color: transparent var(--tooltip-color) transparent transparent; }
+  aside.general-sidebar a:hover .tooltiptext {
+    visibility: visible; }
+  aside.general-sidebar .sidebar-active-link {
+    background-color: #1414aa; }
+  aside.general-sidebar #mid-icons {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    margin-top: 20vh;
+    width: calc(var(--header-width) / 2);
+    margin-left: calc(var(--header-width) / 8);
+    justify-content: space-between; }
+  aside.general-sidebar #logout-icon {
+    margin-top: 20vh;
+    margin-left: calc(var(--header-width) / 8); }
+
 .landing-header {
   width: 100%;
   padding: 1rem 5rem; }
