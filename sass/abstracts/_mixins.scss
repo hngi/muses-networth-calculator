@@ -6,7 +6,7 @@
         display: table;
     }
 }
-$mobile: 700px;
+$mobile: 850px;
 @mixin mobile {
 	@media (max-width: #{$mobile}) {
 		@content;
