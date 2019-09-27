@@ -976,7 +976,7 @@ main#overview-main {
       main#overview-main table {
         margin-bottom: 10rem;
         max-width: 100vw;
-        padding: 0;
+        padding: 1.5rem;
         margin-left: -7rem; } }
     main#overview-main table #overview-checkbox-col {
       width: 13%; }
