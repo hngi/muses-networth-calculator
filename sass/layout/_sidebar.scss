@@ -1,0 +1,42 @@
+aside.general-sidebar
+{
+	display: flex;
+	flex-direction: column;
+	background-color: var(--sidebar-color);
+	color: white;
+	position: fixed;
+	width: var(--header-width);
+	height: 100vh;
+	z-index: 10;
+	left: 0;
+	top: var(--header-width);
+	a
+	{
+		display: block;
+		border-radius: 5px;
+		cursor: pointer;
+		padding: 1px 5px;
+	}
+	.sidebar-active-link
+	{
+		background-color: rgb(20, 20, 170);
+		cursor: default;
+	}
+	#mid-icons
+	{
+		display: flex;
+		flex-direction: column;
+		height: 15vh;
+		margin-top: 40vh;
+		width: calc(var(--header-width) / 2);
+		margin-left: calc(var(--header-width) / 8);
+		justify-content: space-between;
+		top: 30vh;
+		
+	}
+	#logout-icon
+	{
+		margin-top: 20vh;
+		margin-left: calc(var(--header-width) / 8);
+	}
+}

@@ -1,0 +1,41 @@
+header.general-header
+{
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	background: var(--header-background);
+	width: 100vw;
+	height: var(--header-width);
+	justify-content: space-between;
+	padding-right: 2rem;
+
+	#logo-link
+	{
+		height: var(--header-width);
+		width: var(--header-width);
+		align-items: center;
+		display: block;
+		#logo
+		{
+			display: block;
+			margin: 5px auto;
+		}
+	}
+	nav
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		min-width: 14vw;
+		#name-plate
+		{
+			margin-right: 0.5rem;
+			margin-left: 1.5rem;
+			font-size: 1.8rem;
+		}
+	}
+}

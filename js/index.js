@@ -11,8 +11,8 @@ fetch(backendUrl + "/api");
 
 
 // redirect if logged in
-//if (window.localStorage.getItem(auth_token))
-//	location.href = "dashboard.html";
+if (window.localStorage.getItem(auth_token))
+	location.href = "dashboard.html";
 
 const useToken = data =>
 {
