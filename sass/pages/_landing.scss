@@ -10,6 +10,9 @@
       flex: 1;
       height: 7rem;
       overflow: hidden;
+      @include mobile {
+        display: none;
+      }
       img {
         height: 100%;
         width: 50px;
@@ -20,8 +23,17 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 3rem;
+
+      @include mobile {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+      }
+
       #home-nav {
         text-decoration: underline;
+        @include mobile {
+          text-decoration: none;
+        }
       }
 
       .nav-item {
