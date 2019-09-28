@@ -388,12 +388,10 @@ aside.general-sidebar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 3rem; }
-
       @media (max-width: 850px) {
         .landing-header .nav-bar .nav-menu {
           grid-template-columns: repeat(4, 1fr);
           justify-content: center; } }
-
       .landing-header .nav-bar .nav-menu #home-nav {
         text-decoration: underline; }
         @media (max-width: 850px) {
@@ -884,10 +882,21 @@ main#overview-main {
             margin-top: 1rem; } }
       main#overview-main section#overview-controls section#overview-controls-left .overview-controls-focus {
         transition: 1s ease-out;
-        background-color: skyblue;
+        background-color: #50c882;
         cursor: pointer; }
       main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort {
         cursor: pointer; }
+        main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort select {
+          cursor: pointer;
+          height: 90%;
+          outline: none;
+          border: none;
+          font-size: inherit;
+          width: 18rem;
+          font-family: inherit;
+          font-weight: bold; }
+        main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort option {
+          font-weight: bold; }
     main#overview-main section#overview-controls .little-btn {
       padding: 1.4rem 1rem 0.6rem; }
       main#overview-main section#overview-controls .little-btn img {
@@ -978,10 +987,11 @@ main#overview-main {
   #overview-modal-container #overview-delete-modal {
     background-color: var(--header-background);
     padding: 4rem;
-    height: 40vh;
-    width: 40vw;
+    height: 260px;
+    width: 540px;
     margin: 30vh auto;
-    border-radius: 10px; }
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); }
   #overview-modal-container h1 {
     margin-bottom: 5rem; }
   #overview-modal-container button {
@@ -993,6 +1003,8 @@ main#overview-main {
     font-family: inherit;
     font-size: 1.8rem;
     transition: 0.4s ease-out; }
+  #overview-modal-container button:hover {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3); }
   #overview-modal-container #overview-delete-cancel {
     margin-left: 18vw; }
   #overview-modal-container #overview-delete-yes {

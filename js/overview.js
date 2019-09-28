@@ -1,6 +1,7 @@
 auth_token = "muse_nwc_auth_token";
 overview_mode = "muse_nwc_overview_mode";
 item_edit = "muse_nwc_item_edit";
+overview_sort = "muse_nwc_sort";
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
 
 
@@ -10,9 +11,14 @@ let selectedItems = [];
 let displayedCBs = [];
 if (!localStorage.getItem(overview_mode)) 
 	localStorage.setItem(overview_mode, "ASSET");
+if (!localStorage.getItem(overview_sort))
+	localStorage.setItem(overview_sort, "td");
+document.querySelector("#overview-controls-sort select").value = localStorage.getItem(overview_sort);
+document.getElementById("overview-select-all").checked = false;
 
 const powerUp = () =>
 {
+	localStorage.removeItem(item_edit);
 	let mode = localStorage.getItem(overview_mode);
 	fetch(backendUrl + "/api/items",
 	{
@@ -56,19 +62,32 @@ const powerUp = () =>
 
 powerUp();
 
-document.getElementById("overview-select-all").checked = false;
-
 const updateControlFocus = () =>
 {
+	let del = document.getElementById("overview-controls-delete");
+	let edit = document.getElementById("overview-controls-edit");
 	if (selectedItems.length)
-		document.getElementById("overview-controls-delete").classList.add("overview-controls-focus");
+	{
+		del.classList.add("overview-controls-focus");
+		del.setAttribute("title", "Delete item" + (selectedItems.length > 1 ? "s" : ""));
+	}
 	else
-		document.getElementById("overview-controls-delete").classList.remove("overview-controls-focus");
+	{
+		del.classList.remove("overview-controls-focus");
+		del.setAttribute("title", "You must select one or more rows in order to delete");
+	}
 
 	if (selectedItems.length === 1)
-		document.getElementById("overview-controls-edit").classList.add("overview-controls-focus");
+	{
+		edit.classList.add("overview-controls-focus");
+		edit.setAttribute("title", "Edit item");
+	}
 	else
-		document.getElementById("overview-controls-edit").classList.remove("overview-controls-focus");
+	{
+		edit.classList.remove("overview-controls-focus");
+		edit.setAttribute("title", "You must select a row in order to edit");
+	}
+
 }
 
 const selectRow = e =>
@@ -89,6 +108,7 @@ const selectRow = e =>
 const deleteItem = () =>
 {
 	document.getElementById("overview-modal-container").style.display = "none";
+	if (!selectedItems.length) return;
 	for (let i of selectedItems)
 	{
 		fetch(backendUrl + "/api/items",
@@ -106,20 +126,43 @@ const deleteItem = () =>
 
 	selectedItems = [];
 	updateControlFocus();
-	powerUp();
+	setTimeout(() => powerUp(), 400);
 }
 
 const populateTable = (items) =>
 {
 	let mode = localStorage.getItem(overview_mode);
+	let sort = localStorage.getItem(overview_sort);
+	let sortedItems = items.slice();
+
+	switch(sort)
+	{
+		case "ta": sortedItems = items.reverse();
+		break;
+		case "da": sortedItems.sort((a, b) => a.description.localeCompare(b.description));
+		break;
+		case "dd": sortedItems.sort((a, b) => b.description.localeCompare(a.description));
+		break;
+		case "va": sortedItems.sort((a, b) => a.value - b.value);
+		break;
+		case "vd": sortedItems.sort((a, b) => b.value - a.value);
+		break;
+	}
+
+	let search = document.getElementById("overview-search").value;
+	let filteredItems = search.length ? sortedItems.filter(a => 
+		a.description.toLowerCase().includes(search)) : sortedItems;
+
 	selectedItems = [];
 	displayedCBs = [];
+	updateControlFocus();
+	document.getElementById("overview-select-all").checked = false;
 	let th = table.firstChild;
 	while (table.childNodes[2])
 		table.removeChild(table.childNodes[2]);
 
 	table.appendChild(th);
-	for (let item of items)
+	for (let item of filteredItems)
 	{
 		if (item.type.toLowerCase() !== mode.toLowerCase())
 			continue;
@@ -153,7 +196,9 @@ const populateTable = (items) =>
 	if (!displayedCBs.length)
 	{
 		document.getElementById("overview-info").style.display = "block";
-		document.getElementById("overview-info").textContent = `You have not added any ${mode === "ASSET" ? 
+		document.getElementById("overview-info").textContent = document.getElementById("overview-search").value.length ? 
+		`You have no ${mode === "ASSET" ? "assets" : "liabilities"}  matching that description` : 
+		`You have not added any ${mode === "ASSET" ? 
 			"assets" : "liabilities"}`;
 	}
 	else
@@ -216,13 +261,27 @@ document.getElementById("overview-controls-delete").addEventListener("click", e 
 	document.getElementById("overview-modal-container").style.display = "block";
 	document.getElementById("overview-delete-query").textContent = "Are you sure you want to delete " + 
 		(selectedItems.length > 1 ? "these items?" : "this item?");
+	document.addEventListener("keydown", e => 
+	{
+		if (document.getElementById("overview-modal-container").style.display == "block")
+		{
+			if (e.code == "Enter")
+				deleteItem();
+			else (e.code == "Escape")
+				document.getElementById("overview-modal-container").style.display = "none";
+		}
+	})
 	document.getElementById("overview-delete-yes").addEventListener("click", e => 
 	{
 		deleteItem();
 	});
+	document.getElementById("overview-delete-cancel").addEventListener("click", e => 
+	{
+		document.getElementById("overview-modal-container").style.display = "none";
+	});
 	document.getElementById("overview-modal-container").addEventListener("click", e => 
 	{
-		if (e.path[0] == document.getElementById("overview-modal-container"))
+		if (e.path && e.path[0] == document.getElementById("overview-modal-container"))
 			document.getElementById("overview-modal-container").style.display = "none";
 	});
 });
@@ -236,3 +295,14 @@ document.getElementById("overview-add-item").addEventListener("click", e =>
 {
 	location.href = "newitem.html";
 });
+document.querySelector("#overview-controls-sort select").addEventListener("change", e =>
+{
+	localStorage.setItem(overview_sort, e.target.value);
+	populateTable(items);
+});
+document.getElementById("overview-search").addEventListener("input", e =>
+{
+	selectedItems = [];
+	updateControlFocus();
+	populateTable(items);
+})
