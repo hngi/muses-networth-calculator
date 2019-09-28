@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="widtr=device-widtr, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-     <link href="https://fonts.googleapis.com/css?family=Montsserat&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
     <link rel="stylesheet" href="css/style.css" />
     <title>Overview</title>
@@ -25,30 +24,37 @@
     <main class="general-main" id="overview-main">
         <h1>Overview</h1>
         <section id="item-switch">
-            <div id="assets-switch" class="item-switch-active" data-switch-value="ASSET">Assets</div>
-            <div id="liabilities-switch" data-switch-value="LIABILITY">Liabilities</div>
+            <div id="assets-switch" title="See assets" class="item-switch-active">Assets</div>
+            <div id="liabilities-switch" title="See liabilities">Liabilities</div>
         </section>
         <section id="overview-controls">
             <section id="overview-controls-left">
-                <div>
-                <a class="little-btn" href="" id="overview-controls-edit"><img src="assets/img/edit-icon.jpg" height="20px" width="20px"></a>
-                <a href="" class="little-btn" id="overview-controls-delete"><img src="assets/svg/delete-icon.svg" height="20px" width="20px"></a>
-                <a href="" class="little-btn" id="overview-controls-sort"><img src="assets/img/sort-icon.png" height="20px" width="20px"></a>
+                <div id="little-btns-div">
+                <a class="little-btn" href="" id="overview-controls-edit" title="Edit selected item"><img src="assets/img/edit-icon.jpg" height="20px" width="20px"></a>
+                <a href="" class="little-btn" id="overview-controls-delete" title="Delete selected item"><img src="assets/svg/delete-icon.svg" height="20px" width="20px"></a>
+                <a href="" class="little-btn" id="overview-controls-sort" title="Sort items"><img src="assets/img/sort-icon.png" height="20px" width="20px"></a>
                 </div>
                 <input type="text" name="search" placeholder="&nbsp;Search by description">
             </section>
             <button id="overview-add-item">Add Asset</button>
         </section>
-        <table data-mode="ASSET">
+        <table>
             <tr>
-                <th id="overview-checkbox-col"><input type="checkbox" id="overview-select-all" checked=""></th>
+                <th id="overview-checkbox-col"><input type="checkbox" id="overview-select-all"></th>
                 <th id="overview-type-col">Type</th>
                 <th id="overview-desc-col">Description</th>
                 <th id="overview-value-col">Value</th>
             </tr>
         </table>
+        <label id="overview-info"></label>
     </main>
-        
+    <div id="overview-modal-container">
+        <div id="overview-delete-modal">
+            <h1 id="overview-delete-query"></h1>
+            <button id="overview-delete-cancel">Cancel</button>
+            <button id="overview-delete-yes">Yes</button>
+        </div>
+    </div>
         <!-- Side Navigation -->
     <aside class="general-sidebar">
         <div id="mid-icons">
@@ -58,6 +64,7 @@
         </div>
         <a id="logout-icon"><span class="tooltiptext">Logout</span><img src="assets/svg/logout-icon.svg"></a>
     </aside>
+    
 </body>
 </html>
 

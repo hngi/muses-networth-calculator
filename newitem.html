@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
+    <link rel="icon" type="image/png" href="assets/img/muses.png">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Congratulations</title>
+    <title>New Item</title>
 </head>
 <body>
     <!-- Navigation -->
@@ -21,11 +21,43 @@
     </header>
 
     <!-- Content -->
-    <main class="general-main" id="congratulations-main">
-        <h1>Congratulations</h1>
-        <h3>You have successfully calculated your net worth</h3>
+    <main class="general-main" id="newitem-main">
+        <div id="newitem-flex">
+            <div>
+                <h1 id="newitem-intro"><span title="Back to Overview" id="intro-title">Overview</span> <span id="intro-symbol">&gt</span> <span id="intro-spec">Add Asset</span></h1>
+                <div>
+                    <div>
+                        <a href="overview.html" id="newitem-go-back" title="Go back">
+                            <div></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="newitem-modal">
+                <h1><img src="assets/img/money-icon.png" height="30px" width="30px"> <span id="newitem-form-title">Add new item<span></h1>
+                <form>
+                    <section>
+                        <label for="item-type">Type</label>
+                        <select class="newitem-form-input" id="item-type">
+                            <option value="asset">ASSET</option>
+                            <option value="liability">LIABILITY</option>
+                        </select>
+                    </section>
+                    <section>
+                        <label for="item-desc">Description</label>
+                        <input class="newitem-form-input" type="text" name="description" placeholder="Short description" id="item-desc" required>
+                    </section>
+                    <section>
+                        <label for="item-value">Value</label>
+                        <input class="newitem-form-input" id="item-value" type="text" name="value" required placeholder="Positive or negative value">
+                    </section>
+                    <label id="newitem-info"><span id="newitem-info-main">Item added successfully</span> &#10003; Hold on. . .</label>
+                    <button id="newitem-submit">ADD</button>
+                </form>
+            </div>
+        </div>
     </main>
-        
         <!-- Side Navigation -->
     <aside class="general-sidebar">
         <div id="mid-icons">
@@ -39,3 +71,4 @@
 </html>
 
 <script type="text/javascript" src="js/header-sidebar.js"></script>
+<script type="text/javascript" src="js/newitem.js"></script>
