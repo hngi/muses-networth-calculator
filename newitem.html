@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
+    <link rel="icon" type="image/png" href="assets/img/muses.png">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Congratulations</title>
+    <title>New Item</title>
 </head>
 <body>
     <!-- Navigation -->
@@ -24,13 +24,13 @@
     <main class="general-main" id="newitem-main">
         <div id="newitem-flex">
             <div>
-                <h1 id="newitem-intro"><span id="intro-title">Overview</span> <span id="intro-symbol">&gt</span> <span id="intro-spec">Add Asset</span></h1>
+                <h1 id="newitem-intro"><span title="Back to Overview" id="intro-title">Overview</span> <span id="intro-symbol">&gt</span> <span id="intro-spec">Add Asset</span></h1>
                 <div>
-                    <a href="#">
-                        <div id="newitem-go-back">
+                    <div>
+                        <a href="overview.html" id="newitem-go-back" title="Go back">
                             <div></div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -52,7 +52,8 @@
                         <label for="item-value">Value</label>
                         <input class="newitem-form-input" id="item-value" type="text" name="value" required placeholder="Positive or negative value">
                     </section>
-                    <button>ADD</button>
+                    <label id="newitem-info"></label>
+                    <button id="newitem-submit">ADD</button>
                 </form>
             </div>
         </div>

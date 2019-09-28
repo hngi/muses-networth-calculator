@@ -332,7 +332,7 @@ aside.general-sidebar {
     --tooltip-color: black; }
     aside.general-sidebar a .tooltiptext {
       opacity: 0;
-      width: 120px;
+      width: 60px;
       background-color: var(--tooltip-color);
       color: #fff;
       text-align: center;
@@ -351,7 +351,8 @@ aside.general-sidebar {
       border: 8px black solid;
       border-color: transparent var(--tooltip-color) transparent transparent; }
   aside.general-sidebar a:hover .tooltiptext {
-    opacity: 100; }
+    opacity: 100;
+    width: 120px; }
   aside.general-sidebar .sidebar-active-link {
     background-color: #1414aa; }
   aside.general-sidebar #mid-icons {
@@ -947,6 +948,11 @@ main#overview-main {
       font-size: 4rem; }
     main#overview-main table .selected-row {
       border: 1px solid dimgray; }
+  main#overview-main #overview-info {
+    display: none;
+    text-align: center;
+    margin-top: 6rem;
+    font-size: 3rem; }
 
 main#newitem-main {
   padding: 2rem 3rem; }
@@ -961,7 +967,8 @@ main#newitem-main {
       border: 1px solid var(--sidebar-color);
       transition: 0.4s ease-out;
       transform: rotate(-90deg);
-      margin: 6rem; }
+      margin: 6rem;
+      display: block; }
     main#newitem-main #newitem-flex #newitem-go-back:hover {
       background-color: rgba(224, 200, 203, 0.3); }
     main#newitem-main #newitem-flex #newitem-go-back > div {
@@ -1004,6 +1011,8 @@ main#newitem-main {
       main#newitem-main #newitem-flex #newitem-modal h1 {
         font-size: 2.5rem;
         font-weight: 600; }
+      main#newitem-main #newitem-flex #newitem-modal #newitem-info {
+        display: none; }
       main#newitem-main #newitem-flex #newitem-modal form {
         margin: 2rem auto; }
         main#newitem-main #newitem-flex #newitem-modal form section {
@@ -1032,7 +1041,7 @@ main#newitem-main {
       main#newitem-main #newitem-flex #newitem-modal .newitem-form-input {
         outline: none;
         border: solid lightgray 2px;
-        border-radius: 0.3rem;
+        border-radius: 0.6rem;
         padding: 0.5rem 1rem;
         width: 95%;
         font-family: Raleway, segoe UI, sans-serif;

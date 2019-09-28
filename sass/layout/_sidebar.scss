@@ -21,7 +21,7 @@ aside.general-sidebar
 		.tooltiptext 
 		{
 			opacity: 0;
-			width: 120px;
+			width: 60px;
 			background-color: var(--tooltip-color);
 			color: #fff;
 			text-align: center;
@@ -47,6 +47,7 @@ aside.general-sidebar
 	a:hover .tooltiptext 
 	{
 	  opacity: 100;
+	  width: 120px;
 	}
 	.sidebar-active-link
 	{
