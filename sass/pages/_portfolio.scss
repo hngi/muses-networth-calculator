@@ -49,6 +49,7 @@
 
     .left-panel {
       flex: 1;
+      width: 100vw;
       display: flex;
       flex-direction: column;
       background-color: rgb(220, 235, 255);
@@ -80,6 +81,14 @@
       {
         text-decoration: underline;
       }
+    }
+  }
+
+  .mobile.right-panel {
+    display: none;
+    @include mobile {
+      display: block;
+      margin-bottom: 0;
     }
   }
   .right-panel {

@@ -1,31 +1,66 @@
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 #dashboard-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 300px;
   padding: 10rem 15rem 0rem 10rem;
   font-family: Raleway, segoe UI, sans-serif;
-
-  .welcome-message {
+  grid-template-areas:
+    "welcome image-welcome";
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: "image-welcome"
+      "welcome";
+      padding: 0 2rem;
+    }
+    .welcome-message {
+    grid-area: welcome;
     h1 {
       font-size: 6rem;
       font-weight: 300;
       color: #3f3f3f;
+      @include mobile {
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+      }
     }
     h2 {
       text-align: start;
       margin-top: 2rem;
       font-size: 5rem;
       font-weight: 700;
+      @include mobile {
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+      }
     }
     .actions {
       margin-top: 5rem;
+      @include mobile {
+        display: block;
+        justify-items: space-around;
+        flex-wrap: initial;
+  
+      }
 
       button {
         border: none;
         border-radius: 0.5rem;
-        background-color: white;
+        background-color: rgb(165, 180, 247);
         font-size: 2rem;
         padding: 1rem 2rem;
         cursor: pointer;
+        @include mobile {
+          display: block;
+          width: 70%;
+          margin: 2rem auto !important;
+          
+        }
       }
       .letsbegin {
         background-color: #4a7de0;
@@ -39,7 +74,7 @@
         }
       }
       .watchdemo {
-        color: #4a7de0;
+        color: #000;
         transition: all 500ms ease-in-out;
 
         i {
@@ -58,5 +93,6 @@
   }
   .welcome-svg {
     padding: 5rem 10rem;
+    grid-area: image-welcome;
   }
 }

@@ -4,6 +4,9 @@ main#congratulations-main
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position: 25vw 0;
+	@include mobile {
+		background-position: 25vw 15vh;
+	}
 
 	h1
 	{
@@ -11,10 +14,20 @@ main#congratulations-main
 		font-weight: 50;
 		font-size: 6rem;
 		text-align: center;
+		@include mobile {
+			padding-top: 30vh;
+			font-size: 3rem;
+			padding: inherit 1rem;
+			width: 90%;
+		}
 	}
 	h3
 	{
 		text-align: center;
 		font-size: 1.5rem;
+		@include mobile {
+			width: 90%;
+			font-size: 1.5rem;
+		}
 	}
 }
