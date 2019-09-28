@@ -885,18 +885,21 @@ main#overview-main {
         background-color: #50c882;
         cursor: pointer; }
       main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort {
-        cursor: pointer; }
+        cursor: pointer;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem; }
         main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort select {
           cursor: pointer;
           height: 90%;
           outline: none;
           border: none;
           font-size: inherit;
-          width: 18rem;
           font-family: inherit;
           font-weight: bold; }
         main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort option {
-          font-weight: bold; }
+          font-weight: bold;
+          border: none;
+          outline: none; }
     main#overview-main section#overview-controls .little-btn {
       padding: 1.4rem 1rem 0.6rem; }
       main#overview-main section#overview-controls .little-btn img {

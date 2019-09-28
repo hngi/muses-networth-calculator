@@ -74,6 +74,8 @@ main#overview-main {
       #overview-controls-sort 
       {
         cursor: pointer;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
         select
         {
           cursor: pointer;
@@ -81,13 +83,14 @@ main#overview-main {
           outline: none;
           border: none;
           font-size: inherit;
-          width: 18rem;
           font-family: inherit;
           font-weight: bold;
         }
         option
         {
           font-weight: bold;
+          border: none;
+          outline: none;
         }
       }
     }

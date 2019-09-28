@@ -12,7 +12,7 @@ let displayedCBs = [];
 if (!localStorage.getItem(overview_mode)) 
 	localStorage.setItem(overview_mode, "ASSET");
 if (!localStorage.getItem(overview_sort))
-	localStorage.setItem(overview_sort, "td");
+	localStorage.setItem(overview_sort, "ta");
 document.querySelector("#overview-controls-sort select").value = localStorage.getItem(overview_sort);
 document.getElementById("overview-select-all").checked = false;
 
@@ -147,6 +147,7 @@ const populateTable = (items) =>
 		break;
 		case "vd": sortedItems.sort((a, b) => b.value - a.value);
 		break;
+		default: sortedItems = items.slice();
 	}
 
 	let search = document.getElementById("overview-search").value;
