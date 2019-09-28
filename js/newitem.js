@@ -1,6 +1,12 @@
 auth_token = "muse_nwc_auth_token";
 overview_mode = "muse_nwc_overview_mode";
+item_edit = "muse_nwc_item_edit";
+
+
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
+let editItem = JSON.parse(localStorage.getItem(item_edit));
+localStorage.removeItem(item_edit);
+console.log(editItem);
 
 // Ping heroku backend host. It sleeps after inactive interval and takes around 12 seconds to wake
 // So, hasten the process at page load
@@ -10,11 +16,20 @@ fetch(backendUrl + "/api");
 const applyMode = () =>
 {
 	let mode = localStorage.getItem(overview_mode);
-	document.getElementById("intro-spec").textContent = mode === "ASSET" ?
-		"Add Asset" : "Add Liability";
+	document.getElementById("intro-spec").textContent = (editItem ? "Edit " : "Add ") + (mode === "ASSET" ?
+		"Asset" : "Liability");
 	document.getElementById("item-type").value = mode.toLowerCase();
 	document.getElementById("item-value").setAttribute("placeholder", mode === "ASSET" ?
 		"Positive value for asset" : "Negative value for liability");
+
+	if (editItem)
+	{
+		document.getElementById("newitem-form-title").textContent = "Edit item";
+		document.getElementById("item-desc").value = editItem.description;
+		document.getElementById("item-value").value = editItem.value;
+		document.getElementById("newitem-submit").textContent = "UPDATE";
+		document.getElementById("newitem-info-main").textContent = "Changes applied successfully";
+	}
 }
 
 applyMode();
@@ -44,26 +59,55 @@ document.getElementById("newitem-submit").addEventListener("click", e =>
 		e.preventDefault();
 
 	let data = {type, description, value};
-	fetch(backendUrl + "/api/items",
+	if (!editItem)
 	{
-		method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		headers: 
+		fetch(backendUrl + "/api/items",
 		{
-		  'Content-Type': 'application/json',
-		  'Origin': 'muse-client',
-		  'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')
-		},
-		body: JSON.stringify(data) // body data type must match "Content-Type" header
-	})
-	.then(data => data.json())
-	.then(json => 
+			method: 'POST', // *GET, POST, PUT, DELETE, etc.
+			headers: 
+			{
+			  'Content-Type': 'application/json',
+			  'Origin': 'muse-client',
+			  'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')
+			},
+			body: JSON.stringify(data) // body data type must match "Content-Type" header
+		})
+		.then(data => data.json())
+		.then(json => 
+		{
+			if (json.code)
+				console.log(`Error! ${json.code}: ${json.errors}`)
+			else
+			{
+				document.getElementById("newitem-info").style.opacity = 100;
+				setTimeout(() => location.href = "overview.html", 1500);
+			}
+		});
+	}
+	else if (editItem)
 	{
-		if (json.code)
-			console.log(`Error! ${json.code}: ${json.errors}`)
-		else
+		let item_id = editItem.id;
+		fetch(backendUrl + "/api/items",
 		{
-			document.getElementById("newitem-info").style.opacity = 100;
-			setTimeout(() => location.href = "overview.html", 2000);
-		}
-	});
+			method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+			headers: 
+			{
+			  'Content-Type': 'application/json',
+			  'Origin': 'muse-client',
+			  'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')
+			},
+			body: JSON.stringify({...data, item_id}) // body data type must match "Content-Type" header
+		})
+		.then(data => data.json())
+		.then(json => 
+		{
+			if (json.code)
+				console.log(`Error! ${json.code}: ${json.errors}`)
+			else
+			{
+				document.getElementById("newitem-info").style.opacity = 100;
+				setTimeout(() => location.href = "overview.html", 1500);
+			}
+		});
+	}
 })

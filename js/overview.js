@@ -1,5 +1,6 @@
 auth_token = "muse_nwc_auth_token";
 overview_mode = "muse_nwc_overview_mode";
+item_edit = "muse_nwc_item_edit";
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
 
 
@@ -177,7 +178,10 @@ document.getElementById("overview-select-all").addEventListener("click", e =>
 document.getElementById("overview-controls-edit").addEventListener("click", e =>
 {
 	e.preventDefault();
-	
+	if (!selectedItems.length)
+		return;
+	localStorage.setItem(item_edit, JSON.stringify(selectedItems[0]));
+	location.href = "newitem.html";
 });
 
 document.getElementById("overview-controls-delete").addEventListener("click", e =>
