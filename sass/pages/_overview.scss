@@ -68,7 +68,7 @@ main#overview-main {
       }
       .overview-controls-focus {
         transition: 1s ease-out;
-        background-color: rgb(80, 200, 130);
+        background-color: var(--sidebar-color);//rgb(80, 200, 130);
         cursor: pointer;
       }
       #overview-controls-sort 
@@ -85,12 +85,13 @@ main#overview-main {
           font-size: inherit;
           font-family: inherit;
           font-weight: bold;
-        }
-        option
-        {
-          font-weight: bold;
-          border: none;
-          outline: none;
+          option
+          {
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -116,7 +117,7 @@ main#overview-main {
       }
     }
     #overview-add-item {
-      background-color: rgb(80, 200, 130);
+      background-color: var(--sidebar-color);//rgb(80, 200, 130);
       cursor: pointer;
       color: var(--header-background);
       outline: none;
@@ -194,7 +195,27 @@ main#overview-main {
     margin-top: 6rem;
     font-size: 3rem;
   }
+  #overview-calculate
+  {
+    background-color: var(--sidebar-color);//rgb(80, 200, 130);
+    cursor: pointer;
+    color: var(--header-background);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    transition: 0.4s ease-out;
+    margin-top: 4rem;
+    margin-left: 35vw;
+  }
+  #overview-calculate:hover
+  {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3);
+  }
 }
+
 #overview-modal-container
 {
   display: none;
@@ -241,7 +262,7 @@ main#overview-main {
   #overview-delete-yes
   {
     color: var(--header-background);
-    background-color: rgb(80, 200, 130);
+    background-color: var(--sidebar-color);//rgb(80, 200, 130);
     padding: 1rem 4rem;
   }
 }
