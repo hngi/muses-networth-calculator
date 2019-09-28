@@ -300,7 +300,9 @@ header.general-header {
     display: block; }
     header.general-header #logo-link #logo {
       display: block;
-      margin: 5px auto; }
+      margin: 5px auto;
+      height: 50px;
+      width: 35px; }
   header.general-header nav {
     display: flex;
     flex-direction: row;
@@ -354,7 +356,7 @@ aside.general-sidebar {
     opacity: 100;
     width: 120px; }
   aside.general-sidebar .sidebar-active-link {
-    background-color: #1414aa; }
+    background-color: #141496; }
   aside.general-sidebar #mid-icons {
     display: flex;
     flex-direction: column;
@@ -723,7 +725,8 @@ body {
   @media (max-width: 850px) {
     #dashboard-main {
       grid-template-columns: 1fr;
-      grid-template-areas: "image-welcome" "welcome";
+      grid-template-areas: "image-welcome"
+ "welcome";
       padding: 0 2rem; } }
   #dashboard-main .welcome-message {
     grid-area: welcome; }
@@ -1090,10 +1093,25 @@ main#overview-main {
             margin-top: 1rem; } }
       main#overview-main section#overview-controls section#overview-controls-left .overview-controls-focus {
         transition: 1s ease-out;
-        background-color: skyblue;
+        background-color: var(--sidebar-color);
         cursor: pointer; }
       main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort {
-        cursor: pointer; }
+        cursor: pointer;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem; }
+        main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort select {
+          cursor: pointer;
+          height: 90%;
+          outline: none;
+          border: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: bold; }
+          main#overview-main section#overview-controls section#overview-controls-left #overview-controls-sort select option {
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer; }
     main#overview-main section#overview-controls .little-btn {
       padding: 1.4rem 1rem 0.6rem; }
       main#overview-main section#overview-controls .little-btn img {
@@ -1112,7 +1130,7 @@ main#overview-main {
         display: inline-block;
         margin: auto; }
     main#overview-main section#overview-controls #overview-add-item {
-      background-color: #50c882;
+      background-color: var(--sidebar-color);
       cursor: pointer;
       color: var(--header-background);
       outline: none;
@@ -1176,6 +1194,21 @@ main#overview-main {
     text-align: center;
     margin-top: 6rem;
     font-size: 3rem; }
+  main#overview-main #overview-calculate {
+    background-color: var(--sidebar-color);
+    cursor: pointer;
+    color: var(--header-background);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    transition: 0.4s ease-out;
+    margin-top: 4rem;
+    margin-left: 35vw; }
+  main#overview-main #overview-calculate:hover {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3); }
 
 #overview-modal-container {
   display: none;
@@ -1189,10 +1222,11 @@ main#overview-main {
   #overview-modal-container #overview-delete-modal {
     background-color: var(--header-background);
     padding: 4rem;
-    height: 40vh;
-    width: 40vw;
+    height: 260px;
+    width: 540px;
     margin: 30vh auto;
-    border-radius: 10px; }
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); }
   #overview-modal-container h1 {
     margin-bottom: 5rem; }
   #overview-modal-container button {
@@ -1204,11 +1238,13 @@ main#overview-main {
     font-family: inherit;
     font-size: 1.8rem;
     transition: 0.4s ease-out; }
+  #overview-modal-container button:hover {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3); }
   #overview-modal-container #overview-delete-cancel {
     margin-left: 18vw; }
   #overview-modal-container #overview-delete-yes {
     color: var(--header-background);
-    background-color: #50c882;
+    background-color: var(--sidebar-color);
     padding: 1rem 4rem; }
 
 main#newitem-main {

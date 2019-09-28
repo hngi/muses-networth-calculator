@@ -47,10 +47,15 @@ document.getElementById("login-button").addEventListener("click", e =>
 	    .then(data => data.json())
 	    .then(json => 
 	    {
-	    	if (json.code == 496)
-	    		alert("Email doesn't exist!");
-	    	else if (json.code == 419)
-	    		alert("Incorrect password");
+				if ( json.code == 496 )
+					// Change alert to nice error message
+					// alert("Email doesn't exist!");
+					unknownEmail();
+					// console.log('email doesnt exist bruh')
+				else if ( json.code == 419 )
+					// Change alet to nice error message
+					// alert("Incorrect password");
+					incorrectPassword();
 			else if (json.data && json.data.token)
 			{
 				useToken(json.data);
@@ -87,7 +92,8 @@ document.getElementById("register-button").addEventListener("click", e =>
 	    .then(json => 
 	    {
 	    	if (json.code == 427)
-	    		alert("Email already exists!");
+					// alert("Email already exists!");
+					takenEmail();
 			else if (json.data && json.data.token)
 			{
 				useToken(json.data);
@@ -95,3 +101,65 @@ document.getElementById("register-button").addEventListener("click", e =>
 			}
 	    });
 });
+
+// Error messages if user inputs wrong or unexpected data
+const unknownEmail = () => {
+	const login = document.getElementById( "loginHeader" )
+	const error = document.createElement( 'p' )
+	error.id = "unknownEmail";
+	error.style.background = "red";
+	error.style.padding = "0.7rem 1rem";
+	error.style.textAlign = "center";
+	error.style.borderRadius = "10px";
+	error.style.marginBottom = "2rem";
+	error.style.color = "#fff";
+
+	error.innerText = "Email doesn't exist!";
+	if ( !document.getElementById( "unknownEmail" )) {
+			login.parentNode.insertBefore(error, login.nextSibling);
+		}
+	setTimeout(() => {
+		error.remove();
+	}, 3000);
+}
+
+const incorrectPassword = () => {
+	const login = document.getElementById( "loginHeader" );
+	const error = document.createElement( "p" );
+	error.id = "incorrectPassword";
+  error.style.background = "red";
+  error.style.padding = "0.7rem 1rem";
+  error.style.textAlign = "center";
+  error.style.borderRadius = "10px";
+  error.style.marginBottom = "2rem";
+  error.style.color = "#fff";
+
+  error.innerText = "Incorrect password!";
+	if ( !document.getElementById( "incorrectPassword" ) ) {
+		login.parentNode.insertBefore(error, login.nextSibling);
+	}
+  setTimeout(() => {
+    error.remove();
+  }, 3000);
+}
+
+const takenEmail = () => {
+	const register = document.getElementById( "registerHeader" );
+	const error = document.createElement( "p" );
+	error.id = "takenEmail";
+  error.style.background = "red";
+  error.style.padding = "0.7rem 1rem";
+  error.style.textAlign = "center";
+  error.style.borderRadius = "10px";
+  error.style.marginBottom = "2rem";
+  error.style.color = "#fff";
+
+  error.innerText = "Email has already been taken!";
+	if ( !document.getElementById( "takenEmail" )) {
+		register.parentNode.insertBefore(error, register.nextSibling);
+	}
+  setTimeout(() => {
+    error.remove();
+  }, 3000);
+}
+
