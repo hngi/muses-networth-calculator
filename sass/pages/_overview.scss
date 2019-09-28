@@ -176,3 +176,48 @@ main#overview-main {
     font-size: 3rem;
   }
 }
+#overview-modal-container
+{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  #overview-delete-modal
+  {
+    background-color: var(--header-background);
+    padding: 4rem;
+    height: 40vh;
+    width: 40vw;
+    margin: 30vh auto;
+    border-radius: 10px;
+  }
+  h1
+  {
+    margin-bottom: 5rem;
+  }
+  button
+  {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    transition: 0.4s ease-out;
+  }
+  #overview-delete-cancel
+  {
+    margin-left: 18vw;
+  }
+  #overview-delete-yes
+  {
+    color: var(--header-background);
+    background-color: rgb(80, 200, 130);
+    padding: 1rem 4rem;
+  }
+}

@@ -86,6 +86,29 @@ const selectRow = e =>
 	updateControlFocus();
 }
 
+const deleteItem = () =>
+{
+	document.getElementById("overview-modal-container").style.display = "none";
+	for (let i of selectedItems)
+	{
+		fetch(backendUrl + "/api/items",
+		{
+			method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+			headers: 
+			{
+			  'Content-Type': 'application/json',
+			  'Origin': 'muse-client',
+			  'Authorization': 'Bearer ' + (localStorage.getItem(auth_token) || '')
+			},
+			body: JSON.stringify({item_id: i.id}) // body data type must match "Content-Type" header
+		});
+	}
+
+	selectedItems = [];
+	updateControlFocus();
+	powerUp();
+}
+
 const populateTable = (items) =>
 {
 	let mode = localStorage.getItem(overview_mode);
@@ -187,6 +210,21 @@ document.getElementById("overview-controls-edit").addEventListener("click", e =>
 document.getElementById("overview-controls-delete").addEventListener("click", e =>
 {
 	e.preventDefault();
+	if(!selectedItems.length)
+		return;
+
+	document.getElementById("overview-modal-container").style.display = "block";
+	document.getElementById("overview-delete-query").textContent = "Are you sure you want to delete " + 
+		(selectedItems.length > 1 ? "these items?" : "this item?");
+	document.getElementById("overview-delete-yes").addEventListener("click", e => 
+	{
+		deleteItem();
+	});
+	document.getElementById("overview-modal-container").addEventListener("click", e => 
+	{
+		if (e.path[0] == document.getElementById("overview-modal-container"))
+			document.getElementById("overview-modal-container").style.display = "none";
+	});
 });
 
 document.getElementById("overview-controls-sort").addEventListener("click", e =>
@@ -197,4 +235,4 @@ document.getElementById("overview-controls-sort").addEventListener("click", e =>
 document.getElementById("overview-add-item").addEventListener("click", e =>
 {
 	location.href = "newitem.html";
-})
+});
