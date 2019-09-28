@@ -31,9 +31,7 @@ const powerUp = () =>
 		else
 		{
 			items = json;
-			console.log(items);
 			populateTable(items);
-			document.getElementById("overview-info").style.display = "none";
 		}
 	});
 	document.getElementById("overview-info").style.display = "block";

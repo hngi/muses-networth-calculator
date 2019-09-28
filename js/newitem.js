@@ -62,10 +62,8 @@ document.getElementById("newitem-submit").addEventListener("click", e =>
 			console.log(`Error! ${json.code}: ${json.errors}`)
 		else
 		{
-			document.getElementById("newitem-info").style.display = "block";
-			document.getElementById("newitem-info")
-				.appendChild(document.createTextNode("Item added successfully! Hold on. . ."));
-			setTimeout(() => location.href = "overview.html", 1000);
+			document.getElementById("newitem-info").style.opacity = 100;
+			setTimeout(() => location.href = "overview.html", 2000);
 		}
 	});
 })
