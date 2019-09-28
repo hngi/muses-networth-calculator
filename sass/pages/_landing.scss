@@ -15,7 +15,7 @@
       }
       img {
         height: 100%;
-        min-width: 5vw;
+        width: 50px;
       }
     }
     .nav-menu {
@@ -23,10 +23,12 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 3rem;
+
       @include mobile {
         grid-template-columns: repeat(4, 1fr);
         justify-content: center;
       }
+
       #home-nav {
         text-decoration: underline;
         @include mobile {
@@ -41,10 +43,6 @@
         transition: all 500ms ease-in-out;
         margin-left: 2rem;
         cursor: pointer;
-
-        @include mobile {
-          padding: 0.5em 0;
-        }
 
         &:hover {
           transform: scale(1.1);
@@ -80,21 +78,13 @@
       flex: 1;
       margin-left: 8%;
       h1 {
-        font-size: 4rem;
+        font-size: 8rem;
         font-weight: 600;
-        line-height: 5rem;
-        margin-bottom: 2rem;
-        @include mobile {
-          font-size: 2.5rem;
-          line-height: 3rem;
-        }
+        line-height: 10rem;
       }
       h6 {
         font-size: 2rem;
         font-weight: 400;
-        @include mobile {
-          font-size: calc(2rem / 1.2);
-        }
       }
     }
     .intro-svg {
@@ -104,11 +94,6 @@
 
       img {
         width: 100%;
-        @include mobile {
-          min-width: 50%;
-          min-height: 50%;
-          object-fit: cover;
-        }
       }
     }
   }
@@ -118,34 +103,21 @@
     background-size: cover;
     background-position: top;
     display: flex;
-    margin-top: -13rem;
+    margin-top: -8rem;
     padding-top: 30rem;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem;
-    @include mobile {
-      margin-top: -17rem;
-    }
 
     h2 {
       margin-bottom: 10rem;
-      @include mobile {
-        font-size: 4.5rem;
-        text-align: center;
-        padding: 0 2rem;
-      }
     }
     .process-image {
-      max-width: 70vw;
-      margin: 0 auto;
+      width: 70%;
+      margin: auto;
       margin-bottom: 20rem;
-      display: grid;
-      grid-template-columns: 1fr;
       img {
         width: 100%;
-        @include mobile {
-          display: none;
-        }
       }
     }
     .process-text {
@@ -153,12 +125,6 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 13%;
-      @include mobile {
-        grid-template-columns: 1fr;
-        row-gap: 12rem;
-        text-align: center;
-        justify-items: center;
-      }
 
       & > * {
         width: 80%;
@@ -178,6 +144,8 @@
       .assets {
         margin-top: -5rem;
       }
+      .liability {
+      }
       .tax-rate {
         margin-top: -4rem;
         margin-left: 1rem;
@@ -191,8 +159,6 @@
     width: 70%;
     display: flex;
     flex-direction: column;
-    margin-top: -15rem;
-
     .offset-text {
       align-self: flex-end;
       font-weight: 400;
@@ -200,9 +166,6 @@
       width: 50%;
       text-align: center;
       margin-bottom: 15rem;
-      @include mobile {
-        align-self: center;
-      }
 
       .divider {
         margin: 10rem auto;
@@ -220,14 +183,6 @@
       border-radius: 2rem;
       background-color: #ccdbf6;
       margin-bottom: 15rem;
-      @include mobile {
-        grid-template-columns: 1fr;
-        width: 100%;
-        padding: 3.5rem 5rem;
-        row-gap: 4rem;
-        align-items: center;
-        justify-content: center;
-      }
       h3 {
         font-size: 3.5rem;
         line-height: 3.5rem;
@@ -250,9 +205,6 @@
           &::placeholder {
             font-size: 2.5rem;
             color: #4a7de0;
-            @include mobile {
-              font-size: 1.9rem;
-            }
           }
         }
         button {
@@ -277,18 +229,18 @@
         align-items: center;
         button {
           display: grid;
-          width: 50%;
+          width: 45%;
           grid-template-columns: max-content 1fr max-content;
           justify-content: center;
           align-items: center;
           background-color: white;
           border: none;
           font-size: 3rem;
-          text-align: center;
+          text-align: start;
           padding-bottom: 3.5rem;
           border-bottom: 0.3rem solid #92b0eb90;
           color: #4a7de0;
-          margin-bottom: 10rem;
+          margin-bottom: 5rem;
           cursor: pointer;
 
           span {
@@ -331,10 +283,6 @@
     column-gap: 10rem;
     align-items: center;
     justify-content: center;
-    @include mobile {
-      grid-template-columns: 1fr;
-      row-gap: 10rem;
-    }
 
     & > * {
       display: flex;
@@ -365,6 +313,13 @@
         color: #4a7de0;
       }
     }
+
+    .begin {
+    }
+    .demo {
+    }
+    .emailsupport {
+    }
   }
 }
 
@@ -376,9 +331,8 @@ footer {
   background-size: cover;
 
   p {
-    margin: 35rem 0 10rem 0;
+    margin-top: 35rem;
     text-align: center;
-    font-weight: bold;
   }
 }
 

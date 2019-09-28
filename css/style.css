@@ -382,16 +382,18 @@ aside.general-sidebar {
           display: none; } }
       .landing-header .nav-bar .muses-logo img {
         height: 100%;
-        min-width: 5vw; }
+        width: 50px; }
     .landing-header .nav-bar .nav-menu {
       list-style-type: none;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 3rem; }
+
       @media (max-width: 850px) {
         .landing-header .nav-bar .nav-menu {
           grid-template-columns: repeat(4, 1fr);
           justify-content: center; } }
+
       .landing-header .nav-bar .nav-menu #home-nav {
         text-decoration: underline; }
         @media (max-width: 850px) {
@@ -404,9 +406,6 @@ aside.general-sidebar {
         transition: all 500ms ease-in-out;
         margin-left: 2rem;
         cursor: pointer; }
-        @media (max-width: 850px) {
-          .landing-header .nav-bar .nav-menu .nav-item {
-            padding: 0.5em 0; } }
         .landing-header .nav-bar .nav-menu .nav-item:hover {
           transform: scale(1.1); }
       .landing-header .nav-bar .nav-menu .join-nav {
@@ -432,74 +431,42 @@ aside.general-sidebar {
       flex: 1;
       margin-left: 8%; }
       .landing-body .upper-section .intro-text h1 {
-        font-size: 4rem;
+        font-size: 8rem;
         font-weight: 600;
-        line-height: 5rem;
-        margin-bottom: 2rem; }
-        @media (max-width: 850px) {
-          .landing-body .upper-section .intro-text h1 {
-            font-size: 2.5rem;
-            line-height: 3rem; } }
+        line-height: 10rem; }
       .landing-body .upper-section .intro-text h6 {
         font-size: 2rem;
         font-weight: 400; }
-        @media (max-width: 850px) {
-          .landing-body .upper-section .intro-text h6 {
-            font-size: calc(2rem / 1.2); } }
     .landing-body .upper-section .intro-svg {
       flex: 1;
       width: 80%;
       overflow: hidden; }
       .landing-body .upper-section .intro-svg img {
         width: 100%; }
-        @media (max-width: 850px) {
-          .landing-body .upper-section .intro-svg img {
-            min-width: 50%;
-            min-height: 50%;
-            object-fit: cover; } }
   .landing-body .howitworks {
     width: 100%;
     background-image: url("../assets/img/blue-background.png");
     background-size: cover;
     background-position: top;
     display: flex;
-    margin-top: -13rem;
+    margin-top: -8rem;
     padding-top: 30rem;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem; }
-    @media (max-width: 850px) {
-      .landing-body .howitworks {
-        margin-top: -17rem; } }
     .landing-body .howitworks h2 {
       margin-bottom: 10rem; }
-      @media (max-width: 850px) {
-        .landing-body .howitworks h2 {
-          font-size: 4.5rem;
-          text-align: center;
-          padding: 0 2rem; } }
     .landing-body .howitworks .process-image {
-      max-width: 70vw;
-      margin: 0 auto;
-      margin-bottom: 20rem;
-      display: grid;
-      grid-template-columns: 1fr; }
+      width: 70%;
+      margin: auto;
+      margin-bottom: 20rem; }
       .landing-body .howitworks .process-image img {
         width: 100%; }
-        @media (max-width: 850px) {
-          .landing-body .howitworks .process-image img {
-            display: none; } }
     .landing-body .howitworks .process-text {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 13%; }
-      @media (max-width: 850px) {
-        .landing-body .howitworks .process-text {
-          grid-template-columns: 1fr;
-          row-gap: 12rem;
-          text-align: center;
-          justify-items: center; } }
       .landing-body .howitworks .process-text > * {
         width: 80%;
         text-align: center;
@@ -520,8 +487,7 @@ aside.general-sidebar {
   .landing-body #faq {
     width: 70%;
     display: flex;
-    flex-direction: column;
-    margin-top: -15rem; }
+    flex-direction: column; }
     .landing-body #faq .offset-text {
       align-self: flex-end;
       font-weight: 400;
@@ -529,9 +495,6 @@ aside.general-sidebar {
       width: 50%;
       text-align: center;
       margin-bottom: 15rem; }
-      @media (max-width: 850px) {
-        .landing-body #faq .offset-text {
-          align-self: center; } }
       .landing-body #faq .offset-text .divider {
         margin: 10rem auto; }
     .landing-body #faq .weekly-tips {
@@ -545,14 +508,6 @@ aside.general-sidebar {
       border-radius: 2rem;
       background-color: #ccdbf6;
       margin-bottom: 15rem; }
-      @media (max-width: 850px) {
-        .landing-body #faq .weekly-tips {
-          grid-template-columns: 1fr;
-          width: 100%;
-          padding: 3.5rem 5rem;
-          row-gap: 4rem;
-          align-items: center;
-          justify-content: center; } }
       .landing-body #faq .weekly-tips h3 {
         font-size: 3.5rem;
         line-height: 3.5rem;
@@ -572,9 +527,6 @@ aside.general-sidebar {
           .landing-body #faq .weekly-tips form input::placeholder {
             font-size: 2.5rem;
             color: #4a7de0; }
-            @media (max-width: 850px) {
-              .landing-body #faq .weekly-tips form input::placeholder {
-                font-size: 1.9rem; } }
         .landing-body #faq .weekly-tips form button {
           border: none;
           background-color: transparent;
@@ -591,18 +543,18 @@ aside.general-sidebar {
       align-items: center; }
       .landing-body #faq .faq .faq-accordion button {
         display: grid;
-        width: 50%;
+        width: 45%;
         grid-template-columns: max-content 1fr max-content;
         justify-content: center;
         align-items: center;
         background-color: white;
         border: none;
         font-size: 3rem;
-        text-align: center;
+        text-align: start;
         padding-bottom: 3.5rem;
         border-bottom: 0.3rem solid #92b0eb90;
         color: #4a7de0;
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
         cursor: pointer; }
         .landing-body #faq .faq .faq-accordion button span {
           text-align: center; }
@@ -635,10 +587,6 @@ aside.general-sidebar {
     column-gap: 10rem;
     align-items: center;
     justify-content: center; }
-    @media (max-width: 850px) {
-      .landing-body .lower-section {
-        grid-template-columns: 1fr;
-        row-gap: 10rem; } }
     .landing-body .lower-section > * {
       display: flex;
       flex-direction: column;
@@ -670,9 +618,8 @@ footer {
   z-index: -1;
   background-size: cover; }
   footer p {
-    margin: 35rem 0 10rem 0;
-    text-align: center;
-    font-weight: bold; }
+    margin-top: 35rem;
+    text-align: center; }
 
 .divider {
   width: 12rem;
