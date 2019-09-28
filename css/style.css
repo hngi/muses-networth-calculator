@@ -375,6 +375,9 @@ aside.general-sidebar {
       flex: 1;
       height: 7rem;
       overflow: hidden; }
+      @media (max-width: 850px) {
+        .landing-header .nav-bar .muses-logo {
+          display: none; } }
       .landing-header .nav-bar .muses-logo img {
         height: 100%;
         min-width: 5vw; }
@@ -385,9 +388,13 @@ aside.general-sidebar {
       margin-top: 3rem; }
       @media (max-width: 850px) {
         .landing-header .nav-bar .nav-menu {
-          grid-template-columns: repeat(2, 1fr); } }
+          grid-template-columns: repeat(4, 1fr);
+          justify-content: center; } }
       .landing-header .nav-bar .nav-menu #home-nav {
         text-decoration: underline; }
+        @media (max-width: 850px) {
+          .landing-header .nav-bar .nav-menu #home-nav {
+            text-decoration: none; } }
       .landing-header .nav-bar .nav-menu .nav-item {
         text-align: center;
         border-radius: 2rem;
