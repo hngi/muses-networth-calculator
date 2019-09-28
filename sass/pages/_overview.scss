@@ -128,7 +128,12 @@ main#overview-main {
       margin-bottom: 10rem;
       max-width: 100vw;
       padding: 1.5rem;
+    }
+    @media (max-width: 360px){
       margin-left: -7rem;
+    }
+    @media (min-width: 361px) and (max-width: 420px){
+      margin-left: -5rem;
     }
 
     #overview-checkbox-col {
