@@ -6,10 +6,18 @@ main#not-found-main
 		font-size: 15rem;
 		padding-top: 10rem;
 		font-weight: 50;
+		@include mobile {
+			font-size: 10rem;
+			width: 90%;
+		}
 	}
 	h3
 	{
 		font-size: 2.5rem;
+		@include mobile {
+			font-size: 1.5rem;
+			width: 90%;
+		}
 	}
 	button
 	{
@@ -24,6 +32,9 @@ main#not-found-main
 		font-family: Raleway, segoe UI, sams-serif;
 		font-weight: bold;
 		transition: 0.4s ease-out;
+		@include mobile {
+			font-size: 1.5rem;
+		}
 	}
 	button:hover
 	{
