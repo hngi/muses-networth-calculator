@@ -28,7 +28,7 @@ const applyMode = () =>
 		document.getElementById("item-desc").value = editItem.description;
 		document.getElementById("item-value").value = editItem.value;
 		document.getElementById("newitem-submit").textContent = "UPDATE";
-		document.getElementById("newitem-info-main").textContent = "Changes applied successfully";
+		document.getElementById("newitem-info-main").textContent = "Changes applied";
 	}
 }
 

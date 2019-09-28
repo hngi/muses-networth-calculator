@@ -6,7 +6,7 @@ header.general-header
 	z-index: 10;
 	left: 0;
 	top: 0;
-	background: white;//var(--header-background);
+	background: white;
 	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
 	width: 100vw;
 	height: var(--header-width);
@@ -23,6 +23,8 @@ header.general-header
 		{
 			display: block;
 			margin: 5px auto;
+			height: 50px;
+			width: 35px;
 		}
 	}
 	nav
