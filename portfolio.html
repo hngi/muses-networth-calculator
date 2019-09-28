@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
-    <title>Portfolio</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Statistics</title>
   </head>
   <body class="blue-body">
     <!-- Navigation -->
@@ -21,98 +22,61 @@
     <!-- Content -->
 
     <main id="portfolio-main" class="general-main">
-      <section class="upper-section">
-        <h1>Portfolio</h1>
-        <div class="portfolio-item">
-          <h2>
-            Dept
-          </h2>
-          <span class="currency">Naira(₦)</span>
-          <h3>86k <sub class="percentage purple"> &nbsp;</sub></h3>
+      <div id="upper-section-wrapper">
+        <h1>Statistics</h1>
+        <section class="upper-section">
+
+          <div id="assets-wrapper">
+            <div class="portfolio-item">
+              <h2>
+                Assets
+              </h2>
+              <span class="currency">Naira(₦)</span>
+              <h3 id="stats-assets-value">2.5M</h3>
+            </div>
+            <img src="assets/img/assets-icon.png" height="120px" width="100px">
+          </div>
+
+        <div id="liabilities-wrapper">
+          <div class="portfolio-item">
+            <h2>
+              Liabilities
+            </h2>
+            <span class="currency">Naira(₦)</span>
+            <h3 id="stats-liabilities-value">140k</h3>
+          </div>
+          <img src="assets/img/liabilities-icon.png"height="120px" width="100px">
         </div>
-        <div class="portfolio-item">
-          <h2>
-            Assets
-          </h2>
-          <span class="currency">Naira(₦)</span>
-          <h3>2.5M <sub class="percentage red">(1.67%)</sub></h3>
-        </div>
-        <div class="portfolio-item">
-          <h2>
-            Liabilities
-          </h2>
-          <span class="currency">Naira(₦)</span>
-          <h3>140k <sub class="percentage gold">(1.67%)</sub></h3>
-        </div>
-        <div class="portfolio-item estimated-worth">
-          <h2>
-            Estimated Net Worth
-          </h2>
-          <span class="currency">Naira(₦)</span>
-          <h3>5.3B <sub class="percentage green">(1.67%)</sub></h3>
-        </div>
-      </section>
+        </section>
+      </div>
+
+
       <section class="lower-section">
         <div class="left-panel">
-          <div class="netgrowth">
-            <div class="labels">
-              <div class="label-inner">
-                <h1>Net Worth Growth</h1>
-                <h2>Overall Information</h2>
-              </div>
-              <div class="netgrowth-years">
-                <span id="netgrowth-years-value">4</span> Years
-              </div>
-            </div>
-            <canvas id="portfolio-chart" width="500" height="200"></canvas>
-          </div>
-          <div class="liability-list">
-            <h1>Liabilities List</h1>
-            <table id="liabilities">
-              <thead>
-                <th>#</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Registered Date</th>
-                <th>Years</th>
-              </thead>
-              <tr>
-                <td>1</td>
-                <td></td>
-                <td>Student Loan</td>
-                <td>343,000</td>
-                <td>24-04-2019</td>
-                <td>2012</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="mobile right-panel">
-          <h1>Liabilities List</h1>
-          <div class="recent-asset">
-            <h3>Student Loan</h3>
-            <h4>₦343,000</h4>
-          </div>
+          <h1>Your Net Worth is</h1>
+          <h1 id="stats-networth-value">₦14 M</h1> <br> <br>
+          <h2>Your net worth puts you in the <span id="stats-percentile-value">90th</span> percentile, globally</h2>
+          <em>According to resource <a href="https://www.givingwhatwecan.org/get-involved/how-rich-am-i/">here</a></em>
         </div>
         <div class="right-panel">
-          <h1>Recent Assets</h1>
+          <h1>Leaderboard</h1>
           <div class="recent-asset">
-            <h3>4 Bedroom Duplex</h3>
-            <h4>₦50.4M</h4>
+            <h3>1. Aliko Dangote</h3>
+            <h4>₦3.72 trn</h4>
           </div>
           <div class="recent-asset">
-            <h3>2 plots of land</h3>
-            <h4>₦50.4M</h4>
+            <h3>2. Mike Adenuga</h3>
+            <h4>₦3.32 trn</h4>
           </div>
           <div class="recent-asset">
-            <h3>shell oil Production</h3>
-            <h4>₦50.4M</h4>
+            <h3>3. Femi Otedola</h3>
+            <h4>₦828 bn</h4>
           </div>
           <div class="recent-asset">
-            <h3>4 Bedroom Duplex</h3>
-            <h4>₦50.4M</h4>
+            <h3>4. Folorunsho Alakija</h3>
+            <h4>₦655 bn</h4>
           </div>
+          <em>According to resource <a href="https://nigerianfinder.com/top-20-richest-men-in-nigeria/">here</a></em>
         </div>
       </section>
     </main>

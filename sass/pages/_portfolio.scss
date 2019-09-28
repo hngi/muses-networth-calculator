@@ -1,191 +1,85 @@
 #portfolio-main {
   display: flex;
   flex-direction: column;
-  padding: 2vw 5vw;
-  margin-bottom: 5em;
-  @include mobile {
-    max-width: 90vw;
-    overflow-x: hidden;
-  }
+  padding: 2vh 2vw;
 
-  .upper-section {
-    border-radius: 2rem;
-    background-color: #f1f3fe;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    padding: 1.5rem 5rem 1.5rem 0;
-    align-items: center;
-    @include mobile {
-      grid-template-columns: 1fr;
-      justify-content: center;
-      margin: 0;
+  #upper-section-wrapper
+  {
+    background-color: rgb(220, 235, 255); //#f1f3fe;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 4rem;
+    h1
+    {
       text-align: center;
-      padding: 2rem 0;
-      max-width: 75vw;
+      font-weight: 100;
+      font-size: 8rem;
     }
-
-    h1 {
-      align-self: start;
-      justify-self: center;
-      font-weight: 700;
-      font-size: 2rem;
-      @include mobile {
-        align-self: center;
-      }
+    h3
+    {
+      font-size: 3rem;
     }
-    .portfolio-item {
-      padding-top: 4rem;
-      justify-self: start;
-      @include mobile {
-        display: flex;
-        flex-direction: row;
-        justify-self: center;
-        align-self: center;
-      }
-
-      h2 {
-        font-weight: 700;
-        font-size: 1.6rem;
-        text-align: start;
-        margin-bottom: 1.5rem;
-      }
-      .currency {
-        font-size: 1.2rem;
-        color: #7a7a7a;
-        // margin-bottom: -0.5rem;
-        padding: 0;
-        margin: 0;
-      }
-      h3 {
-        font-size: 3rem;
-        font-weight: 700;
-        padding: 0;
-        margin: 0;
-
-        .percentage {
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-left: 1rem;
-
-          &.purple {
-            color: purple;
-          }
-          &.red {
-            color: #c53b3d;
-          }
-          &.gold {
-            color: #ba9126;
-          }
-
-          &.green {
-            color: #1ec66c;
-          }
-        }
-      }
+    img
+    {
+      margin-top: 2rem;
     }
-    .estimated-worth {
-      margin-left: -10rem;
-      padding-left: 10rem;
+    #assets-wrapper *
+    {
+      color: green;
+    }
+    #liabilities-wrapper *
+    {
+      color: crimson;
     }
   }
+  .upper-section 
+  {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem 1rem 1.5rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+
 
   .lower-section {
     margin-top: 3rem;
     display: flex;
-    @include mobile {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
+    margin-bottom: 5rem;
 
     .left-panel {
       flex: 1;
       width: 100vw;
       display: flex;
       flex-direction: column;
-
-      .netgrowth {
-        background-color: #f1f3fe;
-        border-radius: 2rem;
-        @include mobile {
-          max-width: 75vw;
-        }
-
-        .labels {
-          display: flex;
-          justify-content: space-between;
-          padding: 2rem 5rem;
-          @include mobile {
-              display: flex;
-              flex-direction: column;
-              padding: 0;
-              align-content: space-between;
-              .label-inner {
-                margin-top: 5em;
-                max-width: 75vw;
-                text-align: center;
-                h2 {
-                  text-align: center;
-                  line-height: 2em;
-                  margin: 1em 0;
-                }
-                            }
-          }
-          h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-          }
-          h2 {
-            text-align: start;
-            font-size: 1.6rem;
-          }
-
-          .netgrowth-years {
-            align-self: center;
-            justify-self: center;
-            padding: 0.5rem 3rem;
-            border-radius: 2rem;
-            border: 0.2rem solid blue;
-            @include mobile {
-              margin: 0 auto;
-            }
-
-            span {
-              margin-right: 1rem;
-            }
-          }
-        }
+      background-color: rgb(220, 235, 255);
+      padding: 4rem;
+      h1
+      {
+        font-size: 4rem;
+        font-weight: 50;
       }
-      .liability-list {
+      h2
+      {
+        font-size: 3rem;
+        text-align: left;
+      }
+      #stats-networth-value
+      {
+        font-weight: 900;
+      }
+      #stats-percentile-value
+      {
+        font-weight: 900;
+        color: green;
+      }
+      em
+      {
         margin-top: 5rem;
-        padding: 2rem;
-        @include mobile {
-          display: none;
-        }
-
-        h1 {
-          font-weight: 700;
-          font-size: 1.6rem;
-          margin-bottom: 2rem;
-        }
-        #liabilities {
-          max-width: 100vw;
-          table {
-            @include mobile {
-              max-width: 75vw;
-            }
-          }
-
-          thead {
-            color: #88898d;
-            border-bottom: 0.2rem solid #c6c8ed;
-            th {
-              padding-bottom: 1rem;
-              font-weight: 400;
-              font-size: 1.4rem;
-              padding: 1em;
-            }
-          }
-        }
+      }
+      a
+      {
+        text-decoration: underline;
       }
     }
   }
@@ -198,25 +92,28 @@
     }
   }
   .right-panel {
-    padding: 5rem;
+    padding: 4rem;
     margin-left: 3rem;
-    max-width: 25%;
-    padding: 5rem;
+    width: 35%;
     align-self: start;
-    border-radius: 2rem;
-    background-color: #f1f3fe;
-    @include mobile {
-      max-width: 75vw;
-      padding: 1em;
-      margin-bottom: 5rem;
-      margin-left: 0;
-      margin-top: 3rem;
+    //border-radius: 2rem;
+    background-color:  rgb(220, 235, 255);
+
+    em
+    {
+      margin-top: 6rem;
+      a
+      {
+        text-decoration: underline;
+      }
     }
 
     h1 {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 3rem;
+      text-decoration: underline;
+      text-decoration-color: dimgray;
     }
     .recent-asset {
       display: flex;
@@ -224,7 +121,7 @@
       margin-bottom: 2rem;
 
       h4 {
-        font-size: 1.3rem;
+        font-size: 2rem;
       }
     }
   }
