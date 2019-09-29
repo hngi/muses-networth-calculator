@@ -6,7 +6,6 @@ item_edit = "muse_nwc_item_edit";
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
 let editItem = JSON.parse(localStorage.getItem(item_edit));
 localStorage.removeItem(item_edit);
-console.log(editItem);
 
 // Ping heroku backend host. It sleeps after inactive interval and takes around 12 seconds to wake
 // So, hasten the process at page load

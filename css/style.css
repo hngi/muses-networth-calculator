@@ -1200,6 +1200,9 @@ main#overview-main {
 
 main#newitem-main {
   padding: 2rem 3rem; }
+  @media (max-width: 850px) {
+    main#newitem-main {
+      padding: 2rem 0; } }
   main#newitem-main #newitem-flex {
     display: flex;
     flex-direction: row; }
@@ -1219,7 +1222,7 @@ main#newitem-main {
       display: block; }
       @media (max-width: 850px) {
         main#newitem-main #newitem-flex #newitem-go-back {
-          margin: 2rem; } }
+          margin: 4rem; } }
     main#newitem-main #newitem-flex #newitem-go-back:hover {
       background-color: rgba(224, 200, 203, 0.3); }
     main#newitem-main #newitem-flex #newitem-go-back > div {
@@ -1236,6 +1239,9 @@ main#newitem-main {
       font-size: 4rem;
       position: relative;
       margin-right: 10rem; }
+      @media (max-width: 850px) {
+        main#newitem-main #newitem-flex #newitem-intro {
+          margin-left: 1rem; } }
       main#newitem-main #newitem-flex #newitem-intro #intro-title {
         cursor: pointer; }
       main#newitem-main #newitem-flex #newitem-intro #intro-symbol {
@@ -1253,9 +1259,6 @@ main#newitem-main {
         font-size: 2.5rem;
         font-weight: 100;
         margin-left: 5rem; }
-        @media (max-width: 850px) {
-          main#newitem-main #newitem-flex #newitem-intro #intro-spec {
-            margin-left: 5.1rem; } }
     main#newitem-main #newitem-flex #newitem-modal {
       background-color: white;
       color: rgba(0, 0, 0, 0.7);
@@ -1267,8 +1270,8 @@ main#newitem-main {
       border-radius: 5px; }
       @media (max-width: 850px) {
         main#newitem-main #newitem-flex #newitem-modal {
-          width: 100%;
-          margin: 2rem auto; } }
+          width: 90%;
+          margin: 4rem auto; } }
       main#newitem-main #newitem-flex #newitem-modal h1 {
         font-size: 2.5rem;
         font-weight: 600; }
