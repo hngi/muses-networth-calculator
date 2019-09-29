@@ -2,6 +2,8 @@ auth_token = "muse_nwc_auth_token";
 overview_mode = "muse_nwc_overview_mode";
 item_edit = "muse_nwc_item_edit";
 overview_sort = "muse_nwc_sort";
+liability_value = "muse_nwc_liability";
+asset_value = "muse_nwc_asset";
 const backendUrl = "https://muses-nwc-api.herokuapp.com";
 
 
@@ -287,11 +289,6 @@ document.getElementById("overview-controls-delete").addEventListener("click", e 
 	});
 });
 
-document.getElementById("overview-controls-sort").addEventListener("click", e =>
-{
-	e.preventDefault();
-});
-
 document.getElementById("overview-add-item").addEventListener("click", e =>
 {
 	location.href = "newitem.html";
@@ -306,4 +303,15 @@ document.getElementById("overview-search").addEventListener("input", e =>
 	selectedItems = [];
 	updateControlFocus();
 	populateTable(items);
+})
+document.getElementById("overview-calculate").addEventListener("click", e =>
+{
+	localStorage.setItem(asset_value, items.reduce((total, a) => total + 
+		((a.type == "asset") ? parseInt(a.value) : 0), 0));
+	localStorage.setItem(liability_value, items.reduce((total, a) => total + 
+		((a.type == "liability") ? parseInt(a.value) : 0), 0));
+	console.log(items);
+	console.log(localStorage.getItem(asset_value));
+	console.log(localStorage.getItem(liability_value));
+	location.href = "portfolio.html";
 })
