@@ -1259,6 +1259,9 @@ main#newitem-main {
         font-size: 2.5rem;
         font-weight: 100;
         margin-left: 5rem; }
+        @media (max-width: 850px) {
+          main#newitem-main #newitem-flex #newitem-intro #intro-spec {
+            font-size: 2rem; } }
     main#newitem-main #newitem-flex #newitem-modal {
       background-color: white;
       color: rgba(0, 0, 0, 0.7);
