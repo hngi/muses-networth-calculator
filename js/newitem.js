@@ -19,7 +19,7 @@ const applyMode = () =>
 		"Asset" : "Liability");
 	document.getElementById("item-type").value = mode.toLowerCase();
 	document.getElementById("item-value").setAttribute("placeholder", mode === "ASSET" ?
-		"Positive value for asset" : "Negative value for liability");
+		"Asset value" : "Liability value");
 
 	if (editItem)
 	{
