@@ -1203,6 +1203,10 @@ main#newitem-main {
   main#newitem-main #newitem-flex {
     display: flex;
     flex-direction: row; }
+    @media (max-width: 850px) {
+      main#newitem-main #newitem-flex {
+        flex-direction: column;
+        width: 100%; } }
     main#newitem-main #newitem-flex #newitem-go-back {
       cursor: pointer;
       border-radius: 50%;
@@ -1213,6 +1217,9 @@ main#newitem-main {
       transform: rotate(-90deg);
       margin: 6rem;
       display: block; }
+      @media (max-width: 850px) {
+        main#newitem-main #newitem-flex #newitem-go-back {
+          margin: 2rem; } }
     main#newitem-main #newitem-flex #newitem-go-back:hover {
       background-color: rgba(224, 200, 203, 0.3); }
     main#newitem-main #newitem-flex #newitem-go-back > div {
@@ -1239,10 +1246,16 @@ main#newitem-main {
         margin-left: 1rem;
         margin-top: 0;
         color: var(--sidebar-color); }
+        @media (max-width: 850px) {
+          main#newitem-main #newitem-flex #newitem-intro #intro-symbol {
+            margin-left: 98%; } }
       main#newitem-main #newitem-flex #newitem-intro #intro-spec {
         font-size: 2.5rem;
         font-weight: 100;
         margin-left: 5rem; }
+        @media (max-width: 850px) {
+          main#newitem-main #newitem-flex #newitem-intro #intro-spec {
+            margin-left: 5.1rem; } }
     main#newitem-main #newitem-flex #newitem-modal {
       background-color: white;
       color: rgba(0, 0, 0, 0.7);
@@ -1252,6 +1265,10 @@ main#newitem-main {
       padding: 4rem;
       margin-top: 8rem;
       border-radius: 5px; }
+      @media (max-width: 850px) {
+        main#newitem-main #newitem-flex #newitem-modal {
+          width: 100%;
+          margin: 2rem auto; } }
       main#newitem-main #newitem-flex #newitem-modal h1 {
         font-size: 2.5rem;
         font-weight: 600; }
@@ -1286,6 +1303,9 @@ main#newitem-main {
           border-radius: 0.5rem;
           cursor: pointer;
           transition: 0.4s ease-out; }
+          @media (max-width: 850px) {
+            main#newitem-main #newitem-flex #newitem-modal form button {
+              margin-top: 1.6rem; } }
         main#newitem-main #newitem-flex #newitem-modal form button:hover {
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); }
       main#newitem-main #newitem-flex #newitem-modal .newitem-form-input {
@@ -1297,6 +1317,9 @@ main#newitem-main {
         font-family: Raleway, segoe UI, sans-serif;
         font-size: 2rem;
         color: rgba(0, 0, 0, 0.6); }
+        @media (max-width: 850px) {
+          main#newitem-main #newitem-flex #newitem-modal .newitem-form-input {
+            width: 100%; } }
       main#newitem-main #newitem-flex #newitem-modal select.newitem-form-input {
         cursor: pointer; }
       main#newitem-main #newitem-flex #newitem-modal #item-value {

@@ -5,7 +5,11 @@ main#newitem-main
 	{
 		display: flex;
 		flex-direction: row;
-
+		@include mobile
+		{
+			flex-direction: column;
+			width: 100%;
+		}
 		#newitem-go-back
 		{
 			cursor: pointer;
@@ -17,6 +21,10 @@ main#newitem-main
 			transform: rotate(-90deg);
 			margin: 6rem;
 			display: block;
+			@include mobile
+			{
+				margin: 2rem;
+			}
 		}
 		#newitem-go-back:hover
 		{
@@ -53,12 +61,20 @@ main#newitem-main
 				margin-left: 1rem;
 				margin-top: 0;
 				color: var(--sidebar-color);
+				@include mobile
+				{
+					margin-left: 98%;
+				}
 			}
 			#intro-spec
 			{
 				font-size: 2.5rem;
 				font-weight: 100;
 				margin-left: 5rem;
+				@include mobile
+				{
+					margin-left: 5.1rem;
+				}
 			}
 		}
 		#newitem-modal
@@ -71,6 +87,11 @@ main#newitem-main
 			padding: 4rem;
 			margin-top: 8rem;
 			border-radius: 5px;
+			@include mobile
+			{
+				width: 100%;
+				margin: 2rem auto;
+			}
 			h1
 			{
 				font-size: 2.5rem;
@@ -115,6 +136,10 @@ main#newitem-main
 					border-radius: 0.5rem;
 					cursor: pointer;
 					transition: 0.4s ease-out;
+					@include mobile
+					{
+						margin-top: 1.6rem;
+					}
 				}
 				button:hover
 				{
@@ -131,6 +156,10 @@ main#newitem-main
 				font-family: Raleway, segoe UI, sans-serif;
 				font-size: 2rem;
 				color: rgba(0, 0, 0, 0.6);
+				@include mobile
+				{
+					width: 100%;
+				}
 			}
 			select.newitem-form-input
 			{
