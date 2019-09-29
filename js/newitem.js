@@ -25,7 +25,7 @@ const applyMode = () =>
 	{
 		document.getElementById("newitem-form-title").textContent = "Edit item";
 		document.getElementById("item-desc").value = editItem.description;
-		document.getElementById("item-value").value = editItem.value;
+		document.getElementById("item-value").value = Math.abs(editItem.value);
 		document.getElementById("newitem-submit").textContent = "UPDATE";
 		document.getElementById("newitem-info-main").textContent = "Changes applied";
 	}
