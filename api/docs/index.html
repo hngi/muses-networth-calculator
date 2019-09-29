@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>API DOCS</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<header>
+		<nav id="top-nav">
+			<a href="#">Intro</a>
+			<a href="#operations">Sign Up</a>
+			<a href="#note">Login</a>
+			<a href="#already-exists">Items CRUD</a>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h1 class="blue">Welcome. . .</h1>
+			<h3 class="blue">This is the REST API docummentation for the #team-muses Net Worth Calculator built using Express and MongoDB with MVC architecture (minus the V :-) )</h3>
+
+			<h3 class="blue">To test locally, apply the following steps</h3>
+			<ul>
+				<li>Clone repo to your machine using <span class="code">git clone</span></li>
+				<li>Run <span class="code">npm install</span> to install dependencies</li>
+				<li>Run <span class="code">node server.js</span> to start backend server</li>
+				<li>Console should show <span class="code">Db connected successfully</span> and <span class="code">API running on port 3000</span></li>
+				<li>The API is all set up. You can start making requests</li>
+			</ul>
+			<p>Note: You do not have to test locally, the api is hosted on <a href="https://muses-nwc-api.herokuapp.com/">https://muses-nwc-api.herokuapp.com/</a> and you can make requests to that url</p>
+
+			<br />
+			<h2 class="blue" id="operations">API Operations</h2>
+			<h4>The API allows you to signup, login and (while logged in) perform CRUD (create, read, update and delete) operations on a set of financial <span class="code">items</span> on your account</h4>
+			<em><strong>Note:</strong> In all the examples, you could substitute <span class="code">http://localhost:3000</span> with the <a href="https://muses-nwc-api.herokuapp.com/">hosted API url</a>, if you are not testing locally</em> <br />
+			<br /></section>
+			<em><strong>Note:</strong> In all the examples, handling of data returned by <span class="code">fetch()</span> has been omitted for sake of clarity. A more complete request is usually in the form <span class="code">fetch(...).then(data => data.json()).then(jsonData => // use jsonData here )</span></em>
+			<h4>To signup, send</h4>
+			<code>
+let data = {"name": "Johnson", "email": "jaycodist@gmail.com", "password": "devlin"};
+fetch("http://localhost:3000/api/signup",
+  {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+    },
+    body: JSON.stringify(data)
+  })
+			</code>
+			<p>Received data will be in the format:</p>
+			<code>
+{
+	message: "New user created",
+	data: 
+	{
+	    name: "Johnson",
+	    email: "jaycodist@gmail.com",
+	    token: "ae243jh34h34h5465mdw201eecn59m808.eybfe343983jfmetrken3434fee48je2lp"
+	}
+}
+			</code>
+				<em id="note">
+					<strong>Note:</strong> The token could already be used to access your account. There's no need to login immediately after a signup. To use the token, you could save to localStorage: 
+					<span class="code">window.localStorage.setItem("auth_token", token)</span>
+					and attach it as header to your future requests: 
+					<span class="code">'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')</span> and logging out could simply be done via <span class="code">localStorage.removeItem("auth_token")</span> at the frontend.
+					<br />See examples below for more information
+				</em>
+			<h4>To login, send</h4>
+						<code>
+let data = {"email": "jaycodist@gmail.com", "password": "devlin"};
+fetch("http://localhost:3000/api/login",
+  {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+    },
+    body: JSON.stringify(data)
+  })
+			</code>
+			<p>Received data will be in the format:</p>
+			<code>
+{
+	message: "Successful login",
+	data: 
+	{
+	    name: "Johnson",
+	    email: "jaycodist@gmail.com",
+	    token: "ae243jh34h34h5465mdw201eecn59m808.eybfe343983jfmetrken3434fee48je2lp"
+	}
+}
+			</code>
+			<p><strong>The following response will be sent if login or signup fails</strong></p>
+						<code>
+{
+    message: ERR_MSG,
+    code: NUMBER
+}
+			</code>
+			<p>Where ERR_MSG and NUMBER could be any of the following, respectively:</p>
+			<ul>
+				<li>"Incorrect password" and 419 (for LOGIN)</li>
+				<li>"Email does not exist" and 496 (for LOGIN)</li>
+				<li id="already-exists">"Email already exists" and 427 (for SIGNUP)</li>
+			</ul>
+			<br />
+			<h2 class="blue">Items</h2>
+			<p>These are used to represent financial items belonging to your account like assets and liabilities. An <span class="code">item</span> is a simple JavaScript object with the following properties</p>
+			<ul>
+				<li>id: unique ID, supplied and managed by backend</li>
+				<li>type: a string that should be either "ASSET" or "LIABILITY"</li>
+				<li>description: a string that briefly describes item</li>
+				<li>value: a number (positive or negative) that represents the monetary value of item</li>
+			</ul>
+			<h4>To see the <span class="code">items</span> on your account, send</h4>
+			<code>
+fetch("http://localhost:3000/api/items",
+  {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+      'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')
+    }
+  })
+			</code>
+			<em><strong>Note:</strong> The <span class="code">Authorization</span> header must be set to contain your login/signup token before you can perform CRUD operations on the items in your account</em>
+			<p>Received data will be in the format:</p>
+			<code>
+[
+	{
+		id: "2e2fgdrer895jktr87h",
+		type: "ASSET",
+		description: "Mercedes car",
+		value: 5000000
+	},
+	{
+		id: "23tyew87e3ghrerer34",
+		type: "LIABILITY",
+		description: "Bank loan",
+		value: -3000000
+	}
+]
+			</code>
+
+	<h4>To add new <span class="code">item</span> to your account, send</h4>
+			<code>
+let data = {"type": "ASSET", "description": "Car", "value": 5000000};
+fetch("http://localhost:3000/api/items",
+  {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+      'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')
+    },
+    body: JSON.stringify(data)
+  })
+			</code>
+			<p>Received data will be in the format:</p>
+			<code>
+{
+	message: 'Item added successfully',
+	data: 
+	{
+	    	id: "as45ew434hj54er8eu43",
+	    	type: "ASSET",
+	    	description: "Car",
+	    	value: 5000000
+	}
+}
+			</code>
+
+			<h4>To update existing <span class="code">item</span> in your account, send</h4>
+			<code>
+let item_id = "as45ew434hj54er8eu43"; // The id of the item already received from the server
+let data = {"value": 45000000, item_id}; // New values for some properties
+fetch("http://localhost:3000/api/items",
+  {
+    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+      'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')
+    },
+    body: JSON.stringify(data)
+  })
+			</code>
+			<p>Received data will be in the format:</p>
+			<code>
+{
+	message: 'Item updated successfully',
+	data: 
+	{
+	    	id: "as45ew434hj54er8eu43",
+	    	type: "ASSET",
+	    	description: "Car",
+	    	value: 45000000
+	}
+}
+			</code>
+
+			<h4>To delete existing <span class="code">item</span> in your account, send</h4>
+			<code>
+let item_id = "as45ew434hj54er8eu43"; // The id of the item already received from the server
+let data = {item_id};
+fetch("http://localhost:3000/api/items",
+  {
+    method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+    headers: 
+    {
+      'Content-Type': 'application/json',
+      'Origin': 'muse-client'
+      'Authorization': 'Bearer ' + (localStorage.getItem("auth_token") || '')
+    },
+    body: JSON.stringify(data)
+  })
+			</code>
+			<p>Received data will be in the format:</p>
+			<code>
+{
+	message: 'Item deleted successfully',
+	newItemsCount: 0	// The number of items left on your account after deletion
+}
+			</code>
+			<p class="center">Have fun!</p>
+		</section>
+	</main>
+	<footer>
+		<strong>&copy 2019</strong>, Team-Muses Backend
+		<br />
+		<br />
+		<a href="#"><strong>Back to top</strong></a>
+		<br />
+		<br /><br />
+		<br />
+	</footer>
+</body>
+</html>
