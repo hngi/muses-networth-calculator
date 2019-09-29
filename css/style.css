@@ -712,6 +712,15 @@ footer {
   margin: auto;
   margin-bottom: 10rem; }
 
+@media (max-width: 800px) {
+  #powered-by {
+    text-align: center; } }
+
+#powered-by {
+  margin-top: 8rem; }
+  #powered-by a {
+    text-decoration: underline; }
+
 body {
   overflow-y: scroll;
   overflow-x: hidden; }

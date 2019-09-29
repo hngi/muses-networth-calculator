@@ -2,7 +2,6 @@
   width: 100%;
   padding: 1rem 5rem;
  
-
   .nav-bar {
     width: 100%;
     display: flex;
@@ -423,4 +422,19 @@ footer {
   background-color: #25c296;
   margin: auto;
   margin-bottom: 10rem;
+}
+@media (max-width: 800px)
+  {
+    #powered-by
+    {
+      text-align: center;
+    }
+  }
+#powered-by
+{
+  margin-top: 8rem;
+  a
+  {
+    text-decoration: underline;
+  }
 }
