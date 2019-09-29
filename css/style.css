@@ -723,6 +723,12 @@ footer {
   #powered-by a {
     text-decoration: underline; }
 
+#optional-ish, #optional-ish2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 2rem auto; }
+
 body {
   overflow-y: scroll;
   overflow-x: hidden; }
@@ -1249,6 +1255,9 @@ main#newitem-main {
           margin-left: 1rem; } }
       main#newitem-main #newitem-flex #newitem-intro #intro-title {
         cursor: pointer; }
+        @media (max-width: 850px) {
+          main#newitem-main #newitem-flex #newitem-intro #intro-title {
+            font-size: 3rem; } }
       main#newitem-main #newitem-flex #newitem-intro #intro-symbol {
         display: inline-block;
         position: absolute;
@@ -1266,7 +1275,7 @@ main#newitem-main {
         margin-left: 5rem; }
         @media (max-width: 850px) {
           main#newitem-main #newitem-flex #newitem-intro #intro-spec {
-            font-size: 2rem; } }
+            font-size: 1.6rem; } }
     main#newitem-main #newitem-flex #newitem-modal {
       background-color: white;
       color: rgba(0, 0, 0, 0.7);

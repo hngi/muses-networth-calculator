@@ -59,6 +59,10 @@ main#newitem-main
 			#intro-title
 			{
 				cursor: pointer;
+				@include mobile
+				{
+					font-size: 3rem;
+				}
 			}
 			#intro-symbol
 			{
@@ -81,7 +85,7 @@ main#newitem-main
 				margin-left: 5rem;
 				@include mobile
 				{
-					font-size: 2rem;
+					font-size: 1.6rem;
 				}
 			}
 		}

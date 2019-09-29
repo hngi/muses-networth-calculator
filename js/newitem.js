@@ -41,22 +41,23 @@ document.getElementById("item-type").addEventListener("change", e =>
 
 document.getElementById("item-value").addEventListener("input", ({target}) =>
 {
-	target.value = target.value.split("").filter((a, i) => /\d/.test(a) || (i === 0 && /-/.test(a))).join("");
+	target.value = target.value.split("").filter((a, i) => /\d/.test(a)).join("");
 });
 
 document.getElementById("intro-title").addEventListener("click", () => location.href = "overview.html");
 
 document.getElementById("newitem-submit").addEventListener("click", e =>
 {
+	let mode = localStorage.getItem(overview_mode);
 	let type = document.getElementById("item-type").value;
 	let description = document.getElementById("item-desc").value;
 	let value = document.getElementById("item-value").value;
-
 	if (!value.length || !description.length)
 		return;
 	else
 		e.preventDefault();
 
+	value = parseInt(mode == "ASSET" ? value : (0 - value));
 	let data = {type, description, value};
 	if (!editItem)
 	{

@@ -248,7 +248,6 @@
         display: grid;
         grid-template-columns: 1fr max-content;
         column-gap: 3rem;
-
         input {
           border: none;
           margin: auto;
@@ -441,4 +440,11 @@ footer {
   {
     text-decoration: underline;
   }
+}
+#optional-ish, #optional-ish2
+{
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
 }
