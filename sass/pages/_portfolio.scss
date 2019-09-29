@@ -2,14 +2,29 @@
   display: flex;
   flex-direction: column;
   padding: 2vh 2vw;
-
+  @include mobile
+  {
+    padding: 1rem;
+  }
   #upper-section-wrapper
   {
     background-color: rgb(220, 235, 255); //#f1f3fe;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 4rem;
+    @include mobile
+    {
+      padding: 1rem;
+      h2
+      {
+        font-size: 3rem;
+      }
+    }
     h1
     {
+      @include mobile
+      {
+        font-size: 4rem;
+      }
       text-align: center;
       font-weight: 100;
       font-size: 8rem;
@@ -17,6 +32,10 @@
     h3
     {
       font-size: 3rem;
+      @include mobile
+      {
+        font-size: 1.3rem;
+      }
     }
     img
     {
@@ -33,6 +52,10 @@
   }
   .upper-section 
   {
+    @include mobile
+    {
+      flex-direction: column;
+    }
     display: flex;
     flex-direction: row;
     padding: 1.5rem 1rem 1.5rem;
@@ -46,6 +69,11 @@
     margin-top: 3rem;
     display: flex;
     margin-bottom: 5rem;
+    @include mobile
+    {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
 
     .left-panel {
       flex: 1;
@@ -54,6 +82,10 @@
       flex-direction: column;
       background-color: rgb(220, 235, 255);
       padding: 4rem;
+      @include mobile
+      {
+        width: 100%;
+      }
       h1
       {
         font-size: 4rem;
@@ -83,14 +115,6 @@
       }
     }
   }
-
-  .mobile.right-panel {
-    display: none;
-    @include mobile {
-      display: block;
-      margin-bottom: 0;
-    }
-  }
   .right-panel {
     padding: 4rem;
     margin-left: 3rem;
@@ -98,7 +122,11 @@
     align-self: start;
     //border-radius: 2rem;
     background-color:  rgb(220, 235, 255);
-
+    @include mobile
+    {
+      width: 100%;
+      margin: 2rem auto;
+    }
     em
     {
       margin-top: 6rem;

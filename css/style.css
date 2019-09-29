@@ -802,16 +802,30 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2vh 2vw; }
+  @media (max-width: 850px) {
+    #portfolio-main {
+      padding: 1rem; } }
   #portfolio-main #upper-section-wrapper {
     background-color: #dcebff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 4rem; }
+    @media (max-width: 850px) {
+      #portfolio-main #upper-section-wrapper {
+        padding: 1rem; }
+        #portfolio-main #upper-section-wrapper h2 {
+          font-size: 3rem; } }
     #portfolio-main #upper-section-wrapper h1 {
       text-align: center;
       font-weight: 100;
       font-size: 8rem; }
+      @media (max-width: 850px) {
+        #portfolio-main #upper-section-wrapper h1 {
+          font-size: 4rem; } }
     #portfolio-main #upper-section-wrapper h3 {
       font-size: 3rem; }
+      @media (max-width: 850px) {
+        #portfolio-main #upper-section-wrapper h3 {
+          font-size: 1.3rem; } }
     #portfolio-main #upper-section-wrapper img {
       margin-top: 2rem; }
     #portfolio-main #upper-section-wrapper #assets-wrapper * {
@@ -824,10 +838,17 @@ body {
     padding: 1.5rem 1rem 1.5rem;
     align-items: center;
     justify-content: space-around; }
+    @media (max-width: 850px) {
+      #portfolio-main .upper-section {
+        flex-direction: column; } }
   #portfolio-main .lower-section {
     margin-top: 3rem;
     display: flex;
     margin-bottom: 5rem; }
+    @media (max-width: 850px) {
+      #portfolio-main .lower-section {
+        flex-direction: column;
+        margin-bottom: 0; } }
     #portfolio-main .lower-section .left-panel {
       flex: 1;
       width: 100vw;
@@ -835,6 +856,9 @@ body {
       flex-direction: column;
       background-color: #dcebff;
       padding: 4rem; }
+      @media (max-width: 850px) {
+        #portfolio-main .lower-section .left-panel {
+          width: 100%; } }
       #portfolio-main .lower-section .left-panel h1 {
         font-size: 4rem;
         font-weight: 50; }
@@ -850,18 +874,16 @@ body {
         margin-top: 5rem; }
       #portfolio-main .lower-section .left-panel a {
         text-decoration: underline; }
-  #portfolio-main .mobile.right-panel {
-    display: none; }
-    @media (max-width: 850px) {
-      #portfolio-main .mobile.right-panel {
-        display: block;
-        margin-bottom: 0; } }
   #portfolio-main .right-panel {
     padding: 4rem;
     margin-left: 3rem;
     width: 35%;
     align-self: start;
     background-color: #dcebff; }
+    @media (max-width: 850px) {
+      #portfolio-main .right-panel {
+        width: 100%;
+        margin: 2rem auto; } }
     #portfolio-main .right-panel em {
       margin-top: 6rem; }
       #portfolio-main .right-panel em a {
