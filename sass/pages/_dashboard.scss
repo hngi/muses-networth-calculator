@@ -2,7 +2,10 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+#powered-by a
+{
+  color: crimson;
+}
 #dashboard-main {
   display: grid;
   grid-template-columns: 1fr 300px;

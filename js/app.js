@@ -1,35 +1,3 @@
-// let lineChartCanvas = document.getElementById("line-chart");
-// // console.log();
-// lineChartCanvas.height =
-//   document.querySelector(".line-chart").offsetHeight - 40;
-// lineChartCanvas.width = document.querySelector(".line-chart").offsetWidth - 40;
-
-// let ctx = lineChartCanvas.getContext("2d");
-// let chart = new Chart(ctx, {
-//   // The type of chart we want to create
-//   type: "line",
-
-//   // The data for our dataset
-//   data: {
-//     labels: ["January", "February", "March", "April", "May", "June", "July"],
-//     datasets: [
-//       {
-//         label: "Spending",
-//         backgroundColor: "rgb(255, 99, 132)",
-//         borderColor: "rgb(255, 99, 132)",
-//         data: [0, 10, 5, 2, 20, 30, 95]
-//       }
-//     ]
-//   },
-
-//   // Configuration options go here
-//   options: {
-//     maintainAspectRatio: true,
-//     responsive: true
-//   }
-// });
-
-//ACCORDION CONTROL
 let acc = document.getElementsByClassName("accordion-trigger");
 
 for (let i = 0; i < acc.length; i++) {
@@ -95,6 +63,19 @@ btn.onclick = function() {
 span.onclick = function() {
   registerModal.style.display = "none";
 };
+
+
+document.getElementById("login-signup-revert").addEventListener("click", e =>
+{
+	loginModal.style.display = "none";
+	registerModal.style.display = "flex";
+});
+document.getElementById("signup-login-revert").addEventListener("click", e =>
+{
+	loginModal.style.display = "flex";
+	registerModal.style.display = "none";
+});
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

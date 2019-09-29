@@ -463,6 +463,8 @@ aside.general-sidebar {
             min-width: 50%;
             min-height: 50%;
             object-fit: cover; } }
+  .landing-body #login-signup-revert, .landing-body #signup-login-revert {
+    cursor: pointer; }
   .landing-body .howitworks {
     width: 100%;
     background-image: url("../assets/img/blue-background.png");
@@ -724,6 +726,9 @@ footer {
 body {
   overflow-y: scroll;
   overflow-x: hidden; }
+
+#powered-by a {
+  color: crimson; }
 
 #dashboard-main {
   display: grid;
