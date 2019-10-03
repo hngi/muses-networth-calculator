@@ -18,38 +18,31 @@ const percentiles =
 
 const convertToString = n =>
 {
-  let output = "";
-  if (Math.floor(Math.abs(n) / 1000000000000) >= 1)
-  {
-    let x = Math.floor(n / 1000000000000);
-    let y = Math.floor(n / 100000000000).toString();
-    let mod = y[y.length - 1];
-    output += x + "." + mod + " TRN";
-    return output;
-  }
-  else if (Math.floor(Math.abs(n) / 1000000000) >= 1)
-  {
-    let x = Math.floor(n / 1000000000);
-    let y = Math.floor(n / 100000000).toString();
-    let mod = y[y.length - 1];
-    output += x + "." + mod + " BN";
-    return output;
-  }
-  else if (Math.floor(Math.abs(n) / 1000000) >= 1)
-  {
-    let x = Math.floor(n / 1000000);
-    let y = Math.floor(n / 100000).toString();
-    let mod = y[y.length - 1];
-    output += x + "." + mod + " M";
-    return output;
-  }
-  else return n.toString();
+  // For trillions
+  if (Math.abs(n) >= 1000000000000)
+    return "" + (Math.round(n / 100000000000) / 10) + " Trillion";
+  // For billions
+  else if (Math.abs(n) >= 1000000000)
+    return "" + (Math.round(n / 100000000) / 10) + " Billion";
+  // For millions
+  else if (Math.abs(n) >= 1000000)
+    return "" + (Math.round(n / 100000) / 10) + " Million";
+  
+  // Insert commas for thousand
+  if (n.toString().length >= 4)
+    return n.toString().split("").reduce((total, a, i, arr) => 
+      total + (arr.length == i + 4? `${a},` : a), "")
+  return n.toString();
 }
 
 
 const getPercentile = n => 
 {
   let dollar = Math.ceil(n / 360);
+  if (dollar >= 10000000000)
+    return 99;
+  if (dollar >= 1000000000)
+    return 97;
   if (dollar >= 100000000)
     return 95;
   if (dollar >= 10000000)
@@ -85,3 +78,4 @@ else if (percentile[percentile.length - 1] == "3")
 else
   pString += "th";
 document.getElementById("stats-percentile-value").textContent = pString;
+document.getElementById("stats-percentile-value").style.color = percentile >= 50 ? "green" : "crimson";

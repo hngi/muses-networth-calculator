@@ -91,7 +91,26 @@ const updateControlFocus = () =>
 		edit.setAttribute("title", "You must select a row in order to edit");
 	}
 
-}
+};
+
+const convertToString = n =>
+{
+  // For trillions
+  if (Math.abs(n) >= 1000000000000)
+    return "" + (Math.round(n / 100000000000) / 10) + " Trillion";
+  // For billions
+  else if (Math.abs(n) >= 1000000000)
+    return "" + (Math.round(n / 100000000) / 10) + " Billion";
+  // For millions
+  else if (Math.abs(n) >= 1000000)
+    return "" + (Math.round(n / 100000) / 10) + " Million";
+  
+  // Insert commas for thousand
+  if (n.toString().length >= 4)
+    return n.toString().split("").reduce((total, a, i, arr) => 
+      total + (arr.length == i + 4? `${a},` : a), "")
+  return n.toString();
+};
 
 const selectRow = e =>
 {
@@ -186,7 +205,7 @@ const populateTable = (items) =>
 		desc.appendChild(document.createTextNode(item.description));
 
 		let value = document.createElement("td");
-		value.appendChild(document.createTextNode(item.value));
+		value.appendChild(document.createTextNode(convertToString(item.value)));
 
 		row.addEventListener("click", selectRow);
 
