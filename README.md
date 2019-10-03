@@ -2,18 +2,35 @@
 
 ## Overview
 
-This is one of the stage 3 projects built by Team Muses. A Net Worth Calculator web app.
+This is one of the stage 3 projects built by Team Muses. A Net Worth Calculator web app. This is not just an average Networth calculator 🙂. Our Networth calculator enables users to login an register if they don't have an account. Users can add several assets and liabilities they have and they will be supplied with the following information on clicking on "calculate" or clicking on the link to the  statistics page.
 
-## Contributing
+- The total sum of their assets
+- The total sum of their liabilities
+- Their total Networth
+- Their percentile globally
 
-This repo has 4 branches. `master`, `frontend`, `backend` and `develop`. The `master` branch shall remain untouched till we're ready for deployment. If you want to work on backend code, create your own branch from `backend` branch, work and make a Pull Request(This is very important. Always make pull requests). If you want to work on the frontend, do the same thing in `frontend` branch. When we want to test our app, we'll bring FE and BE code to `develop` and test. Then when we're satisfied with what is in `develop`, we'll merge to `master` and deploy. Please always include details of what you worked on in your commit and Pull Request messages. Also remember to `pull` first to update your local repo before working and making a PR. 
+## Other features
 
-If you're finding it difficult to find the right git command, here is an awesome online tool at your disposal. [git explorer](https://gitexplorer.com)
+Users can add, delete or update their various liabilities or assets. They can also search and filter items by dated added, value or description. A user can choose to logout and will be taken back to the home page and will need to login again to access their dashboard. 
+
+## Technology used
+
+We built a Node.js/Express powered REST api and hosted it on heroku. And when users try to login, register or perform CRUD operations in their accounts, requests are made to the api, necessary changes are made and data is stored in the database. Vanilla JavaScript and Sass were used on the frontend. And the frontend code is hosted on Netlify.
+
+## Usage
+---
+
+## Backend
+
+There is an `api` folder in the root directory of this repo which contains our REST api code.
+Official Documentation of the api can be found [here](https://jaycodist.github.io/muses-backend-docs)
 
 
-----
+## Frontend
+- Run `npm install` to install dependencies
+- Run `npm start` to start the development server
 
-- Run `npm install` to install dependencies(in this case, node-sass)
-- Run `npm run compile-sass` to compile the sass files or `npm run watch-sass` to watch
 
-Take note that main.scss only contains imports. To understand why, look up the so-called '7-1 sass rule'.
+---
+
+**Happy coding** ✨✨🚀

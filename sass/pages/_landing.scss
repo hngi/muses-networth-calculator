@@ -24,10 +24,10 @@
     .nav-menu {
       list-style-type: none;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       margin-top: 3rem;
       @include mobile {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         justify-content: center;
         align-content: center;
       }
@@ -48,11 +48,13 @@
 
         @include mobile {
           padding: 0.5em 0;
+          margin-left: 1rem;
         }
 
         &:hover {
           transform: scale(1.1);
         }
+
       }
       .join-nav {
         background-color: #f1f6fe;
@@ -62,6 +64,13 @@
       #register-modal-trigger {
         cursor: pointer;
       }
+
+      
+        .join-now-nav {
+          @include mobile {
+            width: 9rem;
+          }
+        }
     }
   }
 }
@@ -405,7 +414,7 @@
   }
 }
 
-footer {
+.index-footer {
   background-image: url("../assets/img/blue-background-2.png");
   width: 100%;
   margin-top: -35rem;
