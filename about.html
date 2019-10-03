@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NetWorth Calculator | About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="assets/img/muses.png">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="about-body">
+  <header class="landing-header">
+    <div class="nav-bar">
+      <div class="muses-logo">
+        <img src="./assets/img/muses.png" />
+      </div>
+      <nav class="nav-menu">
+        <a id="home-nav" href="index.html" class="nav-item about-home">Home</a>
+        <a href="index.html#faq" class="nav-item">Faq</a>
+        <a href="about.html" class="nav-item about-about">About</a>
+        <a id="login-modal-trigger" class="nav-item">Login</a>
+        <a id="register-modal-trigger" class="nav-item join-now-nav">Join now</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="about-main">
+    <h1 class="about-header">Muses NetWorth Calculator</h1>
+    <p class="about-first-paragraph">The Muses NetWorth Calculator is
+      a full scale web
+      application that gives users real time information about their assets and liabilities in turn, helping them keep track
+      of their Net Worth. This is not just an average calculator that gives out the difference between assets and
+      liabilities. Our NetWorth calculator enables users create a free account so that they can always login and have access to
+      their data among other interesting features. </p>
+    <section class="about-section">
+      <div class="about-img-container">
+        <img src="assets/img/networth-11.PNG" class="about-screenshot" alt="">
+      </div>
+      <div>
+        <p class="about-paragraph">With our NetWorth calculator, you can add an unlimited number of assets and liabilities and can sort and filter these items based on date/time added, description or monetary value.  </p>
+        <p class="about-paragraph">
+          You can also edit and delete items added. In the process of all these operations, your data
+          are being stored and updated simultaneously when necessary so when you login some other time, you can easily access all your information and perform
+          other operations
+        </p>
+      </div>
+    </section>
+    <section class="about-section">
+      <div class="about-img-container">
+      <img src="assets/img/networth-22.PNG" class="about-screenshot" alt="">
+      </div>
+      <div>
+      <p class="about-paragraph">A dedicated statistics page contains valuable information about the total values of your assets, liabilities and net worth. You can also get these values immediately after adding, updating or deleting an item. </p>
+      <p class="about-paragraph">
+        Your total net worth also enables us accurately calculate the percentile you fall in globally and your present ranking in Nigeria's richest.
+      </p>
+      </div>
+    </section>
+    <div class="about-hoz-line"></div>
+    <section class="about-follow">
+      <a href="https://twitter.com/muses_networth" class="about-follow-btn"><i class="fab fa-twitter"></i>Follow us on Twitter</a>
+    </section>
+  </main>
+
+
+  <footer class="about-footer">
+    <p>
+      Muses Copyright &copy; 2019
+    </p>
+  </footer>
+
+
+  <!-- MODALS -->
+  <div id="login-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="close">
+        <div>&times;</div>
+      </div>
+      <form name="login" action="">
+        <h2 id="loginHeader">Log In</h2>
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" placeholder="Your email" required />
+        <label for="login-password">Password</label>
+        <input type="password" name="password" id="login-password" placeholder="Your Password" required />
+        <div class="stay-signed">
+          <input id="keep-signed-in" type="checkbox" checked /><label for="keep-signed-in">Keep me signed in</label>
+        </div>
+        <a href="404.html">Forgot password?</a>
+        <button id="login-button">
+          <i class="fas fa-unlock"></i>
+          <p>
+            Enter
+          </p>
+        </button>
+        <h4 id="optional-ish">Don't have an account? <a id="login-signup-revert">Sign up</a></h4>
+      </form>
+    </div>
+  </div>
+  
+  <div id="register-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="close">&times;</div>
+      <form name="register" action="">
+        <h2 id="registerHeader">Register</h2>
+        <label for="register-firstname">Name</label>
+        <input type="text" name="name" id="register-firstname" placeholder="Your Name" required />
+        <label for="register-email">Email</label>
+        <input type="email" name="email" id="register-email" placeholder="Your email" required />
+        <label for="register-password">Password</label>
+        <input type="password" name="password" id="register-password" placeholder="Your Password" required />
+        <div class="stay-signed">
+          <input type="checkbox" id="keep-signed-in-reg" checked /><label for="keep-signed-in-reg">Keep me signed
+            in</label>
+        </div>
+        <a href="404.html">Forgot password?</a>
+        <button id="register-button">
+          <i class="fas fa-unlock"></i>
+          <p>
+            Enter
+          </p>
+        </button>
+        <h4 id="optional-ish2">Already have an account? <a id="signup-login-revert">Login</a></h4>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="js/app.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
