@@ -78,3 +78,4 @@ else if (percentile[percentile.length - 1] == "3")
 else
   pString += "th";
 document.getElementById("stats-percentile-value").textContent = pString;
+document.getElementById("stats-percentile-value").style.color = percentile >= 50 ? "green" : "crimson";
