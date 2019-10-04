@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="google-signin-client_id" content="1039137931813-037lfes22v0goblregnhs39lvio8iqpj.apps.googleusercontent.com">
     <title>Net Worth Calculator</title>
     <link
       rel="stylesheet"
@@ -193,7 +194,10 @@
                 Enter
               </p>
             </button>
-            <h4 id="optional-ish">Don't have an account? <a id="login-signup-revert">Sign up</a></h4>
+            <!-- Login with Google button... Imported script for functionality at bottom of the file and in the head element -->
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <!-- <a href="" onclick="onSignIn" data-onsuccess="onSignIn">Login with Google</a> -->
+            <!-- <h4 id="optional-ish">Don't have an account? <a id="login-signup-revert">Sign up</a></h4> -->
           </form>
         </div>
       </div>
@@ -253,5 +257,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <!-- Scripts for google signin function -->
+    <script src="js/google-api.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </body>
 </html>
